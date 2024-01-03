@@ -1,0 +1,76 @@
+/* src/components/LandingPage.css */
+
+body{
+background-color: black;
+}
+
+.info-page h1{
+align-self: flex-start;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: grey;
+font-weight: 300;
+}
+
+.ex{
+align-self: flex-start;
+margin-bottom: 20px;
+}
+
+.info-page {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  img{
+  object-fit: cover;
+  height: 200px;
+  max-width: 90vw;
+  min-width: 90vw;
+  overflow: scroll;
+  }
+
+  .textbox{
+    margin-top: 100px;
+    display: flex;
+    width: 100vw;
+    overflow: scroll;
+    gap: 20px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .textcontainer{
+  min-width: 90vw;
+  box-sizing: border-box;
+  background-color: white;
+  color: rgb(144, 144, 144);
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+  min-height: 300px;
+  }
+
+  .aicontent{
+  width: 70vw;
+  height: 200px;
+  background-color: white;
+  color: black;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 20px;
+  }
+
+  ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0px;
+list-style: none;
+text-decoration: none;
+  }
+  

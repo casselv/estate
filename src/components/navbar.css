@@ -1,0 +1,40 @@
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(22, 22, 22); /* Match the color to the screenshot */
+    padding: 10px;
+    height: 5vh;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #fff; /* Text color */
+}
+
+.menu-icon {
+    display: none;
+    color: #fff;
+}
+
+/* Example of a media query to show the hamburger menu icon on smaller screens */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
