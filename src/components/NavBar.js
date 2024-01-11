@@ -7,7 +7,7 @@ const NavigationBar = () => {
     <nav className="navigation-bar">
       <ul className="nav-list">
         <li className="nav-item">
-          <Link to="/">Home</Link>
+          <Link to="/">Physio</Link>
         </li>
         {/* Add more list items as needed */}
       </ul>
