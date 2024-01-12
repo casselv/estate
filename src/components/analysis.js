@@ -10,14 +10,18 @@ function Analysis() {
     console.log("the fetch is running");
     console.log("on gg pull a glock", names);
     console.log(description);
+
     try {
-      const response = await fetch("http://localhost:3012/api/analyze", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ names, description }),
-      });
+      const response = await fetch(
+        "https://estateserver-production.up.railway.app/api/analyze",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ names, description }),
+        }
+      );
 
       if (!response.ok) {
         console.error("Server error:", response.statusText);

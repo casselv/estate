@@ -1,6 +1,6 @@
 
 .landing-page {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     color: white;
     display: flex;
     flex-direction: column;
@@ -131,12 +131,15 @@
     width: 960px;   /* Fixed width */
     height: 600px;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
+    background-color: #ffffff;
+    margin-top: 10px;
 }
 
 .landing-page {
     overflow: auto; /* Adds scrollbar if content overflows */
     width: 100%;    /* Adjust as needed */
     height: 100%;   /* Adjust as needed */
+    margin-top: 10px;
 }
 
   .object-name{
@@ -152,8 +155,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000; /* Or any other color or image */
-    color: #fff; /* Text color */
+    background: #ffffff; /* Or any other color or image */
+    color: #727272; /* Text color */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,5 +168,5 @@
   }
 
   .dis{
-  color: #39ff14;
+  color: #000000;
   }

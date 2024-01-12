@@ -23,12 +23,12 @@ function LandingPage() {
     // Load the Unity script
     const loadUnityScript = () => {
       const script = document.createElement("script");
-      script.src = "/loladot4.loader.js"; // Make sure this path is correct
+      script.src = "/loladot66.loader.js"; // Make sure this path is correct
       script.onload = () => {
         createUnityInstance(document.getElementById("unity-canvas"), {
-          dataUrl: "/loladot4.data",
-          frameworkUrl: "/loladot4.framework.js",
-          codeUrl: "/loladot4.wasm",
+          dataUrl: "/loladot66.data",
+          frameworkUrl: "/loladot66.framework.js",
+          codeUrl: "/loladot66.wasm",
           // ... other config settings
         })
           .then((unityInstance) => {
