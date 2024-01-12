@@ -16,7 +16,9 @@ function LandingPage() {
       (el) => el.textContent
     );
 
-    navigate("/analysis", { state: { names, description } });
+    navigate("/analysis", {
+      state: { names, description, painLevel, duration, painType },
+    });
   };
 
   useEffect(() => {
@@ -82,10 +84,33 @@ function LandingPage() {
   };
   // Add this button in your render method for testing
 
+  const getPainLevelDescriptor = (value) => {
+    if (value <= 2) {
+      return "Mild";
+    } else if (value <= 5) {
+      return "Moderate";
+    } else if (value <= 7) {
+      return "Severe";
+    } else {
+      return "Very Severe";
+    }
+  };
+
+  const [painLevel, setPainLevel] = useState(0);
+  const painLevelDescriptor = getPainLevelDescriptor(painLevel);
+
+  const handlePainTypeChange = (e) => {
+    setPainType(e.target.value);
+  };
+
+  const [painType, setPainType] = useState("");
+
+  const [duration, setDuration] = useState(0);
+
   return (
     <div className="landing-page">
       <p className="dis">select areas of pain or injury</p>
-      <div id="custom-loader" class="custom-loader">
+      <div id="custom-loader" className="custom-loader">
         Loading Physio...
       </div>
       <canvas id="unity-canvas" width="960" height="600"></canvas>
@@ -107,6 +132,81 @@ function LandingPage() {
           onChange={(e) => setTextAreaValue(e.target.value)}
         />
 
+        <div className="optionBox">
+          <div className="slider-container">
+            <label htmlFor="duration">
+              Duration of injury: <span>{duration} Days</span>
+            </label>
+            <input
+              type="range"
+              id="duration"
+              name="duration"
+              min="0"
+              max="30" // Assuming the max value for duration is 30 days
+              value={duration}
+              onChange={(e) => {
+                setDuration(e.target.value);
+              }}
+            />
+          </div>
+
+          <div className="slider-container">
+            <label htmlFor="pain-level">
+              Level of Pain: <span>{painLevelDescriptor}</span>
+            </label>
+            <input
+              type="range"
+              id="pain-level"
+              name="pain-level"
+              min="0"
+              max="10" // Assuming the pain level is on a scale of 0 to 10
+              value={painLevel}
+              onChange={(e) => {
+                setPainLevel(e.target.value);
+              }}
+            />
+          </div>
+
+          <div className="radio-container">
+            <p>Pain Type:</p>
+            <label>
+              <input
+                type="radio"
+                value="throbbing"
+                checked={painType === "throbbing"}
+                onChange={handlePainTypeChange}
+              />
+              Throbbing
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="sharp"
+                checked={painType === "sharp"}
+                onChange={handlePainTypeChange}
+              />
+              Sharp
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="dull"
+                checked={painType === "dull"}
+                onChange={handlePainTypeChange}
+              />
+              Dull
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="ache"
+                checked={painType === "ache"}
+                onChange={handlePainTypeChange}
+              />
+              Ache
+            </label>
+          </div>
+        </div>
         <button onClick={handleAnalyseClick}>analyse</button>
       </div>
     </div>

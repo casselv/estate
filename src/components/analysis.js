@@ -6,10 +6,19 @@ function Analysis() {
   const location = useLocation();
   const [analysisResult, setAnalysisResult] = useState(null);
 
-  const fetchAnalysis = async (names, description) => {
+  const fetchAnalysis = async (
+    names,
+    description,
+    painLevel,
+    duration,
+    painType
+  ) => {
     console.log("the fetch is running");
     console.log("on gg pull a glock", names);
     console.log(description);
+    console.log("painLevel", painLevel);
+    console.log("duration", duration);
+    console.log("painType", painType);
 
     try {
       const response = await fetch(
@@ -19,7 +28,13 @@ function Analysis() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ names, description }),
+          body: JSON.stringify({
+            names,
+            description,
+            painLevel,
+            duration,
+            painType,
+          }),
         }
       );
 
@@ -50,8 +65,9 @@ function Analysis() {
     console.log("useEffect is running for analysis");
     // Check if state is passed correctly and has the data we need
     if (location.state?.names && location.state.description) {
-      const { names, description } = location.state;
-      fetchAnalysis(names, description);
+      const { names, description, painLevel, duration, painType } =
+        location.state;
+      fetchAnalysis(names, description, painLevel, duration, painType);
     }
   }, [location, location.state]);
 

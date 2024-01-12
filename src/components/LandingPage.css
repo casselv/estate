@@ -142,6 +142,50 @@
     margin-top: 10px;
 }
 
+
+.optionBox{
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 20px;
+box-sizing: border-box;
+color:grey;
+}
+
+.slider-container{
+display: flex;
+flex-direction: column;
+width: 100%;
+
+margin-bottom: 30px;
+}
+
+.slider-container span{
+color: red;
+}
+
+.radio-container{
+display: flex;
+align-items: flex-start;
+flex-direction: column;
+justify-content: center;
+
+width: 100%;
+}
+
+
+
+.radio-container label{
+display: flex;
+align-items: center;
+gap: 30px;
+}
+
+.radio-container input{
+margin-top: 0px;
+}
+
   .object-name{
   color: rgb(57, 57, 57);
   background-color: #39ff14;
