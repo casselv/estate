@@ -111,7 +111,7 @@ function LandingPage() {
     <div className="landing-page">
       <p className="dis">select areas of pain or injury</p>
       <div id="custom-loader" className="custom-loader">
-        Loading Physio...
+        Loading AnatoLink...
       </div>
       <canvas id="unity-canvas" width="960" height="600"></canvas>
 

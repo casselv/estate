@@ -25,9 +25,14 @@ nav{
     padding: 0 15px;
 }
 
+.nav-item img {
+   height: 20px;
+   width: 20px;
+}
+
 .nav-item a {
     text-decoration: none;
-    color: #969696; /* Text color */
+    color: rgba(0, 26, 74, 0.468); /* Text color */
 }
 
 .menu-icon {

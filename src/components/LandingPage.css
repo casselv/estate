@@ -83,8 +83,8 @@
   button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #373737;
-    color: rgb(224, 224, 224);
+    background-color: rgb(0, 26, 74);
+    color: rgb(231, 231, 231);
     border: none;
     border-radius: 4px;
     width: 200px;
@@ -162,7 +162,7 @@ margin-bottom: 30px;
 }
 
 .slider-container span{
-color: red;
+color: rgb(0, 26, 74);
 }
 
 .radio-container{
@@ -187,8 +187,8 @@ margin-top: 0px;
 }
 
   .object-name{
-  color: rgb(57, 57, 57);
-  background-color: #39ff14;
+  color: rgb(221, 221, 221);
+  background-color: rgb(0, 26, 74);
   padding: 10px;
   border-radius: 5px;
   }

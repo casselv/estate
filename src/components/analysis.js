@@ -14,49 +14,36 @@ function Analysis() {
     painType
   ) => {
     console.log("the fetch is running");
-    console.log("on gg pull a glock", names);
-    console.log(description);
+    console.log("names", names);
+    console.log("description", description);
     console.log("painLevel", painLevel);
     console.log("duration", duration);
     console.log("painType", painType);
 
     try {
-      const response = await fetch(
-        "https://estateserver-production.up.railway.app/api/analyze",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            names,
-            description,
-            painLevel,
-            duration,
-            painType,
-          }),
-        }
-      );
+      const response = await fetch("http://localhost:3013/api/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          names,
+          description,
+          painLevel,
+          duration,
+          painType,
+        }),
+      });
 
       if (!response.ok) {
         console.error("Server error:", response.statusText);
         return;
       }
 
-      const reader = response.body.getReader();
-
-      // Continuously read from the stream
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break; // Exit the loop if the stream is finished
-
-        // Convert the Uint8Array to a string
-        const chunkText = new TextDecoder().decode(value);
-        setAnalysisResult((prevContent) => (prevContent || "") + chunkText);
-      }
+      const content = await response.text(); // Get the text content of the response
+      setAnalysisResult(content); // Update the state with the response
     } catch (error) {
       console.error("Network error:", error);
-
       // Handle network errors here
     }
   };
@@ -74,9 +61,28 @@ function Analysis() {
   return (
     <div className="analysis-page">
       <div className="result">
-        <h2 className="sistitle">Analysis Result</h2>
+        <div className="toptabs">
+          <a className="sistitle">Overview</a>
+          <a className="sistitle">Symptoms</a>
+          <a className="sistitle">Treatments</a>
+        </div>
+
         {/* Render your analysis result here */}
         <p className="ai-content">{JSON.stringify(analysisResult, null, 2)}</p>
+      </div>
+
+      <div className="commercial">
+        <div className="rehabtitle">Rehabilitation For This Area of Injury</div>
+        <div className="rehabshit">
+          <div className="topselling">
+            <h3>Foam Roller</h3>
+            <a>shop</a>
+          </div>
+          <div className="videoplayer">
+            <img src="/appletrew.png"></img>
+          </div>
+        </div>
+        <div className="counter">OOOOOOOOOO</div>
       </div>
     </div>
   );
