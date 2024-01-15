@@ -1,0 +1,24 @@
+/* ProgressSpinner.css */
+.progress-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+  }
+
+  .progress-spinner h2{
+color: rgba(0, 26, 74, 0.605);
+font-weight: lighter;
+  }
+  
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
+  .progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    stroke-linecap: round;
+  }
+  
