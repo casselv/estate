@@ -128,7 +128,7 @@
   }
 
   #unity-canvas {
-    width: 960px;   /* Fixed width */
+    width: 80%;   /* Fixed width width: 960px; */
     height: 600px;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
     background-color: #ffffff;

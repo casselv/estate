@@ -16,31 +16,31 @@ const RehabCarousel = ({ rehabItems }) => {
   const mockRehabItems = [
     {
       title: "Foam Roller",
-      link: "#",
+      link: "/shop",
       mediaSrc: "/appletrew.png", // Replace with your image path
       description: "Use this foam roller for muscle relaxation.",
     },
     {
       title: "Resistance Bands",
-      link: "#",
+      link: "/shop",
       mediaSrc: "/appletrew.png", // Replace with your image path
       description: "Ideal for stretching and strength training.",
     },
     {
       title: "Resistance Bands",
-      link: "#",
+      link: "/shop",
       mediaSrc: "/appletrew.png", // Replace with your image path
       description: "Ideal for stretching and strength training.",
     },
     {
       title: "Resistance Bands",
-      link: "#",
+      link: "/shop",
       mediaSrc: "/appletrew.png", // Replace with your image path
       description: "Ideal for stretching and strength training.",
     },
     {
       title: "Resistance Bands",
-      link: "#",
+      link: "/shop",
       mediaSrc: "/appletrew.png", // Replace with your image path
       description: "Ideal for stretching and strength training.",
     },

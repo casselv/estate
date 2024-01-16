@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import "./analysis.css";
 import Spinner from "./Spinner";
@@ -12,28 +12,29 @@ function Analysis() {
     treatment: "",
   });
 
-  const [activeTab, setActiveTab] = useState("overview"); // State to track the active tab
-  const [isLoading, setIsLoading] = useState(true); // New loading state
+  const [activeTab, setActiveTab] = useState("overview");
+  const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
-  const fetchAnalysis = async (
-    names,
-    description,
-    painLevel,
-    duration,
-    painType
-  ) => {
-    console.log("the fetch is running");
-    console.log("names", names);
-    console.log("description", description);
-    console.log("painLevel", painLevel);
-    console.log("duration", duration);
-    console.log("painType", painType);
+  useEffect(() => {
+    console.log("useEffect is running for analysis");
 
-    try {
-      const response = await fetch(
-        "https://estateserver-production.up.railway.app/api/analyze",
-        {
+    const fetchAnalysis = async (
+      names,
+      description,
+      painLevel,
+      duration,
+      painType
+    ) => {
+      console.log("the fetch is running");
+      console.log("names", names);
+      console.log("description", description);
+      console.log("painLevel", painLevel);
+      console.log("duration", duration);
+      console.log("painType", painType);
+
+      try {
+        const response = await fetch("http://localhost:3013/api/analyze", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -45,23 +46,40 @@ function Analysis() {
             duration,
             painType,
           }),
+        });
+
+        if (!response.ok) {
+          console.error("Server error:", response.statusText);
+          return;
         }
-      );
 
-      if (!response.ok) {
-        console.error("Server error:", response.statusText);
-        return;
+        const content = await response.text();
+        const parsedcontent = parseAIResponse(content);
+        setAnalysisSections(parsedcontent);
+      } catch (error) {
+        console.error("Network error:", error);
       }
+    };
 
-      const content = await response.text();
-      // Get the text content of the response
-      const parsedcontent = parseAIResponse(content);
-      setAnalysisSections(parsedcontent); // Update the state with the response
-    } catch (error) {
-      console.error("Network error:", error);
-      // Handle network errors here
+    const interval = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress >= 100) {
+          clearInterval(interval);
+          setIsLoading(false);
+          return 100;
+        }
+        return oldProgress + (1000 / 13000) * 100;
+      });
+    }, 1000);
+
+    if (location.state?.names && location.state.description) {
+      const { names, description, painLevel, duration, painType } =
+        location.state;
+      fetchAnalysis(names, description, painLevel, duration, painType);
     }
-  };
+
+    return () => clearInterval(interval);
+  }, [location, location.state]);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -96,18 +114,15 @@ function Analysis() {
     let symptoms = "";
     let treatment = "";
 
-    // Function to find the start index of each section
     const findSectionStart = (sectionName) => {
       const index = text.indexOf(sectionName);
       return index;
     };
 
-    // Find start indices of each section
     const overviewStart = findSectionStart("Overview:");
     const symptomsStart = findSectionStart("Symptoms:");
     const treatmentStart = findSectionStart("Treatment:");
 
-    // Extract each section, excluding the section headers
     overview =
       overviewStart !== -1 && symptomsStart !== -1
         ? text.slice(overviewStart + "Overview:".length, symptomsStart).trim()
@@ -126,34 +141,8 @@ function Analysis() {
     return { overview, symptoms, treatment };
   }
 
-  useEffect(() => {
-    console.log("useEffect is running for analysis");
-
-    // Start a timer that updates the progress state
-    const interval = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress >= 100) {
-          clearInterval(interval); // clear interval if progress is complete
-          setIsLoading(false); // Hide the spinner
-          return 100;
-        }
-        return oldProgress + (1000 / 13000) * 100; // increment progress based on the time elapsed
-      });
-    }, 1000); // update progress every second
-
-    // Check if state is passed correctly and has the data we need
-    if (location.state?.names && location.state.description) {
-      const { names, description, painLevel, duration, painType } =
-        location.state;
-      fetchAnalysis(names, description, painLevel, duration, painType);
-    }
-
-    // Clear interval on component unmount
-    return () => clearInterval(interval);
-  }, [location, location.state]);
-
   if (isLoading) {
-    return <Spinner progress={progress} />; // Show the spinner while loading
+    return <Spinner progress={progress} />;
   }
 
   return (
@@ -182,9 +171,7 @@ function Analysis() {
           </button>
         </div>
 
-        <div className="ai-content">
-          {renderContent()} {/* Call the function here */}
-        </div>
+        <div className="ai-content">{renderContent()}</div>
       </div>
 
       <div className="commercial">

@@ -1,0 +1,28 @@
+body{
+color: black;
+padding: 0px;
+margin: 0px;
+}
+
+.product{
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 40px;
+align-items: center;
+box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+
+}
+
+img{
+height: 100px;
+object-fit: scale-down;
+}
+
+.product-details{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
