@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./analysis.css";
 import Spinner from "./Spinner";
 import RehabCarousel from "./RehabCarousel";
+import rehabItems from "./mockrehab";
 
 function Analysis() {
   const location = useLocation();
@@ -12,6 +13,8 @@ function Analysis() {
     treatment: "",
   });
 
+  const [lastWord, setLastWord] = useState("");
+  console.log("drakomalfoy", lastWord);
   const [activeTab, setActiveTab] = useState("overview");
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -55,6 +58,7 @@ function Analysis() {
 
         const content = await response.text();
         const parsedcontent = parseAIResponse(content);
+
         setAnalysisSections(parsedcontent);
       } catch (error) {
         console.error("Network error:", error);
@@ -138,6 +142,9 @@ function Analysis() {
         ? text.slice(treatmentStart + "Treatment:".length).trim()
         : "";
 
+    const lastWord = treatment.split(" ").pop().toLowerCase();
+    setLastWord(lastWord);
+
     return { overview, symptoms, treatment };
   }
 
@@ -176,7 +183,7 @@ function Analysis() {
 
       <div className="commercial">
         <div className="rehabtitle">Rehabilitation For This Area of Injury</div>
-        <RehabCarousel />
+        <RehabCarousel rehabItems={rehabItems} selectedCategory={lastWord} />
       </div>
     </div>
   );

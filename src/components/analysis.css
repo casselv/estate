@@ -223,4 +223,21 @@ width: 20ch;
 list-style: none;
 text-decoration: none;
   }
+
+@media (max-width: 768px) {
+  .analysis-page{
+    border-radius: 5px;
+    width: 100%;
+    color: rgb(169, 169, 169);
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    }
+}
   

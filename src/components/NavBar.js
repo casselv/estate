@@ -8,6 +8,8 @@ const NavigationBar = () => {
       <ul className="nav-list">
         <li className="nav-item">
           <Link to="/">AnatoLink</Link>
+        </li>
+        <li className="nav-item">
           <Link to="/Shop">Shop</Link>
         </li>
         {/* Add more list items as needed */}

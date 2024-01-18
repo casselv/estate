@@ -84,20 +84,7 @@ function LandingPage() {
   };
   // Add this button in your render method for testing
 
-  const getPainLevelDescriptor = (value) => {
-    if (value <= 2) {
-      return "Mild";
-    } else if (value <= 5) {
-      return "Moderate";
-    } else if (value <= 7) {
-      return "Severe";
-    } else {
-      return "Very Severe";
-    }
-  };
-
   const [painLevel, setPainLevel] = useState(0);
-  const painLevelDescriptor = getPainLevelDescriptor(painLevel);
 
   const handlePainTypeChange = (e) => {
     setPainType(e.target.value);
@@ -128,6 +115,7 @@ function LandingPage() {
           ref={descriptionRef}
           className="diagnose"
           value={textAreaValue}
+          placeholder="Describe your injury"
           onKeyDown={handleKeyDown}
           onChange={(e) => setTextAreaValue(e.target.value)}
         />
@@ -152,7 +140,7 @@ function LandingPage() {
 
           <div className="slider-container">
             <label htmlFor="pain-level">
-              Level of Pain: <span>{painLevelDescriptor}</span>
+              Level of Pain: <span>{painLevel} / 10</span>
             </label>
             <input
               type="range"
@@ -204,6 +192,42 @@ function LandingPage() {
                 onChange={handlePainTypeChange}
               />
               Ache
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="stabbing"
+                checked={painType === "stabbing"}
+                onChange={handlePainTypeChange}
+              />
+              Stabbing
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="burning"
+                checked={painType === "burning"}
+                onChange={handlePainTypeChange}
+              />
+              Burning
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="cramping"
+                checked={painType === "cramping"}
+                onChange={handlePainTypeChange}
+              />
+              Cramping
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="tingling"
+                checked={painType === "tingling"}
+                onChange={handlePainTypeChange}
+              />
+              Tingling
             </label>
           </div>
         </div>

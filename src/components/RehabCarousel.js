@@ -4,7 +4,18 @@ import "./RehabCarousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const RehabCarousel = ({ rehabItems }) => {
+const RehabCarousel = ({ rehabItems, selectedCategory }) => {
+  console.log("Selected Category:", selectedCategory);
+
+  const cleanCategory = selectedCategory
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .trim()
+    .toLowerCase();
+
+  const filteredItems = rehabItems.filter((item) =>
+    item.title.toLowerCase().includes(cleanCategory)
+  );
+
   const settings = {
     dots: true,
     infinite: true,
@@ -13,55 +24,25 @@ const RehabCarousel = ({ rehabItems }) => {
     slidesToScroll: 1,
   };
 
-  const mockRehabItems = [
-    {
-      title: "Foam Roller",
-      link: "/shop",
-      mediaSrc: "/appletrew.png", // Replace with your image path
-      description: "Use this foam roller for muscle relaxation.",
-    },
-    {
-      title: "Resistance Bands",
-      link: "/shop",
-      mediaSrc: "/appletrew.png", // Replace with your image path
-      description: "Ideal for stretching and strength training.",
-    },
-    {
-      title: "Resistance Bands",
-      link: "/shop",
-      mediaSrc: "/appletrew.png", // Replace with your image path
-      description: "Ideal for stretching and strength training.",
-    },
-    {
-      title: "Resistance Bands",
-      link: "/shop",
-      mediaSrc: "/appletrew.png", // Replace with your image path
-      description: "Ideal for stretching and strength training.",
-    },
-    {
-      title: "Resistance Bands",
-      link: "/shop",
-      mediaSrc: "/appletrew.png", // Replace with your image path
-      description: "Ideal for stretching and strength training.",
-    },
-    // Add more items as needed
-  ];
-
   return (
     <div className="rehab-carousel">
       <Slider {...settings}>
-        {mockRehabItems.map((item, index) => (
-          <div key={index} className="rehab-item">
-            <div className="shopitem">
-              <div className="dog">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item, index) => (
+            <div key={index} className="rehab-item">
+              <div className="shopitem">
+                <div className="dog">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <a href={item.link}>View all products</a>
               </div>
-              <a href={item.link}>Shop</a>
+              <img src={item.mediaSrc} alt={item.title} />
             </div>
-            <img src={item.mediaSrc} alt={item.title} />
-          </div>
-        ))}
+          ))
+        ) : (
+          <div>No products available for this category.</div>
+        )}
       </Slider>
     </div>
   );

@@ -8,6 +8,13 @@ import Analysis from "./components/analysis";
 import ProductList from "./components/ProductList";
 import { productsData } from "./components/ProductsData";
 import Checkout from "./components/Checkout";
+import Confirmation from "./components/confirmation";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51OZWISFLBFXrO8t5CBXiWcNxCDLaROtB63mWeRQL9NJfDTJ3lOr04Khus5cO0v6N8VX0MOEZk57AYr02HLItEKrZ00zewUx8Oo"
+);
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -32,21 +39,24 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/analysis/" element={<Analysis />} />
-        <Route
-          path="/shop"
-          element={
-            <ProductList
-              products={productsData}
-              onAddToCart={handleAddToCart}
-              cart={cart}
-            />
-          }
-        />
-      </Routes>
+      <Elements stripe={stripePromise}>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/analysis/" element={<Analysis />} />
+          <Route
+            path="/shop"
+            element={
+              <ProductList
+                products={productsData}
+                onAddToCart={handleAddToCart}
+                cart={cart}
+              />
+            }
+          />
+        </Routes>
+      </Elements>
     </Router>
   );
 }
