@@ -3,9 +3,8 @@ import "./cart.css";
 import { useNavigate } from "react-router-dom";
 
 // import necessary items for routing
-import { Link } from "react-router-dom";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleRemoveFromCart }) => {
   const navigate = useNavigate();
 
   const navigateToCheckout = () => {
@@ -24,9 +23,15 @@ const Cart = ({ cart }) => {
         <p>Your cart is empty.</p>
       ) : (
         cart.map((item) => (
-          <div key={item.id}>
+          <div className="cartier" key={item.id}>
             <h3>{item.name}</h3>
             <p>Quantity: {item.quantity}</p>
+            <button
+              className="removal"
+              onClick={() => handleRemoveFromCart(item.id)}
+            >
+              remove
+            </button>
             {/* Display item price, consider formatting the price */}
           </div>
         ))

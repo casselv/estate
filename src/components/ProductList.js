@@ -1,11 +1,21 @@
 import React from "react";
 import Product from "./Product";
-import Cart from "./cart";
+import EccomerceNav from "./eccomerceNav";
 
-const ProductList = ({ products, onAddToCart, cart }) => {
+const ProductList = ({
+  products,
+  onAddToCart,
+  cart,
+  cartItemCount,
+  handleRemoveFromCart,
+}) => {
   return (
     <div>
-      <Cart cart={cart} />
+      <EccomerceNav
+        cart={cart}
+        handleRemoveFromCart={handleRemoveFromCart}
+        cartItemCount={cartItemCount}
+      />
 
       <div className="product-list">
         {products.map((product) => (

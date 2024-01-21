@@ -7,14 +7,23 @@ import "slick-carousel/slick/slick-theme.css";
 const RehabCarousel = ({ rehabItems, selectedCategory }) => {
   console.log("Selected Category:", selectedCategory);
 
-  const cleanCategory = selectedCategory
+  const validAreas = ["leg", "arm", "back", "stomach"];
+  let cleanCategory = selectedCategory
     .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
     .trim()
     .toLowerCase();
 
-  const filteredItems = rehabItems.filter((item) =>
-    item.title.toLowerCase().includes(cleanCategory)
-  );
+  // Set to 'other' if the category is not one of the valid areas
+  if (!validAreas.includes(cleanCategory)) {
+    cleanCategory = "other";
+  }
+
+  const filteredItems = rehabItems.filter((item) => {
+    if (cleanCategory === "other") {
+      return true;
+    }
+    return item.area.toLowerCase().includes(cleanCategory);
+  });
 
   const settings = {
     dots: true,
@@ -35,9 +44,9 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-                <a href={item.link}>View all products</a>
+                <a href={item.link}>View Product</a>
               </div>
-              <img src={item.mediaSrc} alt={item.title} />
+              <video controls src={item.mediaSrc} alt={item.title} />
             </div>
           ))
         ) : (

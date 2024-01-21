@@ -8,6 +8,7 @@ import Analysis from "./components/analysis";
 import ProductList from "./components/ProductList";
 import { productsData } from "./components/ProductsData";
 import Checkout from "./components/Checkout";
+import EccomerceNav from "./components/eccomerceNav";
 import Confirmation from "./components/confirmation";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -18,6 +19,10 @@ const stripePromise = loadStripe(
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  const handleRemoveFromCart = (productId) => {
+    setCart(cart.filter((item) => item.id !== productId));
+  };
 
   const handleAddToCart = (product) => {
     const productExists = cart.find((item) => item.id === product.id);
@@ -36,6 +41,8 @@ function App() {
     }
   };
 
+  const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
+
   return (
     <Router>
       <NavBar />
@@ -50,8 +57,11 @@ function App() {
             element={
               <ProductList
                 products={productsData}
+                handleRemoveFromCart={handleRemoveFromCart}
                 onAddToCart={handleAddToCart}
+                cartItemCount={cartItemCount}
                 cart={cart}
+                EccomerceNav={EccomerceNav}
               />
             }
           />

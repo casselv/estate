@@ -19,9 +19,9 @@
 }
 
   
-  .rehab-carousel img {
-    max-width: 100%;
-    min-width: 100%;
+  .rehab-carousel video {
+    max-width: 500px;
+    min-width: 500px;
     border-radius: 10px;
     object-fit: scale-down;
     border-radius: 8px;
@@ -100,5 +100,19 @@ flex-direction: column;
   .slick-dots li.slick-active button:before {
     background-color:     rgb(0, 26, 74);; /* Color of the active dot */
   }
+
+@media (max-width: 500px) {
+
+
+  
+  .rehab-carousel video {
+    max-width: 250px;
+    min-width: 250px;
+    border-radius: 10px;
+    object-fit: scale-down;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+}
   
   
