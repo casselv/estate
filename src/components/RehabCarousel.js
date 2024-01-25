@@ -9,7 +9,7 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
 
   const validAreas = ["leg", "arm", "back", "stomach"];
   let cleanCategory = selectedCategory
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .replace(/[.,\/#!$%&*;:{}=\-_`~()]/g, "")
     .trim()
     .toLowerCase();
 
