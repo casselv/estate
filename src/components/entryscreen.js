@@ -16,6 +16,8 @@ const EntryScreen = ({ onVerifyPasscode }) => {
   return (
     <div className="entryScreen">
       <div className="entryContainer">
+        <h1>ACCESS GRANTED TO ANATOLINK SHAREHOLDERS ONLY</h1>
+        <h3>Copyright © 2024 Anatolink Ltd.</h3>
         <input
           type="password"
           className="passcodeInput"
