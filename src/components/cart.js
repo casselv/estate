@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import necessary items for routing
 
 const Cart = ({ cart, handleRemoveFromCart }) => {
+  console.log("check the import", cart);
   const navigate = useNavigate();
 
   const navigateToCheckout = () => {
@@ -24,8 +25,10 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
       ) : (
         cart.map((item) => (
           <div className="cartier" key={item.id}>
-            <h3>{item.name}</h3>
+            <h3 className="itemname">{item.name}</h3>
             <p>Quantity: {item.quantity}</p>
+            <img className="itemimages" src={item.imageUrl} alt=""></img>
+            <p>${item.price}</p>
             <button
               className="removal"
               onClick={() => handleRemoveFromCart(item.id)}
@@ -42,7 +45,6 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
           <button className="boss" onClick={navigateToCheckout}>
             Checkout
           </button>
-          {/* Replace "/checkout" with your checkout route */}
         </>
       )}
     </div>

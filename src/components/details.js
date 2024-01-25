@@ -30,18 +30,20 @@ const Details = ({
   }
 
   return (
-    <div>
-      <EccomerceNav
-        cart={cart}
-        handleRemoveFromCart={handleRemoveFromCart}
-        cartItemCount={cartItemCount}
-      />
-      <h1>{product.name}</h1> {/* Corrected this line */}
-      <img src={product.imageUrl} alt=""></img>
-      <h1>{product.price}</h1>
-      <h1>{product.description}</h1>
-      {/* You can add more details here */}
-      <button onClick={() => onAddToCart(product)}>Add to Cart</button>
+    <div className="detailed">
+      <div className="imaged">
+        <img className="productimaged" src={product.imageUrl} alt=""></img>
+      </div>
+      <div className="text">
+        <h1 className="productname">{product.name}</h1>{" "}
+        {/* Corrected this line */}
+        <h4 className="productPrice">{product.price}</h4>
+        <p className="productdescriptor">{product.description}</p>
+        {/* You can add more details here */}
+        <button className="productbutton" onClick={() => onAddToCart(product)}>
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 };

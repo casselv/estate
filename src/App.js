@@ -21,7 +21,7 @@ const stripePromise = loadStripe(
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  /*const [isAuthenticated, setIsAuthenticated] = useState(false);*/
 
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter((item) => item.id !== productId));
@@ -46,6 +46,7 @@ function App() {
 
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
+  /*
   const verifyPasscode = (enteredPasscode) => {
     const correctPasscode = process.env.REACT_APP_PASSCODE; // Define your correct passcode here
     if (enteredPasscode === correctPasscode) {
@@ -57,11 +58,16 @@ function App() {
 
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
-  }
+  } */
 
   return (
     <Router>
-      <NavBar />
+      <NavBar
+        handleRemoveFromCart={handleRemoveFromCart}
+        onAddToCart={handleAddToCart}
+        cartItemCount={cartItemCount}
+        cart={cart}
+      />
       <Elements stripe={stripePromise}>
         <Routes>
           <Route path="/" element={<LandingPage />} />

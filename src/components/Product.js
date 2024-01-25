@@ -10,7 +10,6 @@ const Product = ({ product, cart, cartItemCount, handleRemoveFromCart }) => {
       <Link to={`/details/${product.id}`}>
         <img src={product.imageUrl} alt={product.name} />
         <h3>{product.name}</h3>
-        <p>{product.description}</p>
         <div className="product-details">
           <span className="price">${product.price.toFixed(2)}</span>
         </div>

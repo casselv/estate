@@ -40,8 +40,8 @@ function LandingPage() {
               loader.style.visibility = "hidden";
 
               // Optional: remove the loader from the DOM after the transition
-              setTimeout(() => loader.remove(), 1000); // Assuming a 0.5s transition
-            }, 2500);
+              setTimeout(() => loader.remove(), 0); // Assuming a 0.5s transition
+            }, 0);
 
             // Assign the Unity instance to the window object for easy access
             window.unityInstance = unityInstance;
@@ -109,126 +109,94 @@ function LandingPage() {
       </div>
 
       <div className="input-container">
-        <div id="clicked-object-name"></div>
+        <div className="ting">
+          <div id="clicked-object-name"></div>
+        </div>
+        <div className="godsplan">
+          <textarea
+            ref={descriptionRef}
+            className="diagnose"
+            value={textAreaValue}
+            placeholder="Describe your injury"
+            onKeyDown={handleKeyDown}
+            onChange={(e) => setTextAreaValue(e.target.value)}
+          />
 
-        <textarea
-          ref={descriptionRef}
-          className="diagnose"
-          value={textAreaValue}
-          placeholder="Describe your injury"
-          onKeyDown={handleKeyDown}
-          onChange={(e) => setTextAreaValue(e.target.value)}
-        />
+          <div className="optionBox">
+            <div className="slider-container">
+              <label htmlFor="duration">
+                Duration of injury: <span>{duration} Days</span>
+              </label>
+              <input
+                type="range"
+                id="duration"
+                name="duration"
+                min="0"
+                max="30" // Assuming the max value for duration is 30 days
+                value={duration}
+                onChange={(e) => {
+                  setDuration(e.target.value);
+                }}
+              />
+            </div>
 
-        <div className="optionBox">
-          <div className="slider-container">
-            <label htmlFor="duration">
-              Duration of injury: <span>{duration} Days</span>
-            </label>
-            <input
-              type="range"
-              id="duration"
-              name="duration"
-              min="0"
-              max="30" // Assuming the max value for duration is 30 days
-              value={duration}
-              onChange={(e) => {
-                setDuration(e.target.value);
-              }}
-            />
-          </div>
+            <div className="slider-container">
+              <label htmlFor="pain-level">
+                Level of Pain: <span>{painLevel} / 10</span>
+              </label>
+              <input
+                type="range"
+                id="pain-level"
+                name="pain-level"
+                min="0"
+                max="10" // Assuming the pain level is on a scale of 0 to 10
+                value={painLevel}
+                onChange={(e) => {
+                  setPainLevel(e.target.value);
+                }}
+              />
+            </div>
 
-          <div className="slider-container">
-            <label htmlFor="pain-level">
-              Level of Pain: <span>{painLevel} / 10</span>
-            </label>
-            <input
-              type="range"
-              id="pain-level"
-              name="pain-level"
-              min="0"
-              max="10" // Assuming the pain level is on a scale of 0 to 10
-              value={painLevel}
-              onChange={(e) => {
-                setPainLevel(e.target.value);
-              }}
-            />
-          </div>
+            <div className="radio-container">
+              <p>Pain Type:</p>
+              <label>
+                <input
+                  type="radio"
+                  value="throbbing"
+                  checked={painType === "throbbing"}
+                  onChange={handlePainTypeChange}
+                />
+                Throbbing
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="sharp"
+                  checked={painType === "sharp"}
+                  onChange={handlePainTypeChange}
+                />
+                Sharp
+              </label>
 
-          <div className="radio-container">
-            <p>Pain Type:</p>
-            <label>
-              <input
-                type="radio"
-                value="throbbing"
-                checked={painType === "throbbing"}
-                onChange={handlePainTypeChange}
-              />
-              Throbbing
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="sharp"
-                checked={painType === "sharp"}
-                onChange={handlePainTypeChange}
-              />
-              Sharp
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="dull"
-                checked={painType === "dull"}
-                onChange={handlePainTypeChange}
-              />
-              Dull
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="ache"
-                checked={painType === "ache"}
-                onChange={handlePainTypeChange}
-              />
-              Ache
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="stabbing"
-                checked={painType === "stabbing"}
-                onChange={handlePainTypeChange}
-              />
-              Stabbing
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="burning"
-                checked={painType === "burning"}
-                onChange={handlePainTypeChange}
-              />
-              Burning
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="cramping"
-                checked={painType === "cramping"}
-                onChange={handlePainTypeChange}
-              />
-              Cramping
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="tingling"
-                checked={painType === "tingling"}
-                onChange={handlePainTypeChange}
-              />
-              Tingling
-            </label>
+              <label>
+                <input
+                  type="radio"
+                  value="ache"
+                  checked={painType === "ache"}
+                  onChange={handlePainTypeChange}
+                />
+                Ache
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="stabbing"
+                  checked={painType === "stabbing"}
+                  onChange={handlePainTypeChange}
+                />
+                Stabbing
+              </label>
+            </div>
           </div>
         </div>
         <button onClick={handleAnalyseClick}>analyse</button>

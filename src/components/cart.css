@@ -1,41 +1,62 @@
-.cart{
-
-width: 50%;
-box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
-background-color: rgb(0, 0, 85);
-color: white;
-overflow: scroll;
-display: flex;
-height: 600px;
-box-sizing: border-box;
-margin: 0px;
-padding: 15px;
-flex-direction: column;
-align-items: center;
-
-position: fixed;
-top: 166px;
-right: 0px;
-}
-
-.removal{
-background-color: white;
-color: rgb(0, 0, 85) ;
-}
-
-
-.cartier{
+.cart {
     width: 100%;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
+    box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.306);
+    background-color: rgb(255, 255, 255);
+    color: rgb(14, 0, 75);
+    display: flex;
+    height: 100vh; /* Use viewport height for full height */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .itemname{
+color: rgb(14, 0, 75);
+background-color: rgba(255, 255, 255, 0);
+padding: 0px;
+margin: 0px;
+border-radius: 0px;
+  }
+  /* Add JavaScript class to body to disable scrolling */
+  .cart-open {
+    overflow: hidden;
+  }
+  
+  /* Your other CSS classes remain the same */
+  .removal {
+    background-color:rgb(0, 0, 85);
+    color: white;
+  }
+  
+  .cartier {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px;
+    border-bottom: 1px solid  rgb(0, 0, 85);
+  }
+  
+  .boss {
+    background-color:rgb(0, 0, 85);
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 5px;
+    list-style: none;
+    text-decoration: none;
+    align-self: center;
+  }
 
-.boss{
-background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 85);
-padding: 10px;
-border-radius: 5px;
-list-style: none;
-text-decoration: none;
-align-self: center;
-}
+  .removal{
+margin-bottom: 10px;
+align-self: flex-start;
+  }
+  
+  .itemimages{
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  }

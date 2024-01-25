@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-import EccomerceNav from "./eccomerceNav";
+import "./productlist.css";
 
 const ProductList = ({
   products,
@@ -11,12 +11,7 @@ const ProductList = ({
 }) => {
   return (
     <div>
-      <EccomerceNav
-        cart={cart}
-        handleRemoveFromCart={handleRemoveFromCart}
-        cartItemCount={cartItemCount}
-      />
-
+      <img className="godgiven" src="./banner3.png"></img>
       <div className="product-list">
         {products.map((product) => (
           <Product

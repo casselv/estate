@@ -1,6 +1,32 @@
-img{
+.productimaged{
     object-fit: scale-down;
-    width: 400px;
-    height: 300px;
-    min-width: 5px;
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    }
+
+
+    .detailed{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    }
+
+    .productbutton{
+    margin: 0px;
+    }
+
+    .productdescriptor{
+    color: black;
+    width: 50ch;
+    }
+
+    .productname{
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0px;
+        margin: 0px;
+        width: fit-content;
     }
