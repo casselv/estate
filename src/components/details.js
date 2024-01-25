@@ -37,7 +37,7 @@ const Details = ({
         cartItemCount={cartItemCount}
       />
       <h1>{product.name}</h1> {/* Corrected this line */}
-      <img src={product.imageUrl} alt="Description of the image"></img>
+      <img src={product.imageUrl} alt=""></img>
       <h1>{product.price}</h1>
       <h1>{product.description}</h1>
       {/* You can add more details here */}
