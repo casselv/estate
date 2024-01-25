@@ -1,0 +1,6 @@
+img{
+    object-fit: scale-down;
+    width: 400px;
+    height: 300px;
+    min-width: 5px;
+    }

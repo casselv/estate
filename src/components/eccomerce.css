@@ -2,9 +2,8 @@
 .secondary-nav {
     width: 100%; /* Full width */
     min-height: 100px;
-    background-color: #f8f8f8; /* Light grey background */
-    border-top: 1px solid #e7e7e7; /* Light grey border top for separation */
-    border-bottom: 1px solid #e7e7e7; /* Light grey border bottom for separation */
+    background-color: #ffffff; /* Light grey background */
+ 
     display: flex; /* Use flexbox for alignment */
     justify-content: space-between; /* Space between the categories and cart icon */
     align-items: center; /* Center items vertically */

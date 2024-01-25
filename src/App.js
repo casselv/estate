@@ -10,8 +10,10 @@ import { productsData } from "./components/ProductsData";
 import Checkout from "./components/Checkout";
 import EccomerceNav from "./components/eccomerceNav";
 import Confirmation from "./components/confirmation";
+import Details from "./components/details";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import EntryScreen from "./components/entryscreen";
 
 const stripePromise = loadStripe(
   "pk_test_51OZWISFLBFXrO8t5CBXiWcNxCDLaROtB63mWeRQL9NJfDTJ3lOr04Khus5cO0v6N8VX0MOEZk57AYr02HLItEKrZ00zewUx8Oo"
@@ -19,6 +21,7 @@ const stripePromise = loadStripe(
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter((item) => item.id !== productId));
@@ -43,6 +46,19 @@ function App() {
 
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
+  const verifyPasscode = (enteredPasscode) => {
+    const correctPasscode = process.env.REACT_APP_PASSCODE; // Define your correct passcode here
+    if (enteredPasscode === correctPasscode) {
+      setIsAuthenticated(true);
+    } else {
+      alert("Incorrect passcode");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return <EntryScreen onVerifyPasscode={verifyPasscode} />;
+  }
+
   return (
     <Router>
       <NavBar />
@@ -50,6 +66,17 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/details/:productId"
+            element={
+              <Details
+                handleRemoveFromCart={handleRemoveFromCart}
+                onAddToCart={handleAddToCart}
+                cartItemCount={cartItemCount}
+                cart={cart}
+              />
+            }
+          />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/analysis/" element={<Analysis />} />
           <Route

@@ -23,6 +23,10 @@ const ProductList = ({
             key={product.id}
             product={product}
             onAddToCart={onAddToCart}
+            products={products}
+            cart={cart}
+            cartItemCount={cartItemCount}
+            handleRemoveFromCart={handleRemoveFromCart}
           />
         ))}
       </div>

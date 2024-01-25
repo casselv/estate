@@ -1,0 +1,32 @@
+.entryScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  .entryContainer {
+    text-align: center;
+  }
+  
+  .passcodeInput {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submitBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submitBtn:hover {
+    background-color: darkblue;
+  }
+  

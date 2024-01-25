@@ -12,7 +12,6 @@ const EccomerceNav = ({ cart, cartItemCount, handleRemoveFromCart }) => {
 
   return (
     <nav className="secondary-nav">
-      <div className="categories">Anatolink Store</div>
       <div className="cart-icon">
         {/* Add cart icon with a link to the cart here */}
       </div>
