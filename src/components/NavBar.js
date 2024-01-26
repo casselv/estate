@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import this only if you're using React Router
 import "./navbar.css"; // Make sure to create a corresponding CSS file
 import Cart from "./cart";
