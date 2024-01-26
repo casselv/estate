@@ -40,6 +40,8 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
 
   const handleStripePayment = async (paymentMethodId) => {
     const amount = Math.round(totalPrice * 100);
+    const cardName = document.querySelector(".cardName").value;
+    console.log(cardName);
     try {
       // Make a POST request to your backend to finalize the payment
       const response = await fetch(
@@ -49,7 +51,7 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ paymentMethodId, amount }), // Send the payment method ID to your backend
+          body: JSON.stringify({ paymentMethodId, amount, cardName }), // Send the payment method ID to your backend
         }
       );
 
@@ -77,10 +79,19 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <CardElement />
+      <div className="cardInputs">
+        <input
+          type="text"
+          name="cardName"
+          required
+          placeholder="Name On Card"
+          className="cardName"
+        ></input>
+        <CardElement />
+      </div>
       {error && <div className="error">{error}</div>}
-      <button type="submit" disabled={!stripe || loading}>
-        Pay Now
+      <button className="paySub" type="submit" disabled={!stripe || loading}>
+        Securely Checkout With Stripe
       </button>
     </form>
   );

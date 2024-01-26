@@ -14,7 +14,9 @@ import Details from "./components/details";
 import Cta from "./components/cta";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import EntryScreen from "./components/entryscreen";
+import PaymentPage from "./components/payment";
+
+//import EntryScreen from "./components/entryscreen";
 
 const stripePromise = loadStripe(
   "pk_test_51OZWISFLBFXrO8t5CBXiWcNxCDLaROtB63mWeRQL9NJfDTJ3lOr04Khus5cO0v6N8VX0MOEZk57AYr02HLItEKrZ00zewUx8Oo"
@@ -22,7 +24,7 @@ const stripePromise = loadStripe(
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  /* const [isAuthenticated, setIsAuthenticated] = useState(false);*/
 
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter((item) => item.id !== productId));
@@ -46,7 +48,7 @@ function App() {
   };
 
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
-
+  /*
   const verifyPasscode = (enteredPasscode) => {
     const correctPasscode = process.env.REACT_APP_PASSCODE; // Define your correct passcode here
     if (enteredPasscode === correctPasscode) {
@@ -54,11 +56,11 @@ function App() {
     } else {
       alert("Incorrect passcode");
     }
-  };
+  }; 
 
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
-  }
+  } */
 
   return (
     <Router>
@@ -72,6 +74,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Cta />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route
             path="/details/:productId"
             element={

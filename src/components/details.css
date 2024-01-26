@@ -30,3 +30,15 @@
         margin: 0px;
         width: fit-content;
     }
+
+    @media (max-width: 768px){
+        .detailed{
+            display: flex;
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 100px;
+            }
+    
+    }

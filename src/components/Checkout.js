@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./checkout.css";
 import { useNavigate } from "react-router-dom";
 
-import StripePaymentForm from "./StripePayment";
+//import StripePaymentForm from "./StripePayment";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -26,56 +26,36 @@ const Checkout = () => {
   };
 
   const totalPrice = calculateTotal();
+  const handleCheckout = () => {
+    // Construct userData object with values from the refs
+    const userData = {
+      fullName: fullNameRef.current.value,
+      email: emailRef.current.value,
+      address1: address1Ref.current.value,
+      address2: address2Ref.current.value || "",
+      city: cityRef.current.value,
+      state: stateRef.current.value,
+      postalCode: postalCodeRef.current.value,
+      country: countryRef.current.value,
+    };
 
-  const handlePaymentSuccess = async (paymentMethodId) => {
-    try {
-      const orderData = {
-        fullName: fullNameRef.current.value,
-        email: emailRef.current.value,
-        address1: address1Ref.current.value,
-        address2: address2Ref.current.value || "",
-        city: cityRef.current.value,
-        state: stateRef.current.value,
-        postalCode: postalCodeRef.current.value,
-        country: countryRef.current.value,
-        cartItems: cart,
-        paymentMethodId,
-        total: totalPrice,
-      };
-
-      const response = await fetch("http://localhost:3013/api/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Order creation failed");
-      }
-
-      // If the response is OK, navigate to the confirmation page
-      navigate("/confirmation");
-    } catch (error) {
-      console.error("Order creation error:", error);
-      alert("There was an issue with your order. Please try again.");
-    }
+    // Navigate to the payment page with userData and other necessary data
+    navigate("/payment", { state: { userData, totalPrice, cart } });
   };
 
   return (
     <div className="checkcont">
-      <h2>Checkout</h2>
-      <div>
-        <h3>Your Cart Items:</h3>
-        {cart.map((item) => (
+      {cart.map((item) => (
+        <div className="boxdiv">
           <div key={item.id}>
             <p>
               {item.name} - Quantity: {item.quantity} - Price: ${item.price}
             </p>
+            <img className="chekedimage" src={item.imageUrl} alt=""></img>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+
       <div>
         <h4>Total: ${calculateTotal().toFixed(2)}</h4>
       </div>
@@ -144,10 +124,9 @@ const Checkout = () => {
 
         {/* Payment details handled by a third-party component */}
       </form>
-      <StripePaymentForm
-        handlePaymentSuccess={handlePaymentSuccess}
-        totalPrice={totalPrice}
-      />
+      <button className="checkoutLit" onClick={handleCheckout}>
+        Proceed to Payment
+      </button>
     </div>
   );
 };

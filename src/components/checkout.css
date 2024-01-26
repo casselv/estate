@@ -6,25 +6,53 @@ padding: 0px;
 .checkcont{
 box-sizing: border-box;
 margin: 30px;
-box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.2);
+
 display: flex;
 border-radius: 5px;
 flex-direction: column;
-align-items: center;
+box-sizing: border-box;
+padding: 40px;
+align-items: flex-start;
 justify-content: center;
 }
 
+
+.boxdiv{
+    box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+    box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 400px;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.chekedimage{
+height: 200px;
+width: 200px;
+}
+
+.checkcont
 form{
 box-sizing: border-box;
-padding: 30px;
+padding: 0px;
 display: flex;
 flex-direction: column;
 width: 80%;
+gap: 20px;
 }
 
-input{
+.checkoutLit{
+align-self: flex-start;
+}
+
+.checkcont input{
 border: solid 1px rgb(215, 215, 215);
 border-radius: 5px;
+padding: 15px;
 }
 
 button {

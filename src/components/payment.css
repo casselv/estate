@@ -1,0 +1,75 @@
+@import 'https://js.stripe.com/v3/';
+
+
+body{
+margin: 0px;
+padding: 0px;
+}
+
+.paymentcont{
+display: flex;
+height: 90vh;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.paymentcont form{
+display: flex;
+flex-direction: column;
+width: 60%;
+}
+
+.paySub{
+align-self: flex-start;
+}
+
+/* Target the CardElement container */
+.StripeElement {
+    display: block;
+    padding: 10px;
+    border:solid 1px grey;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+
+  }
+
+  .cardInputs{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  box-shadow: 5px 10px 20px 10px rgba(128, 128, 128, 0.106);
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 5px;
+  }
+
+  .cardName{
+width: 100%;
+border: solid 1px grey;
+padding: 10px;
+box-sizing: border-box;
+  }
+  
+  /* Style when it's focused */
+  .StripeElement--focus {
+    border-color: #0074cc;
+  }
+
+  
+  /* Style when it's invalid */
+  .StripeElement--invalid {
+    border-color: #ff3860;
+  }
+  
+
+
+.ElementsApp{
+display: flex;
+flex-direction: column;
+background-color: red;
+}
