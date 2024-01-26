@@ -15,11 +15,14 @@
 
 
   .input-container{
-  width: 80%;
+  width: 50%;
   height: 90vh;
   box-shadow: 10px 4px 8px 4px rgba(14, 21, 55, 0.102);
   z-index: 10;
+  left: 0px;
   background-color: white;
+  position: absolute;
+  top: 66px;
 display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -164,8 +167,10 @@ display: flex;
   }
 
   #unity-canvas {
-    width: 70%;   /* Fixed width width: 960px; */
+    width: 50%;   /* Fixed width width: 960px; */
     height: 90vh;
+    right: 0px;
+    position: absolute;
     z-index: 1;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
     background-color: #ffffff;
