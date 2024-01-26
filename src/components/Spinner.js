@@ -13,7 +13,7 @@ const Spinner = ({ progress }) => {
       <svg className="progress-ring" height="50" width="50">
         <circle
           className="progress-ring__circle"
-          stroke="blue"
+          stroke="rgba(0, 26, 74, 1)"
           strokeWidth="4"
           fill="transparent"
           r={radius}

@@ -90,21 +90,21 @@ function Analysis() {
       case "overview":
         return (
           <>
-            <h3>Overview</h3>
+            <h3 className="func">Overview</h3>
             <p>{analysisSections.overview}</p>
           </>
         );
       case "symptoms":
         return (
           <>
-            <h3>Symptoms</h3>
+            <h3 className="func">Symptoms</h3>
             <p>{analysisSections.symptoms}</p>
           </>
         );
       case "treatments":
         return (
           <>
-            <h3>Treatments</h3>
+            <h3 className="func">Treatments</h3>
             <p>{analysisSections.treatment}</p>
           </>
         );
@@ -122,6 +122,8 @@ function Analysis() {
       const index = text.indexOf(sectionName);
       return index;
     };
+
+    /* <div className="rehabtitle">Rehabilitation For This Area of Injury</div>*/
 
     const overviewStart = findSectionStart("Overview:");
     const symptomsStart = findSectionStart("Symptoms:");
@@ -182,7 +184,6 @@ function Analysis() {
       </div>
 
       <div className="commercial">
-        <div className="rehabtitle">Rehabilitation For This Area of Injury</div>
         <RehabCarousel rehabItems={rehabItems} selectedCategory={lastWord} />
       </div>
     </div>
@@ -190,14 +191,3 @@ function Analysis() {
 }
 
 export default Analysis;
-
-/*<div className="rehabshit">
-          <div className="topselling">
-            <h3>Foam Roller</h3>
-            <a>shop</a>
-          </div>
-          <div className="videoplayer">
-            <img src="/appletrew.png"></img>
-          </div>
-        </div>
-        <div className="counter"></div>*/

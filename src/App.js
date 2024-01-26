@@ -11,6 +11,7 @@ import Checkout from "./components/Checkout";
 import EccomerceNav from "./components/eccomerceNav";
 import Confirmation from "./components/confirmation";
 import Details from "./components/details";
+import Cta from "./components/cta";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import EntryScreen from "./components/entryscreen";
@@ -70,7 +71,7 @@ function App() {
       />
       <Elements stripe={stripePromise}>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Cta />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/details/:productId"
@@ -84,6 +85,7 @@ function App() {
             }
           />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/landing" element={<LandingPage />} />
           <Route path="/analysis/" element={<Analysis />} />
           <Route
             path="/shop"

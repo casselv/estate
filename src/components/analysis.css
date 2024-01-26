@@ -23,13 +23,14 @@ border-radius: 5px;
 width: 100%;
 color: rgb(169, 169, 169);
 display: flex;
-margin-top: 40px;
-flex-direction: column;
-flex-wrap: wrap;
-padding-top: 30px;
-padding-bottom: 30px;
-padding-left: 100px;
-padding-right: 100px;
+margin-top: 0px;
+padding-top: 0px;
+height: 90vh;
+justify-content: space-between;
+padding-bottom: 0px;
+padding-left: 0px;
+gap: 10px;
+padding-right: 0px;
 box-sizing: border-box;
 }
 
@@ -38,7 +39,6 @@ background-color: #ffffff;
 box-sizing: border-box;
 padding: 10px;
 border-radius: 10px;
-box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
 min-height: 30vh;
 font-weight: bold;
 margin-top: 10px;
@@ -49,6 +49,10 @@ margin-top: 10px;
  color: rgba(0, 26, 74, 0.66) ;
   }
 
+  .ai-content p{
+  max-width: 60ch;
+  }
+
 .rehabtitle{
 background-color: white;
 padding: 15px;
@@ -57,9 +61,9 @@ width: 100%;
 box-sizing: border-box;
 display: flex;
 justify-content: center;
-color:rgba(0, 26, 74, 0.411);
+color:rgba(0, 26, 74, 0.804);
 border-radius: 5px;
-font-weight: 720;
+font-weight: 500;
 }
 
 .sistitle{
@@ -80,16 +84,18 @@ gap: 15px;
 }
 
 .rehabtitle{
-width: 100%;
+width: fit-content
 }
 
 .commercial{
-margin-top: 40px;
-height: 600px;
+margin-top: 0px;
+height: 90vh;
+
+box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
 display: flex;
 flex-direction: column;
 gap: 15px;
-width: 100%;
+width: 50%;
 box-sizing: border-box;
 }
 
@@ -135,7 +141,7 @@ width: 20ch;
     justify-content: flex-start;
   }
 
-  h1{
+  .analysis-page h1{
  margin-left: 40PX;
   }
 
@@ -143,7 +149,7 @@ width: 20ch;
    margin-left: 40px;
   }
 
-  img{
+  .analysis-page img{
   object-fit: cover;
   height: 200px;
   max-width: 90vw;
@@ -224,7 +230,18 @@ list-style: none;
 text-decoration: none;
   }
 
-@media (max-width: 768px) {
+  .result{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 49%;
+  box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+  }
+
+
+@media (max-width: 1000px) {
   .analysis-page{
     border-radius: 5px;
     width: 100%;
@@ -232,12 +249,32 @@ text-decoration: none;
     display: flex;
     margin-top: 40px;
     flex-direction: column;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
     box-sizing: border-box;
     }
+
+
+    .result{
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+      box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+      }
+
+      .commercial{
+        margin-top: 0px;
+        height: 90vh;
+        
+        box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+
 }
   

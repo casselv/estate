@@ -41,12 +41,18 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
             <div key={index} className="rehab-item">
               <div className="shopitem">
                 <div className="dog">
-                  <h3>{item.title}</h3>
+                  <h3 className="itemtitles">{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
                 <a href={item.link}>View Product</a>
               </div>
-              <video controls src={item.mediaSrc} alt={item.title} />
+              <video
+                controls
+                autoplay
+                muted
+                src={item.mediaSrc}
+                alt={item.title}
+              />
             </div>
           ))
         ) : (

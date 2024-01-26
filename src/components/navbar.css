@@ -17,6 +17,7 @@ gap: 30px;
 .cart-container{
 width: 30%;
 top: 0;
+z-index: 100000000000000;
 position: fixed;
 transition: right 0.3s ease-in-out; 
 right: -30%;

@@ -1,0 +1,77 @@
+body{
+margin: 0px;
+padding: 0px;
+}
+
+.ctabox{
+height: 90vh;
+width: 100vw;
+gap: 60px;
+display: flex;
+box-sizing: border-box;
+padding: 30px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.topText{
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+
+.topText h1{
+background-color: white;
+padding: 0px;
+font-size: 60px;
+color: #000346;
+width: fit-content;
+margin: 0px;
+
+}
+
+.topText p{
+    background-color: white;
+    padding: 0px;
+    color: #9097BC;
+    margin: 0px;
+    width: 50ch;
+
+    }
+
+    .ctaButtons{
+    display: flex;
+    gap: 20px;
+    align-self: flex-start;
+
+    }
+
+    .infobok{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    
+
+    }
+
+    .injuryLink{
+    color: white;
+    cursor: pointer;
+    background-color: blue;
+    padding: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    list-style: none;
+    }
+
+    .shopLink{
+        color: blue;
+        cursor: pointer;
+        text-decoration: none;
+    list-style: none;
+        background-color: white;
+        box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        }

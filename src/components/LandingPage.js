@@ -34,15 +34,6 @@ function LandingPage() {
           // ... other config settings
         })
           .then((unityInstance) => {
-            setTimeout(() => {
-              const loader = document.getElementById("custom-loader");
-              loader.style.opacity = "0";
-              loader.style.visibility = "hidden";
-
-              // Optional: remove the loader from the DOM after the transition
-              setTimeout(() => loader.remove(), 0); // Assuming a 0.5s transition
-            }, 0);
-
             // Assign the Unity instance to the window object for easy access
             window.unityInstance = unityInstance;
           })
@@ -96,18 +87,6 @@ function LandingPage() {
 
   return (
     <div className="landing-page">
-      <p className="dis">select areas of pain or injury</p>
-      <div id="custom-loader" className="custom-loader">
-        Loading AnatoLink...
-      </div>
-      <canvas id="unity-canvas" width="960" height="600"></canvas>
-
-      <div id="unity-loading-bar">
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-
       <div className="input-container">
         <div className="ting">
           <div id="clicked-object-name"></div>
@@ -123,38 +102,40 @@ function LandingPage() {
           />
 
           <div className="optionBox">
-            <div className="slider-container">
-              <label htmlFor="duration">
-                Duration of injury: <span>{duration} Days</span>
-              </label>
-              <input
-                type="range"
-                id="duration"
-                name="duration"
-                min="0"
-                max="30" // Assuming the max value for duration is 30 days
-                value={duration}
-                onChange={(e) => {
-                  setDuration(e.target.value);
-                }}
-              />
-            </div>
+            <div className="slides">
+              <div className="slider-container">
+                <label htmlFor="duration">
+                  Duration of injury: <span>{duration} Days</span>
+                </label>
+                <input
+                  type="range"
+                  id="duration"
+                  name="duration"
+                  min="0"
+                  max="30" // Assuming the max value for duration is 30 days
+                  value={duration}
+                  onChange={(e) => {
+                    setDuration(e.target.value);
+                  }}
+                />
+              </div>
 
-            <div className="slider-container">
-              <label htmlFor="pain-level">
-                Level of Pain: <span>{painLevel} / 10</span>
-              </label>
-              <input
-                type="range"
-                id="pain-level"
-                name="pain-level"
-                min="0"
-                max="10" // Assuming the pain level is on a scale of 0 to 10
-                value={painLevel}
-                onChange={(e) => {
-                  setPainLevel(e.target.value);
-                }}
-              />
+              <div className="slider-container">
+                <label htmlFor="pain-level">
+                  Level of Pain: <span>{painLevel} / 10</span>
+                </label>
+                <input
+                  type="range"
+                  id="pain-level"
+                  name="pain-level"
+                  min="0"
+                  max="10" // Assuming the pain level is on a scale of 0 to 10
+                  value={painLevel}
+                  onChange={(e) => {
+                    setPainLevel(e.target.value);
+                  }}
+                />
+              </div>
             </div>
 
             <div className="radio-container">
@@ -199,7 +180,17 @@ function LandingPage() {
             </div>
           </div>
         </div>
-        <button onClick={handleAnalyseClick}>analyse</button>
+        <button className="injuryana" onClick={handleAnalyseClick}>
+          analyse
+        </button>
+      </div>
+
+      <canvas id="unity-canvas" width="960" height="600"></canvas>
+
+      <div id="unity-loading-bar">
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
       </div>
     </div>
   );

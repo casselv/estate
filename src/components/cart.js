@@ -21,7 +21,7 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
     <div className="cart">
       <h2>Shopping Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>Your cart is empty</p>
       ) : (
         cart.map((item) => (
           <div className="cartier" key={item.id}>
