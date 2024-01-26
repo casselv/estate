@@ -11,7 +11,7 @@ const ProductList = ({
 }) => {
   return (
     <div>
-      <img className="godgiven" src="./banner3.png"></img>
+      <img className="godgiven" src="./banner3.png" alt=""></img>
       <div className="product-list">
         {products.map((product) => (
           <Product

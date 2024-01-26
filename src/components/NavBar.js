@@ -5,7 +5,7 @@ import Cart from "./cart";
 
 const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
   const [isCartVisible, setCartVisible] = useState(false);
-  const cartRef = useRef(null);
+  //const cartRef = useRef(null);
 
   const toggleCart = () => {
     setCartVisible(!isCartVisible);
