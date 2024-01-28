@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+/*import React, { useRef, useState } from "react";
 import "./LandingPage.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,13 +9,13 @@ function LandingPage() {
   const handleAnalyseClick = () => {
     const description = textAreaValue;
 
-    const container = document.getElementById("clicked-object-name");
+    /*const container = document.getElementById("clicked-object-name");
     const names = Array.from(container.querySelectorAll(".object-name")).map(
       (el) => el.textContent
     );
 
     navigate("/analysis", {
-      state: { names, description, painLevel, duration, painType },
+      state: { description, painLevel, duration, painType },
     });
   };
 
@@ -146,63 +146,4 @@ function LandingPage() {
 }
 
 export default LandingPage;
-
-/* <input
-        <textarea ref={descriptionRef} className="diagnose"></textarea>
-type="text"
-ref={autocompleteRef}
-onChange={(e) => setAddress(e.target.value)}
-
-
-/> 
-
- useEffect(() => {
-    // Load the Unity script
-    const loadUnityScript = () => {
-      const script = document.createElement("script");
-      script.src = "/loladot66.loader.js"; // Make sure this path is correct
-      script.onload = () => {
-        createUnityInstance(document.getElementById("unity-canvas"), {
-          dataUrl: "/loladot66.data",
-          frameworkUrl: "/loladot66.framework.js",
-          codeUrl: "/loladot66.wasm",
-          // ... other config settings
-        })
-          .then((unityInstance) => {
-            // Assign the Unity instance to the window object for easy access
-            window.unityInstance = unityInstance;
-          })
-          .catch((message) => {
-            console.error("Unity load error:", message);
-          });
-      };
-      document.body.appendChild(script);
-    };
-
-    loadUnityScript();
-
-    // Cleanup function
-    return () => {
-      // Quit the Unity instance when the component unmounts
-      if (window.unityInstance) {
-        window.unityInstance
-          .Quit()
-          .then(() => {
-            console.log("Unity instance quit successfully");
-          })
-          .catch((error) => {
-            console.log("Failed to quit Unity instance:", error);
-          });
-      }
-    };
-  }, []);
-  
-   <canvas id="unity-canvas" width="960" height="600"></canvas>
-
-      <div id="unity-loading-bar">
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-  
-  */
+ */

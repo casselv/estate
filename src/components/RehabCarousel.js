@@ -48,7 +48,7 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
               </div>
               <video
                 controls
-                autoplay
+                autoPlay
                 muted
                 src={item.mediaSrc}
                 alt={item.title}

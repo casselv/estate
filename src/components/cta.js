@@ -17,7 +17,7 @@ const Cta = () => {
           </p>
         </div>
         <div className="ctaButtons">
-          <Link to="/landing" className="injuryLink">
+          <Link to="/injury-details" className="injuryLink">
             AI Injury Assessment
           </Link>
           <Link to="/shop" className="shopLink">

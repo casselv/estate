@@ -39,11 +39,11 @@ const UnityCanvas = () => {
     };
   }, []);
 
-  const isLandingPage = location.pathname === "/landing";
+  const isModel = location.pathname === "/model";
 
   return (
     <canvas
-      style={{ display: isLandingPage ? "block" : "none" }}
+      style={{ display: isModel ? "block" : "none" }}
       id="unity-canvas"
       width="960"
       height="600"
