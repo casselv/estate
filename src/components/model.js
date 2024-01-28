@@ -1,5 +1,5 @@
 // ModelViewPage.js
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./model.css";
 // Create a corresponding CSS file for styling
