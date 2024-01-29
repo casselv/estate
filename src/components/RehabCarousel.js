@@ -44,7 +44,9 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
                   <h3 className="itemtitles">{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-                <a href={item.link}>View Product</a>
+                <a className="viewsproduct" href={item.link}>
+                  View Product
+                </a>
               </div>
               <video
                 controls

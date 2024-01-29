@@ -1,3 +1,24 @@
 .model-view-page{
 color: black;
+height: 80vh;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.modelnext{
+position: absolute;
+bottom: 0px;
+right: 100px;
+color: #011752 ;
+background-color: white;
+border: solid 1px #011752 ;
+}
+
+
+
+.ting{
+align-items: center;
+display: flex;
+justify-content: center;
 }

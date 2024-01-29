@@ -17,7 +17,6 @@ function Analysis() {
   console.log("drakomalfoy", lastWord);
   const [activeTab, setActiveTab] = useState("overview");
   const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     console.log("useEffect is running for analysis");
@@ -29,6 +28,7 @@ function Analysis() {
       duration,
       painType
     ) => {
+      setIsLoading(true);
       console.log("the fetch is running");
       console.log("names", names);
       console.log("description", description);
@@ -53,6 +53,7 @@ function Analysis() {
 
         if (!response.ok) {
           console.error("Server error:", response.statusText);
+          setIsLoading(false);
           return;
         }
 
@@ -60,29 +61,18 @@ function Analysis() {
         const parsedcontent = parseAIResponse(content);
 
         setAnalysisSections(parsedcontent);
+        setIsLoading(false);
       } catch (error) {
         console.error("Network error:", error);
+        setIsLoading(false);
       }
     };
-
-    const interval = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress >= 100) {
-          clearInterval(interval);
-          setIsLoading(false);
-          return 100;
-        }
-        return oldProgress + (1000 / 13000) * 100;
-      });
-    }, 1000);
 
     if (location.state?.names && location.state.description) {
       const { names, description, painLevel, duration, painType } =
         location.state;
       fetchAnalysis(names, description, painLevel, duration, painType);
     }
-
-    return () => clearInterval(interval);
   }, [location, location.state]);
 
   const renderContent = () => {
@@ -151,7 +141,7 @@ function Analysis() {
   }
 
   if (isLoading) {
-    return <Spinner progress={progress} />;
+    return <Spinner />;
   }
 
   return (

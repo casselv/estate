@@ -5,25 +5,25 @@ import "./LandingPage.css";
 function PainDetailsPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [textAreaValue, setTextAreaValue] = useState(
-    location.state?.textAreaValue || ""
+  const [description, setTextAreaValue] = useState(
+    location.state?.description || ""
   );
 
   const [painLevel, setPainLevel] = useState(0);
   const [painType, setPainType] = useState("");
   const [duration, setDuration] = useState(0);
 
-  console.log("check", textAreaValue);
+  console.log("check", description);
 
   useEffect(() => {
-    if (location.state?.textAreaValue) {
-      setTextAreaValue(location.state.textAreaValue);
+    if (location.state?.description) {
+      setTextAreaValue(location.state.description);
     }
   }, [location.state]);
   const handleAnalyseClick = () => {
     navigate("/model", {
       state: {
-        textAreaValue,
+        description,
         painLevel,
         painType,
         duration,
@@ -111,12 +111,11 @@ function PainDetailsPage() {
             Stabbing
           </label>
         </div>
+        <button className="injuryana" onClick={handleAnalyseClick}>
+          Next
+        </button>
       </div>
       {/* End of radio buttons and sliders code */}
-
-      <button className="injuryana" onClick={handleAnalyseClick}>
-        Next
-      </button>
     </div>
   );
 }

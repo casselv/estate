@@ -8,30 +8,29 @@ function ModelViewPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { textAreaValue, painLevel, painType, duration } = location.state || {};
+  const { description, painLevel, painType, duration } = location.state || {};
 
-  console.log("ek", textAreaValue);
+  console.log("ek", description);
   console.log("ek", painLevel);
   console.log("ek", painType);
   console.log("ek", duration);
 
-  /*
-  const container = document.getElementById("clicked-object-name");
-  const names = Array.from(container.querySelectorAll(".object-name")).map(
-    (el) => el.textContent
-  ); */
-
   const handleAnalyseClick = () => {
+    const container = document.getElementById("clicked-object-name");
+    const names = Array.from(container.querySelectorAll(".object-name")).map(
+      (el) => el.textContent
+    );
     navigate("/analysis", {
-      state: { textAreaValue, painLevel, duration, painType },
+      state: { names, description, painLevel, duration, painType },
     });
   };
 
   return (
     <div className="model-view-page">
-      <h2>click area of pain</h2>
-
-      <button className="injuryana" onClick={handleAnalyseClick}>
+      <div className="ting">
+        <div id="clicked-object-name"></div>
+      </div>
+      <button className="modelnext" onClick={handleAnalyseClick}>
         Next
       </button>
     </div>
@@ -39,7 +38,3 @@ function ModelViewPage() {
 }
 
 export default ModelViewPage;
-
-/*   /<div className="ting">
-        <div id="clicked-object-name"></div>
-      </div>*/

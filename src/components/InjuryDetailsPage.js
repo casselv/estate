@@ -6,12 +6,12 @@ import "./LandingPage.css";
 function InjuryDetailsPage() {
   const navigate = useNavigate();
   const descriptionRef = useRef(null);
-  const [textAreaValue, setTextAreaValue] = useState("");
+  const [description, setTextAreaValue] = useState("");
 
-  console.log("what check", textAreaValue);
+  console.log("what check", description);
 
   const handleNext = () => {
-    navigate("/pain-details", { state: { textAreaValue } });
+    navigate("/pain-details", { state: { description } });
   };
 
   const handleKeyDown = (e) => {
@@ -29,9 +29,9 @@ function InjuryDetailsPage() {
       <div className="input-container">
         <textarea
           className="diagnose"
-          value={textAreaValue}
+          value={description}
           ref={descriptionRef}
-          placeholder="Describe your injury"
+          placeholder="Describe how your injury occured"
           onKeyDown={handleKeyDown}
           onChange={(e) => setTextAreaValue(e.target.value)}
         />

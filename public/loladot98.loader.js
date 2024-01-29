@@ -1013,6 +1013,48 @@ function createUnityInstance(t, n, c) {
 }
 (function () {
   const clickedObjectNames = [];
+  const maxMuscles = 4; // Set the maximum number of muscles that can be selected
+
+  function setClickedObjectName(objectName) {
+    const index = clickedObjectNames.indexOf(objectName);
+
+    if (index === -1) {
+      // Object name not in the array, check if adding it would exceed the limit
+      if (clickedObjectNames.length < maxMuscles) {
+        // If not, add the new object name
+        clickedObjectNames.push(objectName);
+      } else {
+        // If it would exceed the limit, show an alert and do not add it
+        alert(`You can select up to ${maxMuscles} muscles only.`);
+        return; // Early return to avoid adding the name to the array
+      }
+    } else {
+      // Object name already in the array, remove it
+      clickedObjectNames.splice(index, 1);
+    }
+
+    updateClickedObjectsDisplay();
+  }
+
+  function updateClickedObjectsDisplay() {
+    const container = document.getElementById("clicked-object-name");
+    container.innerHTML = ""; // Clear existing content
+
+    clickedObjectNames.forEach((name) => {
+      const elem = document.createElement("div");
+      elem.className = "object-name";
+      elem.textContent = name;
+      container.appendChild(elem);
+    });
+  }
+
+  // Expose the setClickedObjectName to the global scope
+  window.setClickedObjectName = setClickedObjectName;
+})();
+
+/*
+(function () {
+  const clickedObjectNames = [];
 
   function setClickedObjectName(objectName) {
     const index = clickedObjectNames.indexOf(objectName);
@@ -1042,4 +1084,4 @@ function createUnityInstance(t, n, c) {
 
   // Expose the setClickedObjectName to the global scope
   window.setClickedObjectName = setClickedObjectName;
-})();
+})();*/

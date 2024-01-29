@@ -2,15 +2,22 @@
 import React from "react";
 import "./Spinner.css"; // Make sure to create a ProgressSpinner.css file
 
-const Spinner = ({ progress }) => {
+const Spinner = () => {
+  /*
   const radius = 20;
   const circumference = radius * 2 * Math.PI;
   const offset = circumference - (progress / 100) * circumference;
-
+*/
   return (
     <div className="progress-spinner">
-      <h2>Analyzing...</h2>
-      <svg className="progress-ring" height="50" width="50">
+      <h2>analysing...</h2>
+    </div>
+  );
+};
+
+export default Spinner;
+
+/*<svg className="progress-ring" height="50" width="50">
         <circle
           className="progress-ring__circle"
           stroke="rgba(0, 26, 74, 1)"
@@ -21,9 +28,4 @@ const Spinner = ({ progress }) => {
           cy="25"
           style={{ strokeDasharray: circumference, strokeDashoffset: offset }}
         />
-      </svg>
-    </div>
-  );
-};
-
-export default Spinner;
+      </svg>*/

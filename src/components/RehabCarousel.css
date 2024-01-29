@@ -11,6 +11,13 @@
     box-sizing: border-box;
   }
 
+  .rehab-carousel .viewsproduct{
+color: #011752 ;
+background-color: white;
+border: solid 1px #011752 ;
+  }
+
+
   .slick-next,
 .slick-prev {
   display: none !important;
