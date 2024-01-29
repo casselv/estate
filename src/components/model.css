@@ -8,11 +8,20 @@ justify-content: flex-end;
 
 .modelnext{
 position: absolute;
-bottom: 0px;
+bottom: 50px;
 right: 100px;
 color: #ffffff ;
 background-color: #0022ff;
 }
+
+.instruct {
+    position: absolute;
+    color: #0022ff;
+    top: 100px;
+    z-index: 100000000;
+    left: 50%; /* Center the element from the left side of the screen */
+    transform: translateX(-50%); /* Shift it back by half its own width */
+  }
 
 
 

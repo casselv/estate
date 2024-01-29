@@ -9,6 +9,32 @@
 
   }
 
+  .typing-container {
+    padding: 20px;
+    color: #0022ff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    max-width: 100% ;
+  }
+  
+  .typing-text {
+    font-size: 15px;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    color: #0022ff;
+    overflow: hidden;
+    animation: typing 3s steps(30) 1s infinite alternate;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   .landing-page p {
   margin: 0px;
   }
@@ -215,35 +241,32 @@ width: 50%;
 display: flex;
 flex-direction: column;
 width: 100%;
-
+gap: 15px;
 margin-bottom: 30px;
 }
 
 .slider-container span{
-color: rgb(1, 17, 47);
+color: #0022ff;
 font-weight: bold;
 }
 
-.radio-container{
-display: flex;
-align-items: flex-start;
-flex-direction: column;
-justify-content: center;
+.radio-container {
+  display: flex; /* Change to block to stack radio buttons vertically */
+  position: relative;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 
-width: 100%;
+ /* Adjust this to control the spacing between the circle and label */
+  margin-bottom: 10px; /* Add margin to separate radio buttons */
 }
 
 
 
-.radio-container label{
-display: flex;
-align-items: center;
-gap: 30px;
-}
 
-.radio-container input{
-margin-top: 0px;
-}
+
 
 
   .object-name{
@@ -296,7 +319,8 @@ input[type=range] {
 
 /* Styles for the slider track */
 input[type=range]::-webkit-slider-runnable-track {
-  background: #0e39ae;
+  background: #ffffff;
+  border:1px solid #0022ff;
   height: 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease; /* Smooth background color transition */
@@ -386,7 +410,7 @@ input[type=range]:focus {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #0e39ae;
+  background: #ffffff;
 }
 
 input[type=range]:focus::-moz-range-track {
@@ -396,6 +420,38 @@ input[type=range]:focus::-moz-range-track {
 input[type=range]:focus::-ms-track {
   background: #0e39ae;
 }
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+/* Create the circular shape for the radio button */
+.radio-container .radio-button {
+
+cursor: pointer;
+height: 20px; /* Adjust this to control the size of the circle */
+  width: 20px; /* Should be the same as the height for a perfect circle */
+  border: 2px solid blue; /* Blue border */
+  border-radius: 50%; /* Makes it circular */
+}
+
+/* Style the radio button when it's selected (filled with blue) */
+.radio-container input[type="radio"]:checked + .radio-button {
+  background-color: blue; /* Fill with blue when selected */
+}
+
+.raded label{
+display: flex;
+flex-direction: column;
+gap: 10px;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
   .landing-page {
@@ -457,6 +513,21 @@ input[type=range]:focus::-ms-track {
     }
 
 
+  .object-name{
+    color: rgb(12, 19, 216);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7px;
+    border: solid 1px rgb(48, 28, 227) ;
+    border-radius: 5px;
+    }
+
+
+
+
+
   #unity-canvas {
     width: 90%;     /* Fixed width */
     height: 70vh;
@@ -470,5 +541,18 @@ input[type=range]:focus::-ms-track {
     left: 50%;       /* Align the left edge to the center of the parent */
     transform: translate(-50%, -50%); /* Shift the element back by its own half width and height */
 }
+
+
+.radio-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  }
+
+
+
 
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./LandingPage.css";
+import ProgressBar from "./ProgressBar";
 
 function PainDetailsPage() {
   const location = useLocation();
@@ -72,50 +73,65 @@ function PainDetailsPage() {
         </div>
 
         <div className="radio-container">
-          <p>Pain Type:</p>
-          <label>
-            <input
-              type="radio"
-              value="throbbing"
-              checked={painType === "throbbing"}
-              onChange={(e) => setPainType(e.target.value)}
-            />
-            Throbbing
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="sharp"
-              checked={painType === "sharp"}
-              onChange={(e) => setPainType(e.target.value)}
-            />
-            Sharp
-          </label>
+          <div className="raded">
+            {" "}
+            <label>
+              <input
+                type="radio"
+                value="throbbing"
+                checked={painType === "throbbing"}
+                onChange={(e) => setPainType(e.target.value)}
+              />
+              <span class="radio-button"></span>
+              Throbbing
+            </label>
+          </div>
 
-          <label>
-            <input
-              type="radio"
-              value="ache"
-              checked={painType === "ache"}
-              onChange={(e) => setPainType(e.target.value)}
-            />
-            Ache
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="stabbing"
-              checked={painType === "stabbing"}
-              onChange={(e) => setPainType(e.target.value)}
-            />
-            Stabbing
-          </label>
+          <div className="raded">
+            <label>
+              <input
+                type="radio"
+                value="sharp"
+                checked={painType === "sharp"}
+                onChange={(e) => setPainType(e.target.value)}
+              />
+              <span class="radio-button"></span>
+              Sharp
+            </label>
+          </div>
+
+          <div className="raded">
+            <label>
+              <input
+                type="radio"
+                value="ache"
+                checked={painType === "ache"}
+                onChange={(e) => setPainType(e.target.value)}
+              />
+              <span class="radio-button"></span>
+              Ache
+            </label>
+          </div>
+
+          <div className="raded">
+            <label>
+              <input
+                type="radio"
+                value="stabbing"
+                checked={painType === "stabbing"}
+                onChange={(e) => setPainType(e.target.value)}
+              />
+              <span class="radio-button"></span>
+              Stabbing
+            </label>
+          </div>
         </div>
         <button className="injuryana" onClick={handleAnalyseClick}>
           Next
         </button>
       </div>
       {/* End of radio buttons and sliders code */}
+      <ProgressBar step={2} />
     </div>
   );
 }

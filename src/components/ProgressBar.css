@@ -1,0 +1,29 @@
+.progress-container {
+    width: 500px;
+    align-self: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 40px;
+    box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.206);
+  }
+  
+  .progress-bar {
+    height: 20px;
+    border-radius: 3px;
+    background-color: rgba(0, 13, 255, 0.529);
+    transition: width 0.4s ease;
+  }
+
+
+  @media (max-width: 500px) {
+    .progress-container {
+        width: 200px;
+        align-self: center;
+        background-color: #ffffff;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 60px;
+        box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.206);
+      }
+  }
