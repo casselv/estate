@@ -19,6 +19,7 @@ import PaymentPage from "./components/payment";
 import ModelViewPage from "./components/model";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
 import PainDetailsPage from "./components/PainDetailsPage";
+import Footer from "./components/Footer";
 
 //import EntryScreen from "./components/entryscreen";
 
@@ -114,6 +115,7 @@ function App() {
           />
         </Routes>
       </Elements>
+      <Footer />
     </Router>
   );
 }

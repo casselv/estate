@@ -75,3 +75,25 @@ margin: 0px;
         padding: 20px;
         border-radius: 5px;
         }
+
+        @media (max-width: 500px) {
+            .topText h1{
+                background-color: white;
+                padding: 0px;
+                font-size: 30px;
+                color: #000346;
+                width: fit-content;
+                margin: 0px;
+                
+                }
+
+                .topText p{
+                    background-color: white;
+                    padding: 0px;
+                    color: #9097BC;
+                    margin: 0px;
+                    font-size: 15px;
+                    width: 30ch;
+                
+                    }
+        }

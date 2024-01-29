@@ -42,3 +42,11 @@
             }
     
     }
+
+
+    @media (max-width: 500px){
+        .productdescriptor{
+            color: black;
+            width: 30ch;
+            }
+    }

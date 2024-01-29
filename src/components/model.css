@@ -1,6 +1,6 @@
 .model-view-page{
 color: black;
-height: 80vh;
+height: 90vh;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
@@ -10,9 +10,8 @@ justify-content: flex-end;
 position: absolute;
 bottom: 0px;
 right: 100px;
-color: #011752 ;
-background-color: white;
-border: solid 1px #011752 ;
+color: #ffffff ;
+background-color: #0022ff;
 }
 
 

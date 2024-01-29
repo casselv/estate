@@ -8,12 +8,12 @@ const UnityCanvas = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "/loladot98.loader.js"; // Make sure this path is correct
+    script.src = "/loladot101.loader.js"; // Make sure this path is correct
     script.onload = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
-        dataUrl: "/loladot98.data",
-        frameworkUrl: "/loladot98.framework.js",
-        codeUrl: "/loladot98.wasm",
+        dataUrl: "/loladot101.data",
+        frameworkUrl: "/loladot101.framework.js",
+        codeUrl: "/loladot101.wasm",
       })
         .then((unityInstance) => {
           // Assign the Unity instance to the window object for easy access

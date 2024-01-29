@@ -20,7 +20,7 @@ top: 0;
 z-index: 100000000000000;
 position: fixed;
 transition: right 0.3s ease-in-out; 
-right: -30%;
+right: -100%;
 }
 
 nav{
@@ -70,6 +70,19 @@ nav{
         position: fixed;
         transition: right 0.31s ease-in-out; 
         right: -30%;
+        }
+}
+
+
+@media (max-width: 500px){
+    
+    .cart-container{
+        width: 70%;
+        top: 0;
+        z-index: 100000000000;
+        position: fixed;
+        transition: right 0.31s ease-in-out; 
+        right: -100%;
         }
 }
 

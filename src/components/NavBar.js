@@ -44,7 +44,7 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
   }, []);
 
   const cartStyle = {
-    right: isCartVisible ? "0" : "-50%", // Slide in when visible, slide out when hidden
+    right: isCartVisible ? "0" : "-100%", // Slide in when visible, slide out when hidden
   };
 
   return (
