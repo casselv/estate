@@ -466,12 +466,13 @@ align-items: center;
 
 
   #unity-canvas {
-    width: 60%;   /* Fixed width width: 960px; */
+    width: 200%;   /* Fixed width width: 960px; */
     height: 70vh;
     z-index: 1;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
     background-color: #ffffff;
     margin-top: 0px;
+    overflow: hidden;
 }
 
   .input-container {
