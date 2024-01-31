@@ -8,12 +8,12 @@ const UnityCanvas = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "/loladot500.loader.js"; // Make sure this path is correct
+    script.src = "/loladot600.loader.js"; // Make sure this path is correct
     script.onload = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
-        dataUrl: "/loladot500.data",
-        frameworkUrl: "/loladot500.framework.js",
-        codeUrl: "/loladot500.wasm",
+        dataUrl: "/loladot600.data",
+        frameworkUrl: "/loladot600.framework.js",
+        codeUrl: "/loladot600.wasm",
       })
         .then((unityInstance) => {
           unityInstance.o["WebGLInput"].captureAllKeyboardInput = false;
