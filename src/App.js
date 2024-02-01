@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NavBar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
+import AddProduct from "./components/addProduct";
 import Analysis from "./components/analysis";
 import ProductList from "./components/ProductList";
 import { productsData } from "./components/ProductsData";
@@ -14,7 +15,7 @@ import Details from "./components/details";
 import Cta from "./components/cta";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import UnityCanvas from "./components/UnityCanvas";
+//import UnityCanvas from "./components/UnityCanvas";
 import PaymentPage from "./components/payment";
 import ModelViewPage from "./components/model";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
@@ -67,6 +68,7 @@ function App() {
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
   }
+   <UnityCanvas />
 */
   return (
     <Router>
@@ -77,13 +79,13 @@ function App() {
         cart={cart}
       />
       <Elements stripe={stripePromise}>
-        <UnityCanvas />
         <Routes>
           <Route path="/" element={<Cta />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/injury-details" element={<InjuryDetailsPage />} />
           <Route path="/pain-details" element={<PainDetailsPage />} />
           <Route path="/model" element={<ModelViewPage />} />
+          <Route path="/add-product" element={<AddProduct />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route
             path="/details/:productId"
@@ -98,7 +100,6 @@ function App() {
           />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/landing" element={<LandingPage />} />
-
           <Route path="/analysis/" element={<Analysis />} />
           <Route
             path="/shop"
