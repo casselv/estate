@@ -8,9 +8,8 @@ const Product = ({ product }) => {
   return (
     <div className="product">
       <Link to={`/details/${product.id}`}>
-        {product.image_urls.map((url, index) => (
-          <img key={index} src={url} alt={product.name} />
-        ))}
+        <img src={product.image_urls[0]} alt={product.name} />
+
         <h3>{product.name}</h3>
         <div className="product-details">
           <span className="price">{product.price}</span>
@@ -21,5 +20,3 @@ const Product = ({ product }) => {
 };
 
 export default Product;
-
-//        <button onClick={() => onAddToCart(product)}>Add to Cart</button>

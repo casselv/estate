@@ -15,7 +15,7 @@ import Details from "./components/details";
 import Cta from "./components/cta";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-//import UnityCanvas from "./components/UnityCanvas";
+import UnityCanvas from "./components/UnityCanvas";
 import PaymentPage from "./components/payment";
 import ModelViewPage from "./components/model";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
@@ -68,7 +68,7 @@ function App() {
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
   }
-   <UnityCanvas />
+
 */
   return (
     <Router>
@@ -79,6 +79,7 @@ function App() {
         cart={cart}
       />
       <Elements stripe={stripePromise}>
+        <UnityCanvas />
         <Routes>
           <Route path="/" element={<Cta />} />
           <Route path="/checkout" element={<Checkout />} />

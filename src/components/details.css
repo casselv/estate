@@ -31,6 +31,17 @@
         width: fit-content;
     }
 
+    .imaged{
+    display: 'grid';
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 10px; /* Space between images */
+  height: 100%;
+ overflow: scroll;
+width: 300px;
+
+box-sizing: border-box;
+    }
+
     @media (max-width: 768px){
         .detailed{
             display: flex;

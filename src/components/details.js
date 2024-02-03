@@ -1,32 +1,37 @@
-import React from "react";
-import "./details.css";
-import EccomerceNav from "./eccomerceNav";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./details.css"; // Ensure your CSS path is correct
 
-const Details = ({
-  handleRemoveFromCart,
-  onAddToCart,
-  cartItemCount,
-  cart,
-  products, // Pass the products data as a prop
-}) => {
+const Details = () => {
   const { productId } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Find the product in the products array based on the productId
-  const product = products.find((p) => p.id === Number(productId));
+  useEffect(() => {
+    const fetchProductDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3013/api/products/${productId}`
+        );
+        if (!response.ok) throw new Error("Failed to fetch");
+        const product = await response.json();
+        console.log("ok", product);
 
-  if (!product) {
-    return (
-      <div>
-        <EccomerceNav
-          cart={cart}
-          handleRemoveFromCart={handleRemoveFromCart}
-          cartItemCount={cartItemCount}
-        />
-        No product found
-      </div>
-    );
-  }
+        setProduct(product);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProductDetails();
+  }, [productId]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!product) return <div>No product found</div>;
 
   return (
     <div className="detailed">
@@ -36,7 +41,7 @@ const Details = ({
             key={index}
             className="productimaged"
             src={url}
-            alt={` ${index + 1}`}
+            alt={`Product ${index + 1}`}
           />
         ))}
       </div>
@@ -44,9 +49,8 @@ const Details = ({
         <h1 className="productname">{product.name}</h1>
         <h4 className="productPrice">{product.price}</h4>
         <p className="productdescriptor">{product.description}</p>
-        <button className="productbutton" onClick={() => onAddToCart(product)}>
-          Add to Cart
-        </button>
+        {/* Assuming you handle adding to cart elsewhere */}
+        <button className="productbutton">Add to Cart</button>
       </div>
     </div>
   );
