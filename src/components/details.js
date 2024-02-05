@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./details.css"; // Ensure your CSS path is correct
 
-const Details = () => {
+const Details = ({ onAddToCart }) => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ const Details = () => {
     const fetchProductDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3013/api/products/${productId}`
+          `https://estateserver-production.up.railway.app/api/products/${productId}`
         );
         if (!response.ok) throw new Error("Failed to fetch");
         const product = await response.json();
@@ -50,7 +50,9 @@ const Details = () => {
         <h4 className="productPrice">{product.price}</h4>
         <p className="productdescriptor">{product.description}</p>
         {/* Assuming you handle adding to cart elsewhere */}
-        <button className="productbutton">Add to Cart</button>
+        <button className="productbutton" onClick={() => onAddToCart(product)}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

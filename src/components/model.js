@@ -20,9 +20,15 @@ function ModelViewPage() {
     const names = Array.from(container.querySelectorAll(".object-name")).map(
       (el) => el.textContent
     );
-    navigate("/analysis", {
-      state: { names, description, painLevel, duration, painType },
-    });
+
+    if (names.length === 0) {
+      // Display an alert or show an error message to the user
+      alert("Please select an area of pain before proceeding.");
+    } else {
+      navigate("/analysis", {
+        state: { names, description, painLevel, duration, painType },
+      });
+    }
   };
 
   return (

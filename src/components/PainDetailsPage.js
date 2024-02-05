@@ -22,14 +22,19 @@ function PainDetailsPage() {
     }
   }, [location.state]);
   const handleAnalyseClick = () => {
-    navigate("/model", {
-      state: {
-        description,
-        painLevel,
-        painType,
-        duration,
-      },
-    });
+    if (!description || !painLevel || !painType || !duration) {
+      // Display an alert or show an error message to the user
+      alert("Please fill in all fields before proceeding.");
+    } else {
+      navigate("/model", {
+        state: {
+          description,
+          painLevel,
+          painType,
+          duration,
+        },
+      });
+    }
   };
 
   return (
@@ -82,7 +87,7 @@ function PainDetailsPage() {
                 checked={painType === "throbbing"}
                 onChange={(e) => setPainType(e.target.value)}
               />
-              <span class="radio-button"></span>
+              <span className="radio-button"></span>
               Throbbing
             </label>
           </div>
@@ -95,7 +100,7 @@ function PainDetailsPage() {
                 checked={painType === "sharp"}
                 onChange={(e) => setPainType(e.target.value)}
               />
-              <span class="radio-button"></span>
+              <span className="radio-button"></span>
               Sharp
             </label>
           </div>
@@ -108,7 +113,7 @@ function PainDetailsPage() {
                 checked={painType === "ache"}
                 onChange={(e) => setPainType(e.target.value)}
               />
-              <span class="radio-button"></span>
+              <span className="radio-button"></span>
               Ache
             </label>
           </div>
@@ -121,7 +126,7 @@ function PainDetailsPage() {
                 checked={painType === "stabbing"}
                 onChange={(e) => setPainType(e.target.value)}
               />
-              <span class="radio-button"></span>
+              <span className="radio-button"></span>
               Stabbing
             </label>
           </div>

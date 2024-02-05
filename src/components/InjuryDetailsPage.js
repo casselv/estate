@@ -1,27 +1,22 @@
 // InjuryDetailsPage.js
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import ProgressBar from "./ProgressBar";
 
 function InjuryDetailsPage() {
   const navigate = useNavigate();
-  const descriptionRef = useRef(null);
   const [description, setTextAreaValue] = useState("");
 
   console.log("what check", description);
 
   const handleNext = () => {
-    navigate("/pain-details", { state: { description } });
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Backspace") {
-      // Handle backspace explicitly
-      setTextAreaValue((value) => value.slice(0, -1));
+    if (description.trim() === "") {
+      // Display an alert or show an error message to the user
+      alert("Please enter a description before proceeding.");
     } else {
-      // Append other keys to the value
-      setTextAreaValue((value) => value + e.key);
+      // Navigate to the next page if the description is not empty
+      navigate("/pain-details", { state: { description } });
     }
   };
 
@@ -62,9 +57,7 @@ function InjuryDetailsPage() {
         <textarea
           className="diagnose"
           value={description}
-          ref={descriptionRef}
           placeholder="Briefly describe the injury: cause, symptoms, etc."
-          onKeyDown={handleKeyDown}
           onChange={(e) => setTextAreaValue(e.target.value)}
         />
 

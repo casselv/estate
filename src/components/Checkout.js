@@ -22,9 +22,14 @@ const Checkout = () => {
 
   // Function to calculate total price
   const calculateTotal = () => {
-    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  };
+    return cart.reduce((acc, item) => {
+      // Remove the "$" symbol and convert the price to a number
+      const priceWithoutSymbol = parseFloat(item.price.replace("$", ""));
 
+      // Calculate the total for each item and accumulate it
+      return acc + priceWithoutSymbol * item.quantity;
+    }, 0);
+  };
   const totalPrice = calculateTotal();
   const handleCheckout = () => {
     // Construct userData object with values from the refs
@@ -49,9 +54,9 @@ const Checkout = () => {
         <div className="boxdiv">
           <div key={item.id}>
             <p>
-              {item.name} - Quantity: {item.quantity} - Price: ${item.price}
+              {item.name} - Quantity: {item.quantity} - Price: {item.price}
             </p>
-            <img className="chekedimage" src={item.imageUrl} alt=""></img>
+            <img className="chekedimage" src={item.image_urls[0]} alt="" />
           </div>
         </div>
       ))}

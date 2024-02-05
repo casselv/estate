@@ -44,7 +44,10 @@ function App() {
       setCart(
         cart.map((item) =>
           item.id === product.id
-            ? { ...productExists, quantity: productExists.quantity + 1 }
+            ? {
+                ...productExists,
+                quantity: productExists.quantity + 1,
+              }
             : item
         )
       );
@@ -68,6 +71,8 @@ function App() {
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
   }
+
+   <UnityCanvas />
 
 */
   return (

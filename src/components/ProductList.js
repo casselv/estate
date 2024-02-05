@@ -9,11 +9,12 @@ const ProductList = ({
   handleRemoveFromCart,
 }) => {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3013/api/products");
+        const response = await fetch(
+          "https://estateserver-production.up.railway.app/api/products"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -27,11 +28,16 @@ const ProductList = ({
     fetchProducts();
   }, []);
 
+  const sortedProducts = [...products].sort((a, b) => {
+    return a.id - b.id;
+  });
+
   return (
     <div>
       <img className="godgiven" src="./banner3.png" alt=""></img>
+
       <div className="product-list">
-        {products.map((product) => (
+        {sortedProducts.map((product) => (
           <Product
             key={product.id}
             product={product}
