@@ -22,7 +22,7 @@ import InjuryDetailsPage from "./components/InjuryDetailsPage";
 import PainDetailsPage from "./components/PainDetailsPage";
 import Footer from "./components/Footer";
 
-import EntryScreen from "./components/entryscreen";
+/*import EntryScreen from "./components/entryscreen";*/
 
 const stripePromise = loadStripe(
   "pk_test_51OZWISFLBFXrO8t5CBXiWcNxCDLaROtB63mWeRQL9NJfDTJ3lOr04Khus5cO0v6N8VX0MOEZk57AYr02HLItEKrZ00zewUx8Oo"
@@ -31,7 +31,7 @@ const stripePromise = loadStripe(
 function App() {
   const [cart, setCart] = useState([]);
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  /*const [isAuthenticated, setIsAuthenticated] = useState(false);*/
 
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter((item) => item.id !== productId));
@@ -59,6 +59,7 @@ function App() {
 
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
+  /*
   const verifyPasscode = (enteredPasscode) => {
     const correctPasscode = process.env.REACT_APP_PASSCODE; // Define your correct passcode here
     if (enteredPasscode === correctPasscode) {
@@ -70,7 +71,7 @@ function App() {
 
   if (!isAuthenticated) {
     return <EntryScreen onVerifyPasscode={verifyPasscode} />;
-  }
+  }*/
 
   return (
     <Router>
