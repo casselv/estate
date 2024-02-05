@@ -5,6 +5,11 @@ background-color: rgb(255, 255, 255);
 color: white;
 }
 
+.bonk{
+display: flex;
+flex-direction: column;
+}
+
 
 .info-page h1{
 align-self: flex-start;

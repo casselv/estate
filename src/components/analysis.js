@@ -8,9 +8,9 @@ import rehabItems from "./mockrehab";
 function Analysis() {
   const location = useLocation();
   const [analysisSections, setAnalysisSections] = useState({
-    overview: "",
-    symptoms: "",
-    treatment: "",
+    overview: [],
+    symptoms: [],
+    treatment: [],
   });
 
   const [lastWord, setLastWord] = useState("");
@@ -37,22 +37,19 @@ function Analysis() {
       console.log("painType", painType);
 
       try {
-        const response = await fetch(
-          "https://estateserver-production.up.railway.app/api/analyze",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              names,
-              description,
-              painLevel,
-              duration,
-              painType,
-            }),
-          }
-        );
+        const response = await fetch("http://localhost:3013/api/analyze", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            names,
+            description,
+            painLevel,
+            duration,
+            painType,
+          }),
+        });
 
         if (!response.ok) {
           console.error("Server error:", response.statusText);
@@ -84,21 +81,33 @@ function Analysis() {
         return (
           <>
             <h3 className="func">Overview</h3>
-            <p>{analysisSections.overview}</p>
+            <ul className="bonk">
+              {analysisSections.overview.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </>
         );
       case "symptoms":
         return (
           <>
             <h3 className="func">Symptoms</h3>
-            <p>{analysisSections.symptoms}</p>
+            <ul className="bonk">
+              {analysisSections.symptoms.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </>
         );
       case "treatments":
         return (
           <>
             <h3 className="func">Treatments</h3>
-            <p>{analysisSections.treatment}</p>
+            <ul className="bonk">
+              {analysisSections.treatment.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </>
         );
       default:
@@ -122,23 +131,65 @@ function Analysis() {
     const symptomsStart = findSectionStart("Symptoms:");
     const treatmentStart = findSectionStart("Treatment:");
 
-    overview =
-      overviewStart !== -1 && symptomsStart !== -1
-        ? text.slice(overviewStart + "Overview:".length, symptomsStart).trim()
-        : "";
+    if (overviewStart !== -1 && symptomsStart !== -1) {
+      let overviewText = text
+        .slice(overviewStart + "Overview:".length, symptomsStart)
+        .trim();
+      overview = overviewText
+        .split("\n")
+        .filter((line) => line.trim().startsWith("-"))
+        .map((line) => line.trim().slice(1).trim()); // Assuming overview can be formatted into bullet points
+    } else {
+      overview = []; // Default to an empty array or handle appropriately
+    }
 
-    symptoms =
-      symptomsStart !== -1 && treatmentStart !== -1
-        ? text.slice(symptomsStart + "Symptoms:".length, treatmentStart).trim()
-        : "";
+    if (symptomsStart !== -1 && treatmentStart !== -1) {
+      let symptomsText = text
+        .slice(symptomsStart + "Symptoms:".length, treatmentStart)
+        .trim();
+      symptoms = symptomsText
+        .split("\n")
+        .filter((line) => line.trim().startsWith("-"))
+        .map((line) => line.trim().slice(1).trim()); // Assuming symptoms can be formatted into bullet points
+    } else {
+      symptoms = []; // Default to an empty array or handle appropriately
+    }
 
-    treatment =
+    if (treatmentStart !== -1) {
+      let treatmentText = text
+        .slice(treatmentStart + "Treatment:".length)
+        .trim();
+
+      // Ensure treatmentText is a string before trying to split it
+      if (typeof treatmentText === "string") {
+        treatment = treatmentText
+          .split("\n")
+          .filter((line) => line.trim().startsWith("-"))
+          .map((line) => line.trim().slice(1).trim()); // Remove the hyphen and trim spaces
+      } else {
+        // Handle the case where treatmentText is not a string
+        console.error(
+          "Expected treatmentText to be a string, received:",
+          typeof treatmentText
+        );
+        treatment = []; // Default to an empty array or handle appropriately
+      }
+    }
+
+    /*treatment =
       treatmentStart !== -1
         ? text.slice(treatmentStart + "Treatment:".length).trim()
-        : "";
-
-    const lastWord = treatment.split(" ").pop().toLowerCase();
-    setLastWord(lastWord);
+        : "";*/
+    if (Array.isArray(treatment) && treatment.length > 0) {
+      // Get the last string from the treatment array
+      const lastString = treatment[treatment.length - 1];
+      // Now split the last string to find the last word
+      const lastWord = lastString.split(" ").pop().toLowerCase();
+      setLastWord(lastWord);
+    } else {
+      // Handle the case where treatment is not an array or is empty
+      setLastWord(""); // Or set to a default value or handle as needed
+    }
 
     return { overview, symptoms, treatment };
   }
