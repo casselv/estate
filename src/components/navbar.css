@@ -5,6 +5,7 @@
     background-color: rgb(255, 255, 255); /* Match the color to the screenshot */
     padding: 10px;
     height: 5vh;
+    z-index: 1000000000000000000000000000000;
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.128);
 
 }
