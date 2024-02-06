@@ -2,6 +2,8 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./model.css";
+import UnityCanvas from "./UnityCanvas";
+
 // Create a corresponding CSS file for styling
 
 function ModelViewPage() {
@@ -34,6 +36,7 @@ function ModelViewPage() {
   return (
     <div className="model-view-page">
       <div className="instruct">select area of pain</div>
+      <UnityCanvas />
       <div className="ting">
         <div id="clicked-object-name"></div>
       </div>

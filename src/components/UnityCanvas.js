@@ -1,70 +1,71 @@
 // UnityCanvas.js
 /* global createUnityInstance */
-import React, { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import "./model.css";
 
 const UnityCanvas = () => {
-  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
   const scriptRef = useRef(null);
-  const loadedRef = useRef(false);
 
   useEffect(() => {
-    // Adjust these paths as necessary for your app's routing structure
-    const shouldLoadUnity =
-      location.pathname === "/pain-details" || location.pathname === "/model";
-
-    if (shouldLoadUnity && !loadedRef.current) {
-      scriptRef.current = document.createElement("script");
-      scriptRef.current.src = "/loladot1700.loader.js";
-      scriptRef.current.async = true;
-      scriptRef.current.onload = () => {
-        createUnityInstance(document.getElementById("unity-canvas"), {
-          dataUrl: "/loladot1700.data",
-          frameworkUrl: "/loladot1700.framework.js",
-          codeUrl: "/loladot1700.wasm",
+    // Immediately attempt to load Unity when the component mounts
+    scriptRef.current = document.createElement("script");
+    scriptRef.current.src = "/loladot1700.loader.js";
+    scriptRef.current.async = true;
+    scriptRef.current.onload = () => {
+      createUnityInstance(document.getElementById("unity-canvas"), {
+        dataUrl: "/loladot1700.data",
+        frameworkUrl: "/loladot1700.framework.js",
+        codeUrl: "/loladot1700.wasm",
+      })
+        .then((unityInstance) => {
+          unityInstance.o["WebGLInput"].captureAllKeyboardInput = false;
+          window.unityInstance = unityInstance;
+          setIsLoading(false); // Set loading to false when Unity loads successfully
         })
-          .then((unityInstance) => {
-            unityInstance.o["WebGLInput"].captureAllKeyboardInput = false;
-            window.unityInstance = unityInstance;
-            loadedRef.current = true; // Update the ref to indicate Unity is loaded
-          })
-          .catch((message) => {
-            console.error("Unity load error:", message);
-          });
-      };
-      document.body.appendChild(scriptRef.current);
-    }
+        .catch((error) => {
+          console.error("Unity load error:", error);
+          setIsLoading(false); // Also set loading to false on error
+        });
+    };
+    document.body.appendChild(scriptRef.current);
 
     return () => {
-      if (window.unityInstance && loadedRef.current && !shouldLoadUnity) {
+      // Clean up the Unity instance and the script tag when the component unmounts
+      if (window.unityInstance) {
         window.unityInstance
           .Quit()
           .then(() => {
             console.log("Unity instance quit successfully");
             window.unityInstance = null;
-            loadedRef.current = false; // Update the ref to indicate Unity is unloaded
           })
           .catch((error) => {
-            console.log("Failed to quit Unity instance:", error);
+            console.error("Failed to quit Unity instance:", error);
           });
+      }
 
-        if (scriptRef.current) {
-          document.body.removeChild(scriptRef.current);
-          scriptRef.current = null; // Clear the script reference to prevent memory leaks
-        }
+      if (scriptRef.current) {
+        document.body.removeChild(scriptRef.current);
       }
     };
-  }, [location.pathname]); // Dependency on location.pathname
+  }, []); // Removed dependency on location.pathname
 
-  const isModel = location.pathname === "/model";
-
+  // The canvas is always rendered without conditional display logic
   return (
-    <canvas
-      style={{ display: isModel ? "block" : "none" }}
-      id="unity-canvas"
-      width="960"
-      height="600"
-    ></canvas>
+    <>
+      {isLoading && (
+        <div className="containerpinner">
+          loading 3d model
+          <div className="pinner"></div>
+        </div>
+      )}
+      <canvas
+        style={{ display: isLoading ? "none" : "block" }}
+        id="unity-canvas"
+        width="960"
+        height="600"
+      ></canvas>
+    </>
   );
 };
 

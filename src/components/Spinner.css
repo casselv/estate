@@ -7,6 +7,29 @@
     flex-direction: column;
   }
 
+
+  @keyframes pinner {
+    to {transform: rotate(360deg);}
+  }
+  
+  .pinner {
+    border: 4px solid #00219944;
+    border-radius: 50%;
+    border-top-color: #002199;
+    height: 50px;
+    width: 50px;
+    animation: pinner 1s ease-in-out infinite;
+  }
+  
+  .containerpinner{
+    height: 90vh;
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
   .progress-spinner h2{
 color: rgba(0, 26, 74, 0.605);
 font-weight: lighter;

@@ -44,7 +44,7 @@ function PainDetailsPage() {
         <div className="slides">
           <div className="slider-container">
             <label htmlFor="duration">
-              Duration of injury: <span>{duration} Days</span>
+              How long has this pain persisted? <span>{duration} Days</span>
             </label>
             <input
               type="range"
@@ -61,7 +61,7 @@ function PainDetailsPage() {
 
           <div className="slider-container">
             <label htmlFor="pain-level">
-              Level of Pain: <span>{painLevel} / 10</span>
+              Level of Pain? <span>{painLevel} / 10</span>
             </label>
             <input
               type="range"

@@ -10,7 +10,10 @@ const Spinner = () => {
 */
   return (
     <div className="progress-spinner">
-      <h2>analysing...</h2>
+      <div className="containerpinner">
+        Analysing
+        <div className="pinner"></div>
+      </div>
     </div>
   );
 };
