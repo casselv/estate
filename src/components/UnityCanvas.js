@@ -15,13 +15,13 @@ const UnityCanvas = () => {
 
     if (shouldLoadUnity && !loadedRef.current) {
       scriptRef.current = document.createElement("script");
-      scriptRef.current.src = "/loladot1500.loader.js";
+      scriptRef.current.src = "/loladot1600.loader.js";
       scriptRef.current.async = true;
       scriptRef.current.onload = () => {
         createUnityInstance(document.getElementById("unity-canvas"), {
-          dataUrl: "/loladot1500.data",
-          frameworkUrl: "/loladot1500.framework.js",
-          codeUrl: "/loladot1500.wasm",
+          dataUrl: "/loladot1600.data",
+          frameworkUrl: "/loladot1600.framework.js",
+          codeUrl: "/loladot1600.wasm",
         })
           .then((unityInstance) => {
             unityInstance.o["WebGLInput"].captureAllKeyboardInput = false;
