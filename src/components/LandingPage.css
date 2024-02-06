@@ -538,7 +538,7 @@ align-items: center;
 
     display: block;  /* Prevent inline default behavior */
     background-color: #ffffff;
-    top: 43%;        /* Align the top edge to the center of the parent */
+    top: 60%;        /* Align the top edge to the center of the parent */
     left: 50%;       /* Align the left edge to the center of the parent */
     transform: translate(-50%, -50%); /* Shift the element back by its own half width and height */
 }
