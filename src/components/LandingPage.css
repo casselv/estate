@@ -531,7 +531,7 @@ align-items: center;
 
   #unity-canvas {
     width: 100%;     /* Fixed width */
-    height: 50vh;
+    height: 70vh;
     position: absolute;
     z-index: 1;
 
