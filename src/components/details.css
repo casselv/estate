@@ -13,6 +13,8 @@
     justify-content: center;
     align-items: center;
     gap: 300px;
+    padding: 30px;
+    box-sizing: border-box;
     }
 
     .productbutton{
@@ -30,6 +32,11 @@
         margin: 0px;
         width: fit-content;
     }
+
+    .description-segment {
+        display: block; /* Make span behave like a block element to accept margin */
+        margin-bottom: 20px; /* Adjust spacing as needed */
+      }
 
     .imaged{
     display: 'grid';
@@ -60,4 +67,30 @@ box-sizing: border-box;
             color: black;
             width: 30ch;
             }
+
+
+    .imaged{
+        display: flex;
+     flex-direction: row; /* Single column layout */
+ /* Space between images */
+      height: 300px;
+     overflow: scroll;
+    width: 300px;
+    box-sizing: border-box;
+        }
+
+        .productdescriptor{
+        font-size: 10px;
+        }
+
+
+        .detailed{
+            display: flex;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+            }
+    
     }

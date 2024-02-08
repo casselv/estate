@@ -11,7 +11,7 @@ const Spinner = () => {
   return (
     <div className="progress-spinner">
       <div className="containerpinner">
-        Analysing
+        analysing using complex algorithms
         <div className="pinner"></div>
       </div>
     </div>

@@ -37,22 +37,19 @@ function Analysis() {
       console.log("painType", painType);
 
       try {
-        const response = await fetch(
-          "https://estateserver-production.up.railway.app/api/analyze",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              names,
-              description,
-              painLevel,
-              duration,
-              painType,
-            }),
-          }
-        );
+        const response = await fetch("http://localhost:3013/api/analyze", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            names,
+            description,
+            painLevel,
+            duration,
+            painType,
+          }),
+        });
 
         if (!response.ok) {
           console.error("Server error:", response.statusText);

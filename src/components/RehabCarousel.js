@@ -7,22 +7,41 @@ import "slick-carousel/slick/slick-theme.css";
 const RehabCarousel = ({ rehabItems, selectedCategory }) => {
   console.log("Selected Category:", selectedCategory);
 
-  const validAreas = ["leg", "arm", "back", "stomach"];
+  const validAreas = [
+    "Neck",
+    "Abdominal",
+    "Shoulders",
+    "Chest",
+    "Biceps",
+    "Forearm",
+    "Hands",
+    "Hips",
+    "Glutes",
+    "Quadriceps",
+    "Calves",
+    "Shins",
+    "Feet",
+  ];
+
+  // Convert selectedCategory to a format that is comparable with validAreas
   let cleanCategory = selectedCategory
     .replace(/[.,/#$%&*;:{}=\-_`~()]/g, "")
     .trim()
     .toLowerCase();
 
-  // Set to 'other' if the category is not one of the valid areas
-  if (!validAreas.includes(cleanCategory)) {
+  // Convert validAreas to lowercase for comparison
+  const lowerCaseValidAreas = validAreas.map((area) => area.toLowerCase());
+
+  // Set to 'other' if the category is not one of the valid areas (case-insensitive comparison)
+  if (!lowerCaseValidAreas.includes(cleanCategory)) {
     cleanCategory = "other";
   }
 
   const filteredItems = rehabItems.filter((item) => {
     if (cleanCategory === "other") {
-      return true;
+      return true; // Include all items if the category is 'other'
     }
-    return item.area.toLowerCase().includes(cleanCategory);
+    return item.area.toLowerCase().includes(cleanCategory); // Case-insensitive comparison for filtering
   });
 
   const settings = {
@@ -45,7 +64,7 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
                   <p>{item.description}</p>
                 </div>
                 <a className="viewsproduct" href={item.link}>
-                  View Product
+                  View Products
                 </a>
               </div>
               <video

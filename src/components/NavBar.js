@@ -47,11 +47,23 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
     right: isCartVisible ? "0" : "-100%", // Slide in when visible, slide out when hidden
   };
 
+  /*<img
+              className="weblogo"
+              src="/anatolinkwebsitelogo.png"
+              alt=""
+            ></img> */
+
   return (
     <nav className="navigation-bar">
       <ul className="nav-list">
         <li className="nav-item">
-          <Link to="/">AnatoLink</Link>
+          <Link to="/">
+            <img
+              className="weblogo"
+              src="/anatolinkwebsitelogo.png"
+              alt=""
+            ></img>
+          </Link>
         </li>
         <div className="shoppingboss">
           <li className="nav-item">
