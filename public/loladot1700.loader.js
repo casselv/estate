@@ -1018,14 +1018,12 @@ function createUnityInstance(t, n, c) {
     const index = clickedObjectNames.indexOf(objectName);
 
     if (index === -1) {
-      // Object name not in the array, add the new object name
-      clickedObjectNames.push(objectName);
+      clickedObjectNames.push(objectName); // Add the new object name
     } else {
-      // Object name already in the array, remove it
-      clickedObjectNames.splice(index, 1);
+      clickedObjectNames.splice(index, 1); // Remove the object name if already present
     }
 
-    updateClickedObjectsDisplay();
+    updateClickedObjectsDisplay(); // Update the display whenever there's a change
   }
 
   function updateClickedObjectsDisplay() {
@@ -1035,9 +1033,32 @@ function createUnityInstance(t, n, c) {
     clickedObjectNames.forEach((name) => {
       const elem = document.createElement("div");
       elem.className = "object-name";
-      elem.textContent = name;
-      container.appendChild(elem);
+      elem.textContent = name; // Set the text content to the muscle name
+
+      // Create a button for removing the muscle from the selection
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "X"; // Set the button text to 'X'
+      removeButton.onclick = function () {
+        removeClickedObjectName(name); // Define the logic to remove the muscle
+      };
+      elem.appendChild(removeButton); // Add the button to the div
+
+      container.appendChild(elem); // Add the div to the container
     });
+  }
+
+  function removeClickedObjectName(objectName) {
+    const index = clickedObjectNames.indexOf(objectName);
+    if (index !== -1) {
+      clickedObjectNames.splice(index, 1); // Remove the object name from the array
+      updateClickedObjectsDisplay(); // Update the display
+
+      // Communicate with Unity to unhighlight the object
+      // This assumes you have a function in Unity that can be called to unhighlight the muscle
+      if (typeof window.Unity !== "undefined" && window.Unity.call) {
+        window.Unity.call("UnhighlightObject", objectName);
+      }
+    }
   }
 
   // Expose the setClickedObjectName to the global scope

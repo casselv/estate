@@ -69,7 +69,7 @@ box-sizing: border-box;
 }
 
 .ting{
-display: flex;
+display: flex
 }
 
   #unity-logo {
@@ -170,7 +170,6 @@ display: flex;
   margin-bottom: 20px;
   display: flex;
   max-width: 80%;
-  overflow: scroll;
   justify-content: flex-start;
   min-height:40px;
   }
@@ -270,6 +269,25 @@ font-weight: bold;
   padding: 10px;
   border: solid 1px rgb(48, 28, 227) ;
   border-radius: 5px;
+  position: relative;
+  overflow: visible;
+  }
+
+  .removeButton{
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  z-index: 10000000000000000000000;
+  right: -15px;
+  margin-top: 0px;
+  background-color: #011752c0;
+  margin-bottom: 0px;
+  padding: 15px;
   }
 
   .custom-loader {

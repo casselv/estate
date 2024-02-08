@@ -10,16 +10,15 @@ const UnityCanvas = () => {
   useEffect(() => {
     // Immediately attempt to load Unity when the component mounts
     scriptRef.current = document.createElement("script");
-    scriptRef.current.src = "/loladot1700.loader.js";
+    scriptRef.current.src = "/loladot2400.loader.js";
     scriptRef.current.async = true;
     scriptRef.current.onload = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
-        dataUrl: "/loladot1700.data",
-        frameworkUrl: "/loladot1700.framework.js",
-        codeUrl: "/loladot1700.wasm",
+        dataUrl: "/loladot2400.data",
+        frameworkUrl: "/loladot2400.framework.js",
+        codeUrl: "/loladot2400.wasm",
       })
         .then((unityInstance) => {
-          unityInstance.o["WebGLInput"].captureAllKeyboardInput = false;
           window.unityInstance = unityInstance;
           setIsLoading(false); // Set loading to false when Unity loads successfully
         })
