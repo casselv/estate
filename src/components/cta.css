@@ -3,6 +3,11 @@ margin: 0px;
 padding: 0px;
 }
 
+.vid4{
+position: absolute;
+right: 60px;
+}
+
 .ctabox{
 height: 90vh;
 width: 100vw;
@@ -11,7 +16,7 @@ display: flex;
 box-sizing: border-box;
 padding: 30px;
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 justify-content: center;
 }
 
@@ -24,11 +29,11 @@ gap: 30px;
 .topText h1{
 background-color: white;
 padding: 0px;
-font-size: 60px;
+font-size: 50px;
 color: #000346;
 width: fit-content;
 margin: 0px;
-
+width: 30ch;
 }
 
 .topText p{
@@ -76,6 +81,12 @@ margin: 0px;
         border-radius: 5px;
         }
 
+        @media (max-width: 1000px) {
+            .vid4{
+                display: none;
+                }
+        }
+
         @media (max-width: 500px) {
             .topText h1{
                 background-color: white;
@@ -86,6 +97,10 @@ margin: 0px;
                 margin: 0px;
                 
                 }
+
+                .vid4{
+                    display: none;
+                    }
 
                 .topText p{
                     background-color: white;

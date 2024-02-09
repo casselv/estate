@@ -25,6 +25,9 @@ const Cta = () => {
           </Link>
         </div>
       </div>
+      <video className="vid4" autoPlay muted loop>
+        <source src="/vid4.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
