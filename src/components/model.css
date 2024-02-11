@@ -9,6 +9,12 @@ flex-direction: column;
   to {transform: rotate(360deg);}
 }
 
+.backdrop{
+position: absolute;
+opacity: 0.5;
+right: 583px;
+}
+
 .pinner {
   border: 4px solid #00219944;
   border-radius: 50%;

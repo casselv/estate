@@ -55,6 +55,7 @@ const UnityCanvas = () => {
       {isLoading && (
         <div className="containerpinner">
           loading 3d model
+          <img className="backdrop" src="backdrop.png"></img>
           <div className="pinner"></div>
         </div>
       )}
