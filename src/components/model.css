@@ -42,8 +42,11 @@ background-color: #0022ff;
 
 .instruct {
     position: absolute;
-    color: #0022ff;
-    top: 100px;
+    color: white;
+    background-color: #00219987;
+padding: 10px;
+border-radius: 5px;
+    top: 150px;
     z-index: 100000000;
     left: 50%; /* Center the element from the left side of the screen */
     transform: translateX(-50%); /* Shift it back by half its own width */

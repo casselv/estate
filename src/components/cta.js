@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Cta = () => {
   return (
     <div className="ctabox">
+      <img className="tryimage" src="/trydis.png" alt=""></img>
       <div className="infobok">
         <div className="topText">
           <h1>Discover the future of physiotherapy with Anatolink</h1>

@@ -4,7 +4,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255); /* Match the color to the screenshot */
     padding: 10px;
-    height: 5vh;
+    height: 10vh;
     z-index: 1000000000000000000000000000000;
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.128);
 
@@ -15,6 +15,10 @@ min-width: 100px;
 min-height: 100px;
 object-fit: scale-down;
 cursor: pointer;
+}
+
+.cartItem{
+color: blue;
 }
 
 .weblogo:hover{
@@ -61,7 +65,7 @@ nav{
 
 .nav-item a {
     text-decoration: none;
-    color: rgba(0, 26, 74, 0.468); /* Text color */
+    color: rgba(9, 60, 156, 0.468); /* Text color */
 
 }
 
@@ -72,6 +76,7 @@ nav{
 
 .cart-icon{
     cursor: pointer;
+    color: rgb(7, 7, 139);
 }
 
 @media (max-width: 768px){

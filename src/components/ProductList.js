@@ -34,7 +34,7 @@ const ProductList = ({
 
   return (
     <div>
-      <img className="godgiven" src="./banner3.png" alt=""></img>
+      <img className="godgiven" src="./dopebanner2.png" alt=""></img>
 
       <div className="product-list">
         {sortedProducts.map((product) => (

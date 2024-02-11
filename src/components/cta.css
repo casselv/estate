@@ -20,6 +20,14 @@ align-items: flex-start;
 justify-content: center;
 }
 
+.tryimage{
+position: absolute;
+height: 900px;
+opacity: 0.2;
+left: -300px;
+z-index: -1;
+}
+
 .topText{
 display: flex;
 flex-direction: column;
@@ -27,22 +35,23 @@ gap: 30px;
 }
 
 .topText h1{
-background-color: white;
+
 padding: 0px;
+line-height: 65px;
 font-size: 50px;
-color: #000346;
+color: #010993;
 width: fit-content;
 margin: 0px;
 width: 30ch;
 }
 
 .topText p{
-    background-color: white;
+
     padding: 0px;
-    color: #9097BC;
+    color: #5764a5;
     margin: 0px;
     width: 50ch;
-
+   line-height: 33px;
     }
 
     .ctaButtons{
@@ -89,7 +98,7 @@ width: 30ch;
 
         @media (max-width: 500px) {
             .topText h1{
-                background-color: white;
+        
                 padding: 0px;
                 font-size: 30px;
                 color: #000346;
@@ -103,7 +112,7 @@ width: 30ch;
                     }
 
                 .topText p{
-                    background-color: white;
+            
                     padding: 0px;
                     color: #9097BC;
                     margin: 0px;
