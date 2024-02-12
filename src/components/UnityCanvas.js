@@ -8,7 +8,6 @@ const UnityCanvas = () => {
   const scriptRef = useRef(null);
 
   useEffect(() => {
-    // Immediately attempt to load Unity when the component mounts
     scriptRef.current = document.createElement("script");
     scriptRef.current.src = "/loladot2400.loader.js";
     scriptRef.current.async = true;
@@ -20,7 +19,9 @@ const UnityCanvas = () => {
       })
         .then((unityInstance) => {
           window.unityInstance = unityInstance;
-          setIsLoading(false); // Set loading to false when Unity loads successfully
+          setTimeout(() => {
+            setIsLoading(false); // Set loading to false after a 3-second delay
+          }, 2500); // Delay the removal of the loading screen by 3 seconds
         })
         .catch((error) => {
           console.error("Unity load error:", error);
@@ -30,7 +31,6 @@ const UnityCanvas = () => {
     document.body.appendChild(scriptRef.current);
 
     return () => {
-      // Clean up the Unity instance and the script tag when the component unmounts
       if (window.unityInstance) {
         window.unityInstance
           .Quit()
