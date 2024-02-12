@@ -34,7 +34,7 @@ function ModelViewPage() {
 
   return (
     <div className="model-view-page">
-      <div className="instruct">select area of pain</div>
+      <div className="instruct">Select General Regions of Pain</div>
       <UnityCanvas />
       <div className="ting">
         <div id="clicked-object-name"></div>

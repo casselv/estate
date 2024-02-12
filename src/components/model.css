@@ -38,6 +38,9 @@ justify-content: center;
 .modelnext{
 color: #ffffff ;
 background-color: #0022ff;
+position: absolute;
+bottom: 30px;
+right: 50px;
 }
 
 .instruct {
@@ -58,4 +61,14 @@ border-radius: 5px;
 align-items: center;
 display: flex;
 justify-content: center;
+}
+
+@media (max-width: 500px){
+  .modelnext{
+    color: #ffffff ;
+    background-color: #0022ff;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    }
 }
