@@ -9,19 +9,19 @@ const UnityCanvas = () => {
 
   useEffect(() => {
     scriptRef.current = document.createElement("script");
-    scriptRef.current.src = "/loladot2400.loader.js";
+    scriptRef.current.src = "/loladot2600.loader.js";
     scriptRef.current.async = true;
     scriptRef.current.onload = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
-        dataUrl: "/loladot2400.data",
-        frameworkUrl: "/loladot2400.framework.js",
-        codeUrl: "/loladot2400.wasm",
+        dataUrl: "/loladot2600.data",
+        frameworkUrl: "/loladot2600.framework.js",
+        codeUrl: "/loladot2600.wasm",
       })
         .then((unityInstance) => {
           window.unityInstance = unityInstance;
           setTimeout(() => {
             setIsLoading(false); // Set loading to false after a 3-second delay
-          }, 2500); // Delay the removal of the loading screen by 3 seconds
+          }, 0); // Delay the removal of the loading screen by 3 seconds
         })
         .catch((error) => {
           console.error("Unity load error:", error);
