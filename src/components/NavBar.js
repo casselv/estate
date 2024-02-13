@@ -58,11 +58,7 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
       <ul className="nav-list">
         <li className="nav-item">
           <Link to="/">
-            <img
-              className="weblogo"
-              src="/anatolinkwebsitelogo.png"
-              alt=""
-            ></img>
+            <img className="weblogo" src="/anatolink4.png" alt=""></img>
           </Link>
         </li>
         <div className="shoppingboss">
