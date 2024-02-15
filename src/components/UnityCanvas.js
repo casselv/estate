@@ -9,13 +9,13 @@ const UnityCanvas = () => {
 
   useEffect(() => {
     scriptRef.current = document.createElement("script");
-    scriptRef.current.src = "loladot2900.loader.js";
+    scriptRef.current.src = "loladot3100.loader.js";
     scriptRef.current.async = true;
     scriptRef.current.onload = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
-        dataUrl: "/loladot2900.data",
-        frameworkUrl: "/loladot2900.framework.js",
-        codeUrl: "/loladot2900.wasm",
+        dataUrl: "/loladot3100.data",
+        frameworkUrl: "/loladot3100.framework.js",
+        codeUrl: "/loladot3100.wasm",
       })
         .then((unityInstance) => {
           window.unityInstance = unityInstance;
