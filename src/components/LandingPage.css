@@ -204,6 +204,7 @@ display: flex
   #unity-canvas {
     width: 50%;     /* Fixed width */
     height: 80vh;
+    margin-top: 20px;
     z-index: 1;
     display: block;  /* Prevent inline default behavior */
     background-color: #ffffff;
