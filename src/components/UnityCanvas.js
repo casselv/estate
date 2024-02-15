@@ -15,7 +15,7 @@ const UnityCanvas = () => {
       createUnityInstance(document.getElementById("unity-canvas"), {
         dataUrl: "/loladot2900.data",
         frameworkUrl: "/loladot2900.framework.js",
-        codeUrl: "/loladot2900.wasm",
+        codeUrl: "/loladot2900.wasm.gz",
       })
         .then((unityInstance) => {
           window.unityInstance = unityInstance;
