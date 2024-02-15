@@ -63,10 +63,11 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
         </li>
         <div className="shoppingboss">
           <li className="nav-item">
-            <Link to="/Shop">Shop</Link>
+            <Link className="shopicon" to="/Shop">
+              Shop
+            </Link>
           </li>
           <li>
-            <div className="cart-icon"></div>
             <div className="cart-icon" onClick={toggleCart}>
               <span className="cartItem">({cartItemCount})</span>
               Cart

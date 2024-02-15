@@ -45,7 +45,7 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
     try {
       // Make a POST request to your backend to finalize the payment
       const response = await fetch(
-        "http://localhost:3013/api/create-payment-intent",
+        "https://estateserver-production.up.railway.app/api/create-payment-intent",
         {
           method: "POST",
           headers: {

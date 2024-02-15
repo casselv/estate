@@ -19,13 +19,16 @@ const PaymentPage = () => {
         total: totalPrice,
       };
 
-      const response = await fetch("http://localhost:3013/api/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
+      const response = await fetch(
+        "https://estateserver-production.up.railway.app/api/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Order creation failed");

@@ -22,13 +22,16 @@ function AddProduct() {
     };
 
     try {
-      const response = await fetch("http://localhost:3013/api/push", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(submission),
-      });
+      const response = await fetch(
+        "https://estateserver-production.up.railway.app/api/push",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submission),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
