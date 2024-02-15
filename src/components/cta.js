@@ -8,13 +8,13 @@ const Cta = () => {
       <img className="tryimage" src="/vector.png" alt=""></img>
       <div className="infobok">
         <div className="topText">
-          <h1>Discover the future of physiotherapy with Anatolink</h1>
+          <h1>Anatolink: Pioneering the New Era of Physical Therapy</h1>
           <p>
-            Welcome to Anatolink, your personal physiotherapy advisor. Our
-            mission is to empower your wellness journey with products tailored
-            specifically to your needs. With our innovative AI technology, you
-            get more than just a shopping experience you get a personalized path
-            to better health."
+            Anatolink is a complimentary online resource for diagnosing and
+            assessing physiological injuries. It leverages generative AI and
+            interactive 3D software to provide comprehensive insights, symptoms,
+            and treatment options for a broad spectrum of physical health
+            concerns.
           </p>
         </div>
         <div className="ctaButtons">

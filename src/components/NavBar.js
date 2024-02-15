@@ -70,7 +70,7 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
           <li>
             <div className="cart-icon" onClick={toggleCart}>
               <span className="cartItem">({cartItemCount})</span>
-              Cart
+              <i class="fa-solid fa-cart-shopping"></i>
             </div>
 
             <div className="cart-container" style={cartStyle}>
