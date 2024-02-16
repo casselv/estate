@@ -79,6 +79,7 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Securely Pay</h2>
       <div className="cardInputs">
         <input
           type="text"
@@ -91,7 +92,7 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
       </div>
       {error && <div className="error">{error}</div>}
       <button className="paySub" type="submit" disabled={!stripe || loading}>
-        Securely Checkout With Stripe
+        Checkout With Stripe
       </button>
     </form>
   );

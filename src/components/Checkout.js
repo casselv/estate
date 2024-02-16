@@ -1,12 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./checkout.css";
 import { useNavigate } from "react-router-dom";
 
+const useGoogleMapsScript = (apiKey) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [apiKey]);
+};
+
 //import StripePaymentForm from "./StripePayment";
 
 const Checkout = () => {
+  useGoogleMapsScript("AIzaSyBbvlObfwjz8XcqHmzdNN_nCidNbNkUkpw");
   const navigate = useNavigate();
+  const [errors, setErrors] = React.useState({});
 
   const location = useLocation();
   const { cart } = location.state;
@@ -20,6 +36,46 @@ const Checkout = () => {
   const postalCodeRef = useRef(null);
   const countryRef = useRef(null);
 
+  useEffect(() => {
+    // Function to initialize the Autocomplete
+    const initAutocomplete = () => {
+      if (window.google) {
+        // Initialize Google Places Autocomplete
+        new window.google.maps.places.Autocomplete(address1Ref.current);
+        new window.google.maps.places.Autocomplete(cityRef.current);
+        new window.google.maps.places.Autocomplete(stateRef.current);
+        new window.google.maps.places.Autocomplete(postalCodeRef.current);
+        new window.google.maps.places.Autocomplete(countryRef.current);
+        // Repeat for other inputs if necessary
+      }
+    };
+
+    // Since Google Maps invokes the callback once the script is loaded,
+    // attach initAutocomplete to the window object so it can be invoked as a callback.
+    window.initAutocomplete = initAutocomplete;
+
+    // Check if the Google Maps script is already loaded
+    if (window.google && window.google.maps && window.google.maps.places) {
+      // If already loaded, directly initialize the Autocomplete
+      initAutocomplete();
+    } else {
+      // If not loaded, attach the initAutocomplete function to be called when the script is loaded
+      const script = Array.from(document.getElementsByTagName("script")).find(
+        (s) => s.src.includes("maps.googleapis.com")
+      );
+
+      if (script) {
+        // Add a load event listener to the script tag
+        script.addEventListener("load", initAutocomplete);
+      }
+    }
+
+    // Cleanup function to remove the initAutocomplete from window object
+    return () => {
+      delete window.initAutocomplete;
+    };
+  }, []);
+
   // Function to calculate total price
   const calculateTotal = () => {
     return cart.reduce((acc, item) => {
@@ -32,6 +88,21 @@ const Checkout = () => {
   };
   const totalPrice = calculateTotal();
   const handleCheckout = () => {
+    let newErrors = {};
+
+    // Validate full name and address line 1 (at least)
+    if (!fullNameRef.current.value) {
+      newErrors.fullName = "Full name is required.";
+    }
+    if (!address1Ref.current.value) {
+      newErrors.address1 = "Address line 1 is required.";
+    }
+
+    // If there are any errors, update the state and do not navigate
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     // Construct userData object with values from the refs
     const userData = {
       fullName: fullNameRef.current.value,
@@ -129,6 +200,8 @@ const Checkout = () => {
 
         {/* Payment details handled by a third-party component */}
       </form>
+      {errors.fullName && <p className="error">{errors.fullName}</p>}
+      {errors.address1 && <p className="error">{errors.address1}</p>}
       <button className="checkoutLit" onClick={handleCheckout}>
         Proceed to Payment
       </button>
@@ -137,3 +210,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
+//<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbvlObfwjz8XcqHmzdNN_nCidNbNkUkpw&libraries=places&callback=initAutocomplete"></script>

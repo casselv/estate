@@ -1,10 +1,12 @@
 .cart {
     width: 100%;
-    box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.306);
-    background-color: rgb(255, 255, 255);
-    color: rgb(14, 0, 75);
+    box-shadow: 10px 10px 20px 10px rgba(53, 82, 187, 0.306);
+    background-color: rgb(43, 81, 178);
+    color: rgb(255, 255, 255);
     display: flex;
-    height: 100vh; /* Use viewport height for full height */
+    overflow: scroll;
+    height: 100%;
+    min-height: 100vh; /* Use viewport height for full height */
     box-sizing: border-box;
     margin: 0px;
     padding: 30px;

@@ -4,6 +4,18 @@
     max-height: 300px;
     min-width: 300px;
     min-height: 300px;
+    border-radius: 3px;
+    }
+
+    .text{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: blue;
     }
 
 
@@ -12,17 +24,18 @@
     height: 90vh;
     justify-content: center;
     align-items: center;
-    gap: 300px;
-    padding: 30px;
+
+    padding: 0px;
     box-sizing: border-box;
     }
 
     .productbutton{
     margin: 0px;
+    
     }
 
     .productdescriptor{
-    color: black;
+    color: rgb(40, 59, 183);
     width: 50ch;
     }
 
@@ -39,13 +52,15 @@
       }
 
     .imaged{
-    display: 'grid';
+    display: grid;
   grid-template-columns: 1fr; /* Single column layout */
   gap: 10px; /* Space between images */
   height: 100%;
  overflow: scroll;
-width: 300px;
-
+ justify-content: center;
+ padding: 40px;
+ width: 100%;
+background-color: rgb(6, 6, 129);
 box-sizing: border-box;
     }
 

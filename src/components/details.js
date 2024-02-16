@@ -56,11 +56,14 @@ const Details = ({ onAddToCart }) => {
               <br />
             </span>
           ))}
+          <button
+            className="productbutton"
+            onClick={() => onAddToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
         {/* Assuming you handle adding to cart elsewhere */}
-        <button className="productbutton" onClick={() => onAddToCart(product)}>
-          Add to Cart
-        </button>
       </div>
     </div>
   );

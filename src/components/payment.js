@@ -44,10 +44,15 @@ const PaymentPage = () => {
 
   return (
     <div className="paymentcont">
-      <StripePaymentForm
-        handlePaymentSuccess={handlePaymentSuccess}
-        totalPrice={totalPrice}
-      />
+      <div className="leftpayment">
+        <StripePaymentForm
+          handlePaymentSuccess={handlePaymentSuccess}
+          totalPrice={totalPrice}
+        />
+      </div>
+      <div className="rightpayment">
+        <img className="vec" src="vector.png" alt=""></img>
+      </div>
     </div>
   );
 };
