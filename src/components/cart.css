@@ -1,7 +1,7 @@
 .cart {
     width: 100%;
     box-shadow: 10px 10px 20px 10px rgba(53, 82, 187, 0.306);
-    background-color: rgb(43, 81, 178);
+    background-color: rgb(1, 30, 101);
     color: rgb(255, 255, 255);
     display: flex;
     overflow: scroll;

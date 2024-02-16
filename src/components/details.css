@@ -31,7 +31,7 @@
 
     .productbutton{
     margin: 0px;
-    
+
     }
 
     .productdescriptor{
@@ -90,7 +90,7 @@ box-sizing: border-box;
  /* Space between images */
       height: 300px;
      overflow: scroll;
-    width: 300px;
+    width: 100%;
     box-sizing: border-box;
         }
 
