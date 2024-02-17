@@ -1,6 +1,7 @@
 .progress-container {
     width: 500px;
     align-self: center;
+    display: none;
     background-color: #ffffff;
     border-radius: 5px;
     position: absolute;
@@ -24,6 +25,7 @@
         border-radius: 5px;
         position: absolute;
         bottom: 60px;
+        display: none;
         box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.206);
       }
   }
