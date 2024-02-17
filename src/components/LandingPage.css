@@ -203,7 +203,7 @@ display: flex
 
   #unity-canvas {
     width: 50%;     /* Fixed width */
-    height: 80vh;
+    height: 70vh;
     margin-top: 20px;
     z-index: 1;
     display: block;  /* Prevent inline default behavior */
@@ -481,11 +481,12 @@ align-items: center;
 
   #unity-canvas {
     width: 100%;   /* Fixed width width: 960px; */
-    height: 80vh;
+    height: 70vh;
     z-index: 1;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
     background-color: #ffffff;
-    margin-top: 0px;
+    margin-top: 10px;
+
     overflow: hidden;
 }
 
@@ -544,8 +545,7 @@ align-items: center;
     width: 100%;     /* Fixed width */
     height: 55vh;
     z-index: 1;
-
-
+    margin-top: 10px;
     display: block;  /* Prevent inline default behavior */
     background-color: #ffffff;
 }
