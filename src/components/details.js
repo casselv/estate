@@ -62,6 +62,7 @@ const Details = ({ onAddToCart }) => {
           >
             Add to Cart
           </button>
+          <div className="addmore">- 1 +</div>
         </div>
         {/* Assuming you handle adding to cart elsewhere */}
       </div>

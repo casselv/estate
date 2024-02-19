@@ -95,12 +95,12 @@ margin-right: 5px;
 @media (max-width: 768px){
     
     .cart-container{
-        width: 30%;
+        width: 60%;
         top: 0;
         z-index: 100000000000;
         position: fixed;
         transition: right 0.31s ease-in-out; 
-        right: -30%;
+        right: -100%;
         }
 }
 

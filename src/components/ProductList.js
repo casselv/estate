@@ -32,10 +32,17 @@ const ProductList = ({
     return a.id - b.id;
   });
 
+  const productCounts = products.length;
+
   return (
     <div>
       <img className="godgiven" src="./banner3.png" alt=""></img>
-
+      <div className="dashboard">
+        <div className="productcount">
+          {" "}
+          <span>Results </span> {productCounts}
+        </div>
+      </div>
       <div className="product-list">
         {sortedProducts.map((product) => (
           <Product

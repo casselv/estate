@@ -7,12 +7,20 @@
     border-radius: 3px;
     }
 
-    .text{
+    .productPrice{
+    font-weight: lighter;
+    color: black;
+    }
 
+ 
+
+    .text{
+     box-sizing: border-box;
+     padding: 30px;
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     color: blue;
@@ -31,11 +39,24 @@
 
     .productbutton{
     margin: 0px;
+    background-color: blue;
+    }
 
+    .addmore{
+    border: solid 1px blue;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: blue;
+
+    display: flex;
+    padding: 10px;
+    width: 80px
     }
 
     .productdescriptor{
-    color: rgb(40, 59, 183);
+    color: rgb(122, 122, 122);
     width: 50ch;
     }
 
@@ -43,6 +64,7 @@
         background-color: rgba(255, 255, 255, 0);
         padding: 0px;
         margin: 0px;
+        color: rgb(29, 29, 29);
         width: fit-content;
     }
 
@@ -60,18 +82,66 @@
  justify-content: center;
  padding: 40px;
  width: 100%;
-background-color: rgb(6, 6, 129);
+
+box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.106);
 box-sizing: border-box;
     }
 
     @media (max-width: 768px){
         .detailed{
             display: flex;
-            height: 90vh;
+       height: 100%;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 100px;
+            gap: 10px;
+            padding: 20px;
+            }
+
+            .text{
+                box-sizing: border-box;
+                padding: 30px;
+               height: 100%;
+               width: 100%;
+               display: flex;
+               align-items: flex-start;
+               justify-content: center;
+               flex-direction: column;
+               color: blue;
+               box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.106);
+               }
+
+               .productdescriptor{
+                color: black;
+                width: 50ch;
+                }
+    
+                .productimaged{
+                    object-fit: scale-down;
+                    max-width: 150px;
+                    max-height: 150px;
+                    min-width: 150px;
+                    min-height: 150px;
+                    border-radius: 3px;
+                    }
+                
+    
+    
+        .imaged{
+            display: flex;
+         flex-direction: row; /* Single column layout */
+     /* Space between images */
+         height: fit-content;
+         overflow: scroll;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: white;
+        box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.106);
+            }
+    
+            .productdescriptor{
+            font-size: 10px;
             }
     
     }
@@ -80,8 +150,18 @@ box-sizing: border-box;
     @media (max-width: 500px){
         .productdescriptor{
             color: black;
-            width: 30ch;
+            width: 50ch;
             }
+
+            .productimaged{
+                object-fit: scale-down;
+                max-width: 150px;
+                max-height: 150px;
+                min-width: 150px;
+                min-height: 150px;
+                border-radius: 3px;
+                }
+            
 
 
     .imaged{
@@ -92,6 +172,8 @@ box-sizing: border-box;
      overflow: scroll;
     width: 100%;
     box-sizing: border-box;
+    background-color: white;
+    box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.106);
         }
 
         .productdescriptor{
@@ -106,6 +188,21 @@ box-sizing: border-box;
             align-items: center;
             box-sizing: border-box;
             padding: 20px;
+            gap: 10px;
             }
+
+
+            .text{
+                box-sizing: border-box;
+                padding: 30px;
+               height: 100%;
+               width: 100%;
+               display: flex;
+               align-items: flex-start;
+               justify-content: center;
+               flex-direction: column;
+               color: blue;
+               box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.106);
+               }
     
     }

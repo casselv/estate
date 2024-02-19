@@ -21,7 +21,7 @@ const UnityCanvas = () => {
           window.unityInstance = unityInstance;
           setTimeout(() => {
             setIsLoading(false); // Set loading to false after a 3-second delay
-          }, 0); // Delay the removal of the loading screen by 3 seconds
+          }, 2500); // Delay the removal of the loading screen by 3 seconds
         })
         .catch((error) => {
           console.error("Unity load error:", error);

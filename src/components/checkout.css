@@ -44,6 +44,9 @@ display: flex;
 flex-direction: column;
 width: 80%;
 gap: 20px;
+border-radius: 5px;
+padding: 40px;
+box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.119);
 }
 
 .checkoutLit{
@@ -51,7 +54,7 @@ align-self: flex-start;
 }
 
 .checkcont input{
-border: solid 1px rgb(51, 0, 255);
+border: solid 1px rgb(194, 194, 194);
 border-radius: 5px;
 padding: 15px;
 }
