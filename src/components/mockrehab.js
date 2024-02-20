@@ -57,7 +57,7 @@ const mockRehabItems = [
       "Great for loosening tightness and enhancing mobility in the shoulders.",
   },
   {
-    title: "Chest Rolling",
+    title: "Foam Rolling",
     area: "Chest",
     link: "/shop",
     linkd: "Foam Roller",
@@ -243,7 +243,7 @@ const mockRehabItems = [
     link: "/shop",
     linkd: "Foam Roller",
     prodimg: "/foamroller.avif",
-    mediaSrc: "https://www.youtube.com/embed/FCppY5H83fw?si=lWDXBV6BAHjXt1g7",
+    mediaSrc: "https://www.youtube.com/embed/bTw3wGOq99o?si=ERZkcDQ-5UKGeBZF",
     description:
       "Great for alleviating discomfort and improving flexibility in the shins.",
   },
