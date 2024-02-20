@@ -24,6 +24,7 @@ font-weight: bold;
 border-radius: 4px;
 padding: 10px;
 display: flex;
+display: none;
 gap: 5px;
 flex-direction: column;
 

@@ -52,6 +52,14 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
     slidesToScroll: 1,
   };
 
+  /* <video
+                controls
+                autoPlay
+                muted
+                src={item.mediaSrc}
+                alt={item.title}
+              />*/
+
   return (
     <div className="rehab-carousel">
       <Slider {...settings}>
@@ -63,17 +71,29 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
                   <h3 className="itemtitles">{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-                <a className="viewsproduct" href={item.link}>
-                  View Products
-                </a>
               </div>
-              <video
-                controls
-                autoPlay
-                muted
-                src={item.mediaSrc}
-                alt={item.title}
-              />
+              <div className="vidlink">
+                <iframe
+                  width="250"
+                  height="150"
+                  src={item.mediaSrc}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div className="productconec">
+                <div className="topin">
+                  <div className="prodlink">{item.linkd}</div>
+                  <a href="/shop" className="buylink">
+                    view our products
+                  </a>
+                </div>
+
+                <img className="prodimg" alt="" src={item.prodimg}></img>
+              </div>
             </div>
           ))
         ) : (

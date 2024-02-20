@@ -2,6 +2,7 @@
     text-align: center;
     padding: 0px;
     margin: 0px;
+
     display: flex;
     border-radius: 10px;
     align-items: center;
@@ -10,6 +11,14 @@
     min-width: 100%;
     box-sizing: border-box;
   }
+
+  .prodimg{
+  max-height: 100% !important;
+  object-fit: scale-down !important;
+  max-width: 100% !important;
+  min-width: 2px !important;
+  }
+
 
   .rehab-carousel .viewsproduct{
 color: #ffffff ;
@@ -24,16 +33,58 @@ background-color: rgb(0, 55, 255);
   
 
 .rehab-carousel{
-    
     border-radius: 10px;
     height: 500px;
     box-sizing: border-box;
 }
 
+.buylink{
+background-color: blue !important;
+padding: 10px;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+}
+
+.vidlink{
+box-sizing: border-box;
+padding: 20px;
+margin: 40px;
+border-radius: 5px;
+box-shadow: 10px 10px 20px 5px rgba(59, 86, 183, 0.096);
+}
+
+.vidlink iframe{
+border-radius: 5px;
+}
+
+.topin{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+}
+
+.productconec{
+  box-shadow: 10px 10px 20px 10px rgba(59, 86, 183, 0.096);
+margin: 40px;
+border-radius: 5px;
+
+height: 300px;
+width: auto;
+display: flex;
+gap: 30px;
+box-sizing: border-box;
+padding: 30px;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+
   
   .rehab-carousel video {
-    max-width: 500px;
-    min-width: 500px;
+    max-width: 250px;
+    min-width: 250px;
     border-radius: 10px;
     object-fit: scale-down;
     border-radius: 8px;

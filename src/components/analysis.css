@@ -94,10 +94,11 @@ width: fit-content
 
 .commercial{
 margin-top: 0px;
-min-height: 100%;
+min-height: 90vh;
 justify-content:flex-start;
 box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
 display: flex;
+background-color: rgba(255, 255, 255, 0);
 flex-direction: column;
 gap: 15px;
 width: 50%;

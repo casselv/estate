@@ -63,3 +63,49 @@ button {
 align-self: center;
 justify-self: center;
 }
+
+@media (max-width: 500px) {
+
+
+.boxdiv{
+    box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
+    box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+    .checkcont
+    form{
+    box-sizing: border-box;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.119);
+    }
+
+
+
+.checkcont{
+    box-sizing: border-box;
+    margin: 15px;
+    
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    color: blue;
+    }
+}

@@ -105,3 +105,29 @@ display: flex;
 flex-direction: column;
 background-color: red;
 }
+
+@media (max-width: 500px) {
+  .paymentcont{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    }
+
+    .vec{
+      position: absolute;
+      height: auto;
+      width: 100%;
+      }
+
+
+    .rightpayment{
+      height: 50vh;
+      width: 100%;
+      overflow: hidden;
+      background-color: white;
+      }
+
+}
