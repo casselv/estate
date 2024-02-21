@@ -35,7 +35,9 @@ const PaymentPage = () => {
       }
 
       // If the response is OK, navigate to the confirmation page
-      navigate("/confirmation");
+      navigate("/confirmation", {
+        state: { orderDetails: paymentResult.data },
+      });
     } catch (error) {
       console.error("Order creation error:", error);
       alert("There was an issue with your order. Please try again.");

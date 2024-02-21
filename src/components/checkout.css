@@ -3,6 +3,20 @@ margin: 0px;
 padding: 0px;
 }
 
+.confirmation-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .confirmation-container h2 {
+    color: #4CAF50; /* Success color */
+  }
+  
+  .confirmation-container h3 {
+    margin-top: 20px;
+  }
+  
+
 .checkcont{
 box-sizing: border-box;
 margin: 29px;
