@@ -8,6 +8,8 @@ const PaymentPage = () => {
   const location = useLocation();
   const { userData, totalPrice, cart } = location.state;
 
+  console.log("sdsd", userData);
+
   // Function to handle successful payment
   const handlePaymentSuccess = async (paymentMethodId) => {
     try {
@@ -38,7 +40,7 @@ const PaymentPage = () => {
 
       // If the response is OK, navigate to the confirmation page
       navigate("/confirmation", {
-        state: { orderDetails: paymentResult.orderDetails },
+        state: { orderDetails: orderData },
       });
     } catch (error) {
       console.error("Order creation error:", error);

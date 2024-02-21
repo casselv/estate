@@ -20,7 +20,7 @@
     font-size: 15px;
     border-right: 2px solid #333;
     white-space: nowrap;
-    color: #0022ff;
+    color: #4873B4;
     overflow: hidden;
     animation: typing 3s steps(30) 1s infinite alternate;
   }
@@ -57,7 +57,7 @@ display: flex;
 
 .injuryana{
 color: #ffffff ;
-background-color: #0022ff;
+background-color: #1650A6;
 }
 .godsplan{
 display: flex;
@@ -241,7 +241,7 @@ margin-bottom: 30px;
 }
 
 .slider-container span{
-color: #0022ff;
+color: #4873B4;
 font-weight: bold;
 }
 
@@ -265,9 +265,9 @@ font-weight: bold;
 
 
   .object-name{
-  color: rgb(12, 19, 216);
+  color: #4873B4;
   padding: 10px;
-  border: solid 1px rgb(48, 28, 227) ;
+  border: solid 1px #4873B4 ;
   border-radius: 5px;
   position: relative;
   overflow: visible;
@@ -316,7 +316,7 @@ font-weight: bold;
   }
 
   .dis{
-  color: #011752;
+  color: #0A3C86;
   font-weight: 400;
   }
 
@@ -334,21 +334,21 @@ input[type=range] {
 /* Styles for the slider track */
 input[type=range]::-webkit-slider-runnable-track {
   background: #ffffff;
-  border:1px solid #0022ff;
+  border:1px solid #0A3C86;
   height: 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 input[type=range]::-moz-range-track {
-  background: #0e39ae;
+  background: #0A3C86;
   height: 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
 input[type=range]::-ms-track {
-  background: #0e39ae;
+  background: #0A3C86;
   height: 12px;
   border-radius: 6px;
   border: none;
@@ -359,62 +359,62 @@ input[type=range]::-ms-track {
 /* Styles for the slider thumb */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 0px solid #0e39ae;
+  border: 0px solid #0A3C86;
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background: #0e39ae;
+  background: #0A3C86;
   margin-top: -6px;
   transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for the thumb */
 }
 
 input[type=range]::-moz-range-thumb {
-  border: 0px solid #0e39ae;
+  border: 0px solid #0A3C86;
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background: #0e39ae;
+  background: #0A3C86;
   transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 input[type=range]::-ms-thumb {
-  border: 0px solid #0e39ae;
+  border: 0px solid #0A3C86;
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background: #0e39ae;
+  background: #0A3C86;
   transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover state styles */
 input[type=range]:hover::-webkit-slider-thumb {
-  background: #0e39ae;
+  background: #0A3C86;
   transform: scale(1.1); /* Slightly larger thumb on hover */
 }
 
 input[type=range]:hover::-moz-range-thumb {
-  background: #0e39ae;
+  background: #0A3C86;
   transform: scale(1.1);
 }
 
 input[type=range]:hover::-ms-thumb {
-  background: #0e39ae;
+  background: #0A3C86;
   transform: scale(1.1);
 }
 
 /* Active (dragging) state styles */
 input[type=range]:active::-webkit-slider-thumb {
-  background: #0e39ae;
+  background: #0A3C86;
   transform: scale(1.1); /* Slightly larger thumb on active */
 }
 
 input[type=range]:active::-moz-range-thumb {
-  background: #0e39ae;
+  background: #0A3C86;
   transform: scale(1.1);
 }
 
 input[type=range]:active::-ms-thumb {
-  background: #0e39ae;
+  background:#0A3C86;
   transform: scale(1.1);
 }
 
@@ -428,11 +428,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 input[type=range]:focus::-moz-range-track {
-  background: #0e39ae;
+  background: #0A3C86;
 }
 
 input[type=range]:focus::-ms-track {
-  background: #0e39ae;
+  background: #0A3C86;
 }
 
 .radio-container input[type="radio"] {
@@ -445,13 +445,13 @@ input[type=range]:focus::-ms-track {
 cursor: pointer;
 height: 20px; /* Adjust this to control the size of the circle */
   width: 20px; /* Should be the same as the height for a perfect circle */
-  border: 2px solid blue; /* Blue border */
+  border: 2px solid #0A3C86; /* Blue border */
   border-radius: 50%; /* Makes it circular */
 }
 
 /* Style the radio button when it's selected (filled with blue) */
 .radio-container input[type="radio"]:checked + .radio-button {
-  background-color: blue; /* Fill with blue when selected */
+  background-color: #0A3C86; /* Fill with blue when selected */
 }
 
 .raded label{

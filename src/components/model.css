@@ -17,9 +17,9 @@ right: 583px;
 }
 
 .pinner {
-  border: 4px solid #00219944;
+  border: 4px solid #0a3c8653;
   border-radius: 50%;
-  border-top-color: #002199;
+  border-top-color: #0A3C86;
   height: 50px;
   width: 50px;
   animation: pinner 1s ease-in-out infinite;
@@ -31,14 +31,14 @@ right: 583px;
 display: flex;
 flex-direction: column;
 gap: 50px;
-color: blue;
+color: #0A3C86;
 align-items: center;
 justify-content: center;
 }
 
 .modelnext{
 color: #ffffff ;
-background-color: #0022ff;
+background-color: #1650A6;
 position: absolute;
 bottom: 30px;
 right: 50px;
@@ -47,7 +47,7 @@ right: 50px;
 .instruct {
     position: absolute;
     color: white;
-    background-color: #0037ff87;
+    background-color: #4873B4;
 padding: 10px;
 border-radius: 5px;
     top: 150px;
@@ -67,7 +67,7 @@ justify-content: center;
 @media (max-width: 500px){
   .modelnext{
     color: #ffffff ;
-    background-color: #0022ff;
+    background-color: #1650A6;
     position: absolute;
     bottom: 0px;
     right: 0px;

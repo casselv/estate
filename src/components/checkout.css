@@ -7,9 +7,14 @@ padding: 0px;
     text-align: center;
     padding: 20px;
   }
+
+  .clientcontact{
+  font-weight: bold;
+  }
+  
   
   .confirmation-container h2 {
-    color: #4CAF50; /* Success color */
+    color: #1cd422; /* Success color */
   }
   
   .confirmation-container h3 {

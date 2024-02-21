@@ -4,7 +4,9 @@ import "./checkout.css"; // Ensure this CSS file contains styles you need, or cr
 
 const Confirmation = () => {
   const location = useLocation();
-  const { orderDetails } = location.state || {}; // Assuming you're passing order details via state
+  const { orderDetails } = location.state || {};
+
+  console.log("order detaiks", orderDetails); // Assuming you're passing order details via state
 
   return (
     <div className="checkcont confirmation-container">
@@ -14,14 +16,6 @@ const Confirmation = () => {
       {/* Optional: Display order details if passed */}
       {orderDetails && (
         <>
-          <h3>Order Summary</h3>
-          <p>
-            <strong>Order Number:</strong> {orderDetails.orderNumber}
-          </p>
-          <p>
-            <strong>Total Amount:</strong> $
-            {orderDetails.totalAmount.toFixed(2)}
-          </p>
           {/* Add more details as needed */}
 
           <h3>What's Next?</h3>
@@ -36,6 +30,7 @@ const Confirmation = () => {
         If you have any questions or concerns about your order, please contact
         us.
       </p>
+      <span className="clientcontact">anatolink.com@gmail.com</span>
     </div>
   );
 };

@@ -41,7 +41,7 @@ gap: 30px;
 padding: 0px;
 line-height: 65px;
 font-size: 50px;
-color: #010993;
+color: #1650A6;
 width: fit-content;
 margin: 0px;
 width: 30ch;
@@ -50,7 +50,7 @@ width: 30ch;
 .topText p{
 
     padding: 0px;
-    color: #5764a5;
+    color: #1650A6;
     margin: 0px;
     width: 50ch;
    line-height: 33px;
@@ -82,7 +82,7 @@ width: 30ch;
     }
 
     .shopLink{
-        color: blue;
+        color: #1650A6;
         cursor: pointer;
         text-decoration: none;
     list-style: none;
