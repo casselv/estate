@@ -9,9 +9,7 @@ const Confirmation = () => {
   return (
     <div className="checkcont confirmation-container">
       <h2>Thank You for Your Purchase!</h2>
-      <p>
-        Your payment to ANATO CONGLOMERATE LLC has been successfully processed.
-      </p>
+      <p>Your payment to Anatolink has been successfully processed.</p>
 
       {/* Optional: Display order details if passed */}
       {orderDetails && (
