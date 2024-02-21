@@ -1,0 +1,95 @@
+.review-order-container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .order-summary {
+    margin-bottom: 20px;
+  }
+  
+  .order-summary h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .product-summary {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .product-summary p {
+    margin: 0;
+    color: #666;
+  }
+  
+  .product-image {
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  .actions {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .edit-order-btn, .proceed-payment-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    min-height: 80px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-order-btn:hover, .proceed-payment-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: #ff0000;
+    margin: 5px 0;
+  }
+  
+  /* Additional styles for form inputs to match the theme */
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button.checkoutBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.checkoutBtn:hover {
+    background-color: #218838;
+  }
+  

@@ -17,6 +17,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 //import UnityCanvas from "./components/UnityCanvas";
 import PaymentPage from "./components/payment";
+import ReviewOrder from "./components/ReviewOrder";
 import ModelViewPage from "./components/model";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
 import PainDetailsPage from "./components/PainDetailsPage";
@@ -87,6 +88,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/injury-details" element={<InjuryDetailsPage />} />
           <Route path="/pain-details" element={<PainDetailsPage />} />
+          <Route path="/review-order" element={<ReviewOrder />} />
           <Route path="/model" element={<ModelViewPage />} />
           <Route path="/add-product" element={<AddProduct />} />
           <Route path="/payment" element={<PaymentPage />} />

@@ -116,7 +116,7 @@ const Checkout = () => {
     };
 
     // Navigate to the payment page with userData and other necessary data
-    navigate("/payment", { state: { userData, totalPrice, cart } });
+    navigate("/review-order", { state: { userData, totalPrice, cart } });
   };
 
   return (
@@ -203,7 +203,7 @@ const Checkout = () => {
       {errors.fullName && <p className="error">{errors.fullName}</p>}
       {errors.address1 && <p className="error">{errors.address1}</p>}
       <button className="checkoutLit" onClick={handleCheckout}>
-        Proceed to Payment
+        Review Order
       </button>
     </div>
   );
