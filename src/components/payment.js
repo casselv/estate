@@ -34,9 +34,11 @@ const PaymentPage = () => {
         throw new Error("Order creation failed");
       }
 
+      const paymentResult = await response.json();
+
       // If the response is OK, navigate to the confirmation page
       navigate("/confirmation", {
-        state: { orderDetails: paymentResult.data },
+        state: { orderDetails: paymentResult.orderDetails },
       });
     } catch (error) {
       console.error("Order creation error:", error);
