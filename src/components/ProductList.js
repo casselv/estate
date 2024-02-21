@@ -36,7 +36,7 @@ const ProductList = ({
 
   return (
     <div>
-      <img className="godgiven" src="./banner3.png" alt=""></img>
+      <img className="godgiven" src="./banner5.png" alt=""></img>
       <div className="dashboard">
         <div className="productcount">
           {" "}

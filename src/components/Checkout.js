@@ -121,18 +121,20 @@ const Checkout = () => {
 
   return (
     <div className="checkcont">
-      {cart.map((item) => (
-        <div className="boxdiv">
-          <div key={item.id}>
-            <p>
-              {item.name} - Quantity: {item.quantity} - Price: {item.price}
-            </p>
-            <img className="chekedimage" src={item.image_urls[0]} alt="" />
+      <div className="customeritems">
+        {cart.map((item) => (
+          <div className="boxdiv">
+            <div key={item.id}>
+              <p>
+                {item.name} - Quantity: {item.quantity} - Price: {item.price}
+              </p>
+              <img className="chekedimage" src={item.image_urls[0]} alt="" />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
-      <div>
+      <div className="totalsht">
         <h4>Total: ${calculateTotal().toFixed(2)}</h4>
       </div>
 

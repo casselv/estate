@@ -74,7 +74,7 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
               </div>
               <div className="vidlink">
                 <iframe
-                  width="250"
+                  width="267"
                   height="150"
                   src={item.mediaSrc}
                   title="YouTube video player"

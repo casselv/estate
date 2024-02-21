@@ -6,11 +6,12 @@ padding: 0px;
 .vid4{
 position: absolute;
 right: 60px;
+z-index: -3;
 }
 
 .ctabox{
 height: 90vh;
-width: 100vw;
+max-width: 100vw;
 gap: 60px;
 display: flex;
 overflow: hidden;
@@ -92,10 +93,31 @@ width: 30ch;
         border-radius: 5px;
         }
 
+        @media (max-width: 1300px) {
+            .tryimage{
+                position: absolute;
+                height: 300px;
+                opacity: 0.1;
+                top: 200px;
+                left: 0px;
+                z-index: -1;
+                }
+        }
+
         @media (max-width: 1000px) {
             .vid4{
-                display: none;
+                opacity: 0.3;
+                height: 400px;
                 }
+
+                .tryimage{
+                    position: absolute;
+                    height: 300px;
+                    opacity: 0.1;
+                    top: 200px;
+                    left: 0px;
+                    z-index: -1;
+                    }
         }
 
         @media (max-width: 500px) {
@@ -103,14 +125,16 @@ width: 30ch;
         
                 padding: 0px;
                 font-size: 30px;
-                color: #000346;
+                line-height: 35px;
+                color: #1650A6;
                 width: fit-content;
-                margin: 0px;
-                
-                }
+                margin: 0px;}
 
                 .vid4{
-                    display: none;
+                   
+                        opacity: 0.2;
+                        height: 200px;
+                        
                     }
 
                 .topText p{
@@ -119,7 +143,15 @@ width: 30ch;
                     color: #9097BC;
                     margin: 0px;
                     font-size: 15px;
-                    width: 30ch;
-                
-                    }
+                    width: 30ch;}
+
+
+.tryimage{
+    position: absolute;
+    height: 300px;
+    opacity: 0.1;
+    top: 200px;
+    left: 0px;
+    z-index: -1;
+    }
         }

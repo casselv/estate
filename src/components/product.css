@@ -48,7 +48,7 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 
 .product h1, .product h3{
 background-color: white;
-color: rgb(0, 7, 135) ;
+color: #0A3C86 ;
 padding: 0px;
 font-weight: bold;
 margin-top: 15px;
@@ -97,7 +97,7 @@ min-width: 5px;
 }
 
 .price{
-color:  rgb(0, 7, 135) ;
+color:  #4873B4 ;
 text-decoration: none;
 list-style: none;
 

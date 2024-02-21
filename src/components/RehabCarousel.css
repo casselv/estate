@@ -39,7 +39,7 @@ background-color: rgb(0, 55, 255);
 }
 
 .buylink{
-background-color: blue !important;
+background-color: #1650A6!important;
 padding: 10px;
 border-radius: 5px;
 color: white;
@@ -173,6 +173,30 @@ flex-direction: column;
   }
 
 @media (max-width: 500px) {
+
+  .vidlink{
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px 5px rgba(59, 86, 183, 0.096);
+    }
+
+    .productconec{
+      box-shadow: 10px 10px 20px 10px rgba(59, 86, 183, 0.096);
+    margin: 20px;
+    border-radius: 5px;
+    
+    height: 300px;
+    width: auto;
+    display: flex;
+    gap: 30px;
+    box-sizing: border-box;
+    padding: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    }
 
 
   
