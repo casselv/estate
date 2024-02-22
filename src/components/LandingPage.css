@@ -336,7 +336,7 @@ input[type=range]::-webkit-slider-runnable-track {
   background: #ffffff;
   border:1px solid #0A3C86;
   height: 12px;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 

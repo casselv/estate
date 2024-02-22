@@ -19,9 +19,6 @@ const Footer = () => {
               <a href="/about">About Us</a>
             </li>
             <li>
-              <a href="/services">Services</a>
-            </li>
-            <li>
               <a href="/contact">Contact Us</a>
             </li>
             <li>
@@ -31,18 +28,16 @@ const Footer = () => {
         </section>
         <section className="footer-section">
           <h4>Contact Us</h4>
-          <p>Email: contact@anatolink.com</p>
-          <p>Phone: (123) 456-7890</p>
-          <p>Address: 123 Wellness Ave, Health City, 98765</p>
+          <p>Email: anatolink.com@@gmail.com</p>
         </section>
         <section className="footer-section">
           <h4>Legal</h4>
           <ul>
             <li>
-              <a href="/terms">Terms of Service</a>
+              <a href="/terms-of-service">Terms of Service</a>
             </li>
             <li>
-              <a href="/privacy">Privacy Policy</a>
+              <a href="/privacy-policy">Privacy Policy</a>
             </li>
           </ul>
         </section>

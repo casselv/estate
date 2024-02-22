@@ -47,7 +47,7 @@ right: 50px;
 .instruct {
     position: absolute;
     color: white;
-    background-color: #4873B4;
+    background-color: #4873b470;
 padding: 10px;
 border-radius: 5px;
     top: 150px;
@@ -77,7 +77,7 @@ justify-content: center;
 .instruct {
   position: absolute;
   color: white;
-  background-color: #4873B4;
+  background-color: #4873b470;
 padding: 10px;
 font-size: 13px;
 border-radius: 5px;

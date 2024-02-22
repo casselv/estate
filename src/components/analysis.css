@@ -8,6 +8,7 @@ color: white;
 .bonk{
 display: flex;
 flex-direction: column;
+color: #A9A9A9 !important;
 }
 
 
@@ -311,7 +312,7 @@ text-decoration: none;
 
   .commercial{
     margin-top: 0px;
-    height: 105vh;
+    height: 115vh;
     justify-content:flex-start;
     box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
     display: flex;

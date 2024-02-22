@@ -104,11 +104,26 @@ width: 30ch;
                 }
         }
 
+     
+
         @media (max-width: 1000px) {
             .vid4{
                 opacity: 0.3;
                 height: 400px;
                 }
+
+                .topText h1{
+
+                    padding: 0px;
+                    line-height: 65px;
+                    font-size: 50px;
+                    color: #1650A6;
+                    width: fit-content;
+                    margin: 0px;
+                    width: 20ch;
+                    }
+
+                
 
                 .tryimage{
                     position: absolute;

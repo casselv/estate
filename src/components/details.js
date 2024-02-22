@@ -29,7 +29,7 @@ const Details = ({ onAddToCart }) => {
     fetchProductDetails();
   }, [productId]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="loading-screen">Loading...</div>; // Use the full-screen loading style
   if (error) return <div>Error: {error}</div>;
   if (!product) return <div>No product found</div>;
 
@@ -63,7 +63,6 @@ const Details = ({ onAddToCart }) => {
             Add to Cart
           </button>
         </div>
-        {/* Assuming you handle adding to cart elsewhere */}
       </div>
     </div>
   );

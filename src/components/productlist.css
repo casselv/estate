@@ -8,6 +8,20 @@ opacity: 0.7;
 box-shadow: 10px 10px 20px 10px rgba(0, 67, 251, 0.04);
 }
 
+.loading-screen {
+    background-color: white; /* Background color */
+    display: flex;
+    color: rgb(16, 30, 154);
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: fixed; /* Use fixed to ensure it covers the whole screen even when scrolled */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    z-index: 9999; /* Ensure it's on top of other content */
+}
+
 @media only screen and (max-width: 900px) {
     .godgiven{
         min-width: 100%;

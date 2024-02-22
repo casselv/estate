@@ -1,0 +1,17 @@
+.privacyPolicyContainer {
+    font-family: 'Your Font Family', sans-serif; /* Customize your font family */
+    color: #333; /* Adjust the text color to match your design */
+    line-height: 1.6; /* Adjust line spacing */
+    padding: 20px; /* Adjust padding */
+    max-width: 800px; /* Adjust the max width as necessary */
+    margin: 0 auto; /* Center the container */
+}
+
+ul{
+color:  #4873BA;
+}
+
+.privacyPolicyContainer h2 {
+    color: #0e1ba6; /* Title color */
+    margin-bottom: 20px; /* Spacing after the title */
+}

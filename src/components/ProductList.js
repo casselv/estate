@@ -9,8 +9,10 @@ const ProductList = ({
   handleRemoveFromCart,
 }) => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch(
           "https://estateserver-production.up.railway.app/api/products"
@@ -22,6 +24,8 @@ const ProductList = ({
         setProducts(data);
       } catch (error) {
         console.error("There was a problem fetching the product data:", error);
+      } finally {
+        setIsLoading(false); // Set loading to false after fetching data
       }
     };
 
@@ -40,22 +44,26 @@ const ProductList = ({
       <div className="dashboard">
         <div className="productcount">
           {" "}
-          <span>Results </span> {productCounts}
+          <span>Results </span> {productCounts}{" "}
         </div>
       </div>
-      <div className="product-list">
-        {sortedProducts.map((product) => (
-          <Product
-            key={product.id}
-            product={product}
-            onAddToCart={onAddToCart}
-            products={products}
-            cart={cart}
-            cartItemCount={cartItemCount}
-            handleRemoveFromCart={handleRemoveFromCart}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="loading-screen">Loading...</div> // Display loading message or spinner
+      ) : (
+        <div className="product-list">
+          {sortedProducts.map((product) => (
+            <Product
+              key={product.id}
+              product={product}
+              onAddToCart={onAddToCart}
+              products={products}
+              cart={cart}
+              cartItemCount={cartItemCount}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

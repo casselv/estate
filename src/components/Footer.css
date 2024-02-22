@@ -23,8 +23,9 @@
   }
   
   .footer-section ul li a {
-    color: #4873B4;
+    color: white !important;
     text-decoration: none;
+    font-weight: bold;
   }
   
   .footer-section ul li a:hover {

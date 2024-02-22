@@ -1,6 +1,6 @@
 .rehab-item {
     text-align: center;
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
 
     display: flex;
@@ -139,9 +139,11 @@ flex-direction: column;
     display: flex;
     justify-content: space-between;
     gap: 50px;
+  
+    padding: 0px ;
     width: 100%;
     list-style: none;
-    padding: 0;
+    
   }
   
   .slick-dots li {

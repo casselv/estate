@@ -19,8 +19,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import PaymentPage from "./components/payment";
 import ReviewOrder from "./components/ReviewOrder";
 import ModelViewPage from "./components/model";
+import PrivacyPolicy from "./components/privacypolicy";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
 import PainDetailsPage from "./components/PainDetailsPage";
+import Terms from "./components/terms";
 import Footer from "./components/Footer";
 
 /*import EntryScreen from "./components/entryscreen";*/
@@ -90,7 +92,9 @@ function App() {
           <Route path="/" element={<Cta />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/injury-details" element={<InjuryDetailsPage />} />
+          <Route path="/terms-of-service" element={<Terms />} />
           <Route path="/pain-details" element={<PainDetailsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/review-order" element={<ReviewOrder />} />
           <Route path="/model" element={<ModelViewPage />} />
           <Route path="/add-product" element={<AddProduct />} />
