@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import StripePaymentForm from "./StripePayment";
 import "./payment.css";
 
-const PaymentPage = () => {
+const PaymentPage = ({ resetCart }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { userData, totalPrice, cart } = location.state;
@@ -36,7 +36,7 @@ const PaymentPage = () => {
         throw new Error("Order creation failed");
       }
 
-      const paymentResult = await response.json();
+      resetCart();
 
       // If the response is OK, navigate to the confirmation page
       navigate("/confirmation", {

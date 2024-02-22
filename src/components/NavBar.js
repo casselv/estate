@@ -76,7 +76,11 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
             <div className="cart-container" style={cartStyle}>
               {" "}
               {/* Apply the cartStyle here */}
-              <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />
+              <Cart
+                cart={cart}
+                handleRemoveFromCart={handleRemoveFromCart}
+                toggleCart={toggleCart}
+              />
             </div>
           </li>
         </div>

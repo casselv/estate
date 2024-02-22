@@ -9,15 +9,23 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
   }
+
+  p{
+  color: #4873B4;
+  }
   
   .order-summary {
     margin-bottom: 20px;
   }
   
-  .order-summary h3 {
-    color: #333;
+  .order-summary h3{
+    color: #0A3C86;
     font-size: 18px;
     margin-bottom: 10px;
+  }
+
+  h2{
+    color: #0A3C86;
   }
   
   .product-summary {
@@ -27,13 +35,14 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     align-items: center;
+
     justify-content: space-between;
     margin-bottom: 10px;
   }
   
   .product-summary p {
     margin: 0;
-    color: #666;
+    color: #4873B4;
   }
   
   .product-image {

@@ -134,12 +134,11 @@ const Checkout = () => {
         ))}
       </div>
 
-      <div className="totalsht">
-        <h4>Total: ${calculateTotal().toFixed(2)}</h4>
-      </div>
-
       {/* Checkout form goes here */}
       <form>
+        <div className="totalsht">
+          <h4>Total: ${calculateTotal().toFixed(2)}</h4>
+        </div>
         <h3>Contact Information</h3>
         <input
           type="text"

@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 // import necessary items for routing
 
-const Cart = ({ cart, handleRemoveFromCart }) => {
+const Cart = ({ cart, handleRemoveFromCart, toggleCart }) => {
   console.log("check the import", cart);
   const navigate = useNavigate();
 
   const navigateToCheckout = () => {
+    toggleCart();
     navigate("/checkout", { state: { cart } });
   };
 
@@ -46,12 +47,12 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
         ))
       )}
       {cart.length > 0 && (
-        <>
+        <div className="addup">
           <p>Total: ${calculateTotal()}</p>
           <button className="boss" onClick={navigateToCheckout}>
             Checkout
           </button>
-        </>
+        </div>
       )}
     </div>
   );

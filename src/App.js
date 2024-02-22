@@ -31,6 +31,9 @@ const stripePromise = loadStripe(
 
 function App() {
   const [cart, setCart] = useState([]);
+  const resetCart = () => {
+    setCart([]);
+  };
 
   /*const [isAuthenticated, setIsAuthenticated] = useState(false);*/
 
@@ -91,7 +94,10 @@ function App() {
           <Route path="/review-order" element={<ReviewOrder />} />
           <Route path="/model" element={<ModelViewPage />} />
           <Route path="/add-product" element={<AddProduct />} />
-          <Route path="/payment" element={<PaymentPage />} />
+          <Route
+            path="/payment"
+            element={<PaymentPage resetCart={resetCart} />}
+          />
           <Route
             path="/details/:productId"
             element={

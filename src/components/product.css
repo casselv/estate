@@ -37,7 +37,7 @@ box-shadow: 5px 10px 20px 10px rgba(89, 100, 199, 0.119);
 .product-list{
 display: grid;
 align-content: center;
-gap: 50px;
+gap: 20px;
 padding: 50px;
 background-color: rgba(255, 255, 255, 0.863);
 margin: 0px;
