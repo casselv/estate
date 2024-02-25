@@ -22,8 +22,11 @@ import ModelViewPage from "./components/model";
 import PrivacyPolicy from "./components/privacypolicy";
 import InjuryDetailsPage from "./components/InjuryDetailsPage";
 import PainDetailsPage from "./components/PainDetailsPage";
+import BlogList from "./components/BlogList";
+import BlogPost from "./components/BlogPost";
 import Terms from "./components/terms";
 import Footer from "./components/Footer";
+import BlogPostForm from "./components/contentForm.js";
 
 /*import EntryScreen from "./components/entryscreen";*/
 
@@ -95,6 +98,9 @@ function App() {
           <Route path="/terms-of-service" element={<Terms />} />
           <Route path="/pain-details" element={<PainDetailsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/blog-list" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/master-blog" element={<BlogPostForm />} />
           <Route path="/review-order" element={<ReviewOrder />} />
           <Route path="/model" element={<ModelViewPage />} />
           <Route path="/add-product" element={<AddProduct />} />

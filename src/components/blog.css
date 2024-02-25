@@ -1,0 +1,46 @@
+/* Blog List Styling */
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    min-height: 90vh;
+  }
+  
+  .blog-item-link {
+    text-decoration: none;
+    color: inherit; /* Ensures text color inherits from parent elements, typically black */
+  }
+  
+  .blog-item {
+    width: 100%;
+    max-width: 340px; /* Adjust based on your preference */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures images don't overflow the border-radius */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-5px); /* Moves the blog item slightly up on hover */
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 200px; /* Fixed height for a uniform appearance */
+    object-fit: cover; /* Ensures the image covers the area, might crop */
+  }
+  
+  .blog-title {
+    padding: 15px; /* Adds space around the title */
+    margin: 0;
+    color: #333; /* Dark grey/black for readability */
+    text-align: center; /* Centers the title */
+    font-size: 1.2rem; /* Slightly larger title for emphasis */
+    font-weight: normal; /* Adjust based on your design preference */
+  }
+  
