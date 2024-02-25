@@ -99,7 +99,7 @@ function App() {
           <Route path="/pain-details" element={<PainDetailsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/blog-list" element={<BlogList />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/master-blog" element={<BlogPostForm />} />
           <Route path="/review-order" element={<ReviewOrder />} />
           <Route path="/model" element={<ModelViewPage />} />
