@@ -1,25 +1,46 @@
 /* Blog List Styling */
 .blog-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a three-column layout */
     gap: 20px;
-    justify-content: center;
-    padding: 20px;
+    justify-items: center;
+    padding: 50px;
+    box-sizing: border-box;
     min-height: 90vh;
+    align-items: center;
+  }
+  
+
+  article{
+display: flex;
+min-height: 90vh;
+justify-content: flex-start;
+box-sizing: border-box;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+  }
+
+  .blogimage{
+height: 100px;
+min-width: 100%;
+object-fit: cover;
   }
   
   .blog-item-link {
     text-decoration: none;
+    min-width: 100%;
+
     color: inherit; /* Ensures text color inherits from parent elements, typically black */
   }
   
   .blog-item {
     width: 100%;
-    max-width: 340px; /* Adjust based on your preference */
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    justify-content: flex-start ;
+    text-align: start;
+    align-items: flex-start;
+    border-radius: 0px;
     overflow: hidden; /* Ensures images don't overflow the border-radius */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
     display: flex;
     flex-direction: column;
@@ -36,11 +57,16 @@
   }
   
   .blog-title {
-    padding: 15px; /* Adds space around the title */
+    padding: 0px; /* Adds space around the title */
     margin: 0;
-    color: #333; /* Dark grey/black for readability */
+    color: blue; /* Dark grey/black for readability */
     text-align: center; /* Centers the title */
     font-size: 1.2rem; /* Slightly larger title for emphasis */
     font-weight: normal; /* Adjust based on your design preference */
+  }
+
+  .blog-date{
+    color: rgba(0, 0, 255, 0.516);
+    font-size: 0.8rem;
   }
   

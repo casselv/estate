@@ -31,6 +31,7 @@ const BlogList = () => {
               className="blog-image"
             />
             <h2 className="blog-title">{blog.title}</h2>
+            <h3 className="blog-date">{blog.publish_date}</h3>
           </div>
         </Link>
       ))}

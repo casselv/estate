@@ -36,8 +36,8 @@ const BlogPost = () => {
 
   return (
     <article>
+      <img className="blogimage" src={post.header_image_url} alt={post.title} />
       <h1>{post.title}</h1>
-      <img src={post.header_image_url} alt={post.title} />
       <p>{post.content}</p>
       <p>{post.author}</p>
       <p>{post.publish_date}</p>
