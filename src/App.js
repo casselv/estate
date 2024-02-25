@@ -28,7 +28,7 @@ import Footer from "./components/Footer";
 /*import EntryScreen from "./components/entryscreen";*/
 
 const stripePromise = loadStripe(
-  "pk_test_51OZWISFLBFXrO8t5CBXiWcNxCDLaROtB63mWeRQL9NJfDTJ3lOr04Khus5cO0v6N8VX0MOEZk57AYr02HLItEKrZ00zewUx8Oo"
+  "pk_live_51OZWISFLBFXrO8t5CfqGJeenMLwGrPoKMKbzhL3gMKFlDoFBVdt9KsezkwBEcfXJZnwEhc5Wmga1Bz2yndMl0aI700Y34MB8zE"
 );
 
 function App() {

@@ -10,8 +10,8 @@
 }
 
 .weblogo{
-min-width: 100px;
-min-height: 100px;
+min-width: 140px;
+min-height: 140px;
 object-fit: scale-down;
 cursor: pointer;
 }
@@ -36,6 +36,7 @@ z-index: 100000000000000;
 position: fixed;
 transition: right 0.3s ease-in-out; 
 right: -100%;
+box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.294);
 overflow: scroll;
 }
 

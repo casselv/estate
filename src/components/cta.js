@@ -10,7 +10,7 @@ const Cta = () => {
         <div className="topText">
           <h1>Anatolink: Stepping Towards the Future of Physical Therapy</h1>
           <p>
-            Anatolink is a complimentary online resource for evaluating and
+            Anatolink is a fast free online resource for evaluating and
             assessing physical injuries. It leverages generative AI and
             interactive 3D software to provide comprehensive insights, symptoms,
             and treatment options for a broad spectrum of physical health
@@ -19,7 +19,7 @@ const Cta = () => {
         </div>
         <div className="ctaButtons">
           <Link to="/injury-details" className="injuryLink">
-            AI Injury Assessment
+            1 minute AI Injury Assessment
           </Link>
           <Link to="/shop" className="shopLink">
             Shop

@@ -11,7 +11,7 @@ const Spinner = () => {
   return (
     <div className="progress-spinner">
       <div className="containerpinner">
-        Calculating optimal therapeutic approaches...
+        Calculating optimal therapeutic approach...
         <div className="pinner"></div>
       </div>
     </div>

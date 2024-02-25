@@ -7,8 +7,10 @@
     margin: 0 auto; /* Center the container */
 }
 
-ul{
+.privacyPolicyContainer ul{
 color:  #4873BA;
+display: flex;
+flex-direction: column;
 }
 
 .privacyPolicyContainer h2 {
