@@ -1,0 +1,11 @@
+form{
+box-sizing: border-box;
+padding: 50px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+form textarea{
+height: 200px;
+}
