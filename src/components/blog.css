@@ -6,8 +6,9 @@
     justify-items: center;
     padding: 90px;
     box-sizing: border-box;
-    min-height: 90vh;
+    height: fit-content;
     align-items: center;
+    margin-bottom: 100px;
   }
   
 
