@@ -39,10 +39,10 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
   }
 
   const filteredItems = rehabItems.filter((item) => {
-    if (cleanCategory === "other") {
-      return true; // Include all items if the category is 'other'
-    }
-    return item.area.toLowerCase().includes(cleanCategory); // Case-insensitive comparison for filtering
+    return cleanCategory === "other"
+      ? item.area.toLowerCase() === "other"
+      : item.area.toLowerCase().includes(cleanCategory);
+    // Case-insensitive comparison for filtering
   });
 
   const settings = {

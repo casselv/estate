@@ -40,12 +40,22 @@ const Checkout = () => {
     // Function to initialize the Autocomplete
     const initAutocomplete = () => {
       if (window.google) {
-        // Initialize Google Places Autocomplete
-        new window.google.maps.places.Autocomplete(address1Ref.current);
-        new window.google.maps.places.Autocomplete(cityRef.current);
-        new window.google.maps.places.Autocomplete(stateRef.current);
-        new window.google.maps.places.Autocomplete(postalCodeRef.current);
-        new window.google.maps.places.Autocomplete(countryRef.current);
+        const options = {
+          componentRestrictions: { country: "au" },
+          types: ["geocode"], // this can be ['establishment', 'address', 'regions'] depending on your needs
+        };
+
+        new window.google.maps.places.Autocomplete(
+          address1Ref.current,
+          options
+        );
+        new window.google.maps.places.Autocomplete(cityRef.current, options);
+        new window.google.maps.places.Autocomplete(stateRef.current, options);
+        new window.google.maps.places.Autocomplete(
+          postalCodeRef.current,
+          options
+        );
+        new window.google.maps.places.Autocomplete(countryRef.current, options);
         // Repeat for other inputs if necessary
       }
     };

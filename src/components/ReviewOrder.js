@@ -34,6 +34,9 @@ const ReviewOrder = () => {
             />
           </div>
         ))}
+        <h3>Order Price</h3>
+        <p>Total Product Price: ${totalPrice}</p>{" "}
+        {/* Assumes totalPrice is just the products */}
         <h3>Shipping Details</h3>
         <p>Full Name: {userData.fullName}</p>
         <p>Email: {userData.email}</p>
@@ -44,7 +47,11 @@ const ReviewOrder = () => {
         <p>State/Region: {userData.state}</p>
         <p>Postal Code: {userData.postalCode}</p>
         <p>Country: {userData.country}</p>
-        <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+        <h3>Shipping Price</h3>
+        <p>$11.00</p> {/* Static shipping price */}
+        <h3>Total Price</h3>
+        <p className="ordersum">${(totalPrice + 11).toFixed(2)} AUD</p>{" "}
+        {/* Total price including shipping */}
       </div>
 
       <div className="actions">

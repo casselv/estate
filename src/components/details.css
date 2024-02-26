@@ -22,10 +22,10 @@
      padding: 30px;
     height: 100%;
     width: 100%;
-    font-size: 10px !important;
+    font-size: 15px !important;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     color: blue;
     }

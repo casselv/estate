@@ -1,7 +1,7 @@
 .cart {
     width: 100%;
     box-shadow: 10px 10px 20px 10px rgba(53, 82, 187, 0.306);
-    background-color: #e4e4e4;
+    background-color: #4873B4;
     color: rgb(255, 255, 255);
     display: flex;
     box-shadow: 10px 10px 20px 10px rgba(128, 128, 128, 0.106);
@@ -16,10 +16,13 @@
     align-items: center;
     padding-bottom: 300px;
   }
+  .addup p{
+  color: white;
+  }
 
   .addup{
   position: fixed;
-  background-color: rgb(0, 0, 107);
+  background-color: #1650A6;
   bottom: 0px;
   height: 300px;
   display: flex;
@@ -64,7 +67,7 @@ border-radius: 0px;
   }
   
   .boss {
-    background-color:rgb(0, 0, 255);
+    background-color: #6090d8;
     color: white;
     padding: 10px;
     margin: 0px;
@@ -89,7 +92,7 @@ align-self: flex-start;
   @media (max-width: 500px) {
     .addup{
       position: fixed;
-      background-color: rgb(0, 0, 107);
+      background-color: #1650A6;
       bottom: 0px;
       height: 300px;
       display: flex;
@@ -107,7 +110,7 @@ align-self: flex-start;
   @media (max-width: 768px){
     .addup{
       position: fixed;
-      background-color: rgb(0, 0, 107);
+      background-color: #1650A6;
       bottom: 0px;
       height: 300px;
       display: flex;

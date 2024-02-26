@@ -10,6 +10,12 @@
     font-family: Arial, sans-serif;
   }
 
+  .ordersum{
+  color: #4873B4;
+  font-weight: bold;
+  font-size: 20px;
+  }
+
   p{
   color: #4873B4;
   }

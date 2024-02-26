@@ -481,7 +481,7 @@ align-items: center;
 
   #unity-canvas {
     width: 100%;   /* Fixed width width: 960px; */
-    height: 70vh;
+    height: 65vh;
     z-index: 1;  /* Fixed height */
     display: block; /* Prevent inline default behavior */
     background-color: #ffffff;

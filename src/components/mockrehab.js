@@ -14,8 +14,8 @@ const mockRehabItems = [
     title: "Neck Massage",
     area: "Neck",
     link: "/shop",
-    prodimg: "/massagegun6.avif",
-    linkd: "Mini Massage Gun",
+    prodimg: "/bigmassage.avif",
+    linkd: "Massage Gun",
     mediaSrc:
       "https://www.youtube.com/embed/dUKNiJJ0hpE?autoplay=1&mute=1&si=lEmiU2pKXYJQaXh2",
     description:
@@ -44,10 +44,10 @@ const mockRehabItems = [
   },
   // This one is not a YouTube link, no changes needed
   {
-    title: "Foam Rolling",
+    title: "We have no products for this type of injury",
     area: "other",
     link: "/shop",
-    mediaSrc: "/howtoroll.mp4",
+    mediaSrc: "",
     description: "we have selected other due to no matches",
   },
   {
@@ -65,8 +65,8 @@ const mockRehabItems = [
     title: "Shoulder Massage",
     area: "Shoulders",
     link: "/shop",
-    prodimg: "/massagegun6.avif",
-    linkd: "Mini Massage Gun",
+    prodimg: "/bigmassage.avif",
+    linkd: "Massage Gun",
     mediaSrc:
       "https://www.youtube.com/embed/BBq34WOZt4M?autoplay=1&mute=1&si=zG-3GtK42r5LfZBN",
     description:
@@ -166,8 +166,8 @@ const mockRehabItems = [
     link: "/shop",
     mediaSrc:
       "https://www.youtube.com/embed/w16GnXTSuaQ?autoplay=1&mute=1&si=D1m1mSeKwj8VxZ6t",
-    linkd: "Mini Massage Gun",
-    prodimg: "/massagegun6.avif",
+    linkd: "Massage Gun",
+    prodimg: "/bigmassage.avif",
     description:
       "Effective in releasing tightness and improving flexibility in the hips.",
   },
@@ -252,8 +252,8 @@ const mockRehabItems = [
     title: "Calf Massage",
     area: "Calves",
     link: "/shop",
-    linkd: "Mini Massage Gun - Matte Black",
-    prodimg: "/massagegun.avif",
+    linkd: "Massage Gun",
+    prodimg: "/bigmassage.avif",
     mediaSrc:
       "https://www.youtube.com/embed/Yf0_XM7wztw?autoplay=1&mute=1&si=Q-d9P3npaIbF-rha",
     description:
@@ -263,8 +263,8 @@ const mockRehabItems = [
     title: "Shin Massage",
     area: "Shins",
     link: "/shop",
-    linkd: "Mini Massage Gun - Matte Black",
-    prodimg: "/massagegun.avif",
+    linkd: "Massage Gun",
+    prodimg: "/bigmassage.avif",
     mediaSrc:
       "https://www.youtube.com/embed/FCppY5H83fw?autoplay=1&mute=1&si=lWDXBV6BAHjXt1g7",
     description:

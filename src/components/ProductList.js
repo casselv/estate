@@ -10,6 +10,7 @@ const ProductList = ({
 }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
@@ -40,8 +41,18 @@ const ProductList = ({
 
   return (
     <div>
+      {showPopup && (
+        <>
+          <div className="popup">
+            <p>Currently Accepting Orders in Australia Only</p>
+            <img className="ausonly" src="aus.svg" alt=""></img>
+            <button onClick={() => setShowPopup(false)}>Close</button>
+          </div>
+          <div className="overlay"></div>
+        </>
+      )}
       <img className="godgiven" src="./banner5.png" alt=""></img>
-      <div className="dashboard">
+      <div className={`dashboard ${showPopup ? "blurred" : ""}`}>
         <div className="productcount">
           {" "}
           <span>Results </span> {productCounts}{" "}

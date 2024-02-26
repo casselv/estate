@@ -1,11 +1,39 @@
-import React, { useState } from "react";
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import React, { useState, useEffect } from "react";
+import {
+  useStripe,
+  useElements,
+  CardElement,
+  PaymentRequestButtonElement,
+} from "@stripe/react-stripe-js";
 
 const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
+  const [paymentRequest, setPaymentRequest] = useState(null);
+
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (stripe) {
+      const pr = stripe.paymentRequest({
+        country: "AU", // Specify your country
+        currency: "aud", // Specify your currency
+        total: {
+          label: "Total",
+          amount: Math.round(totalPrice * 100),
+        },
+        requestPayerName: true,
+        requestPayerEmail: true,
+      });
+
+      pr.canMakePayment().then((result) => {
+        if (result) {
+          setPaymentRequest(pr);
+        }
+      });
+    }
+  }, [stripe, totalPrice]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -88,7 +116,11 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
           placeholder="Name On Card"
           className="cardName"
         ></input>
-        <CardElement />
+        {paymentRequest ? (
+          <PaymentRequestButtonElement options={{ paymentRequest }} />
+        ) : (
+          <CardElement />
+        )}
       </div>
       {error && <div className="error">{error}</div>}
       <button className="paySub" type="submit" disabled={!stripe || loading}>
