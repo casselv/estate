@@ -47,6 +47,12 @@ const BlogPostForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const { title, content, author, publishDate, tags } = formData;
+    if (!title || !content || !author || !publishDate || !tags) {
+      alert("Please fill out all the fields");
+      return; // Stop the form submission process
+    }
+
     // Use FormData to handle file upload
     const data = new FormData();
     Object.keys(formData).forEach((key) => {

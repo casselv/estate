@@ -22,6 +22,7 @@
      padding: 30px;
     height: 100%;
     width: 100%;
+    font-size: 10px !important;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -46,7 +47,7 @@
 
     .detailed{
     display: flex;
-    height: 90vh;
+    height: 120vh;
     justify-content: center;
     align-items: center;
 
@@ -74,7 +75,7 @@
 
     .productdescriptor{
     color: #4873B4;
-    width: 50ch;
+    width: 100ch;
     }
 
     .productname{

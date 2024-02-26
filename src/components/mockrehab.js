@@ -22,6 +22,17 @@ const mockRehabItems = [
       "Ideal for relaxing and relieving tension in the neck muscles.",
   },
   {
+    title: "Back Stretching",
+    area: "Back",
+    link: "/shop",
+    prodimg: "/neckstretcher.avif",
+    linkd: "Cervical Neck Stretcher",
+    mediaSrc:
+      "https://www.youtube.com/embed/iu5-Y_gEcvA?autoplay=1&mute=1&si=uvugUdI9mX8U4SLU",
+    description:
+      "Ideal for relaxing and relieving tension in the neck muscles.",
+  },
+  {
     title: "Abdominal Strengthening",
     area: "Abdominal",
     link: "/shop",

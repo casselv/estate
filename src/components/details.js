@@ -49,13 +49,7 @@ const Details = ({ onAddToCart }) => {
         <h1 className="productname">{product.name}</h1>
         <h4 className="productPrice">{product.price}</h4>
         <div className="productdescriptor">
-          {product.description.split(". ").map((item, index, array) => (
-            <span key={index} className="description-segment">
-              {item}
-              {index < array.length - 1 ? ".\u00A0" : "."}
-              <br />
-            </span>
-          ))}
+          <div dangerouslySetInnerHTML={{ __html: product.description }} />
           <button
             className="productbutton"
             onClick={() => onAddToCart(product)}

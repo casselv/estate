@@ -29,7 +29,7 @@ function ModelViewPage() {
       <div className="popup-overlay">
         <div className="popup-content">
           <button className="popup-close" onClick={onClose}>
-            ×
+            ok
           </button>
           <video className="popup-image" autoPlay muted loop>
             <source src="/vid4.mp4" type="video/mp4" />
