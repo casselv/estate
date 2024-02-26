@@ -19,13 +19,14 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
       // Add the shipping amount to the total price
       //const shippingAmount = 1100; // $11 shipping fee in cents
       //const totalWithShipping = Math.round(totalPrice * 100) + shippingAmount;
+      const totalWithShipping = Math.round(totalPrice * 100);
 
       const pr = stripe.paymentRequest({
         country: "AU", // Specify your country
         currency: "aud", // Specify your currency
         total: {
           label: "Total",
-          amount: totalPrice,
+          amount: totalWithShipping,
         },
         requestPayerName: true,
         requestPayerEmail: true,
