@@ -109,18 +109,22 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
     <form onSubmit={handleSubmit}>
       <h2>Securely Pay</h2>
       <div className="cardInputs">
-        <input
-          type="text"
-          name="cardName"
-          required
-          placeholder="Name On Card"
-          className="cardName"
-        ></input>
-        {paymentRequest ? (
-          <PaymentRequestButtonElement options={{ paymentRequest }} />
-        ) : (
-          <CardElement />
+        {paymentRequest && (
+          <div>
+            <PaymentRequestButtonElement options={{ paymentRequest }} />
+          </div>
         )}
+        <div>
+          <h2>Or pay with card</h2>
+          <input
+            type="text"
+            name="cardName"
+            required
+            placeholder="Name On Card"
+            className="cardName"
+          />
+          <CardElement />
+        </div>
       </div>
       {error && <div className="error">{error}</div>}
       <button className="paySub" type="submit" disabled={!stripe || loading}>
