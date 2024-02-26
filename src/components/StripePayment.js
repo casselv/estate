@@ -1,44 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {
-  useStripe,
-  useElements,
-  CardElement,
-  PaymentRequestButtonElement,
-} from "@stripe/react-stripe-js";
+import React, { useState } from "react";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
-  const [paymentRequest, setPaymentRequest] = useState(null);
 
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (stripe) {
-      // Add the shipping amount to the total price
-      //const shippingAmount = 1100; // $11 shipping fee in cents
-      //const totalWithShipping = Math.round(totalPrice * 100) + shippingAmount;
-      const totalWithShipping = Math.round(totalPrice * 100);
-
-      const pr = stripe.paymentRequest({
-        country: "AU", // Specify your country
-        currency: "aud", // Specify your currency
-        total: {
-          label: "Total",
-          amount: totalWithShipping,
-        },
-        requestPayerName: true,
-        requestPayerEmail: true,
-      });
-
-      pr.canMakePayment().then((result) => {
-        if (result) {
-          setPaymentRequest(pr);
-        }
-      });
-    }
-  }, [stripe, totalPrice]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -114,11 +82,6 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
     <form onSubmit={handleSubmit}>
       <h2>Securely Pay</h2>
       <div className="cardInputs">
-        {paymentRequest && (
-          <div>
-            <PaymentRequestButtonElement options={{ paymentRequest }} />
-          </div>
-        )}
         <div>
           <input
             type="text"
