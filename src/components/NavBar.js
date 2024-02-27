@@ -67,6 +67,11 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
               Shop
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="blogicon" to="/blog-list">
+              Blog
+            </Link>
+          </li>
           <li>
             <div className="cart-icon" onClick={toggleCart}>
               <span className="cartItem">({cartItemCount})</span>
