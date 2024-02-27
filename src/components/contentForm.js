@@ -47,8 +47,8 @@ const BlogPostForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { title, content, author, publishDate, tags } = formData;
-    if (!title || !content || !author || !publishDate || !tags) {
+    const { title, content, author, publishDate } = formData;
+    if (!title || !content || !author || !publishDate) {
       alert("Please fill out all the fields");
       return; // Stop the form submission process
     }
