@@ -50,6 +50,7 @@ box-shadow: 10px 10px 20px 10px rgba(0, 67, 251, 0.04);
     width: auto;
     display: flex;
     flex-direction: column;
+    z-index: 9999;
     gap: 30px;
     max-width: 90%; /* Ensure it doesn't get too wide on large screens */
     box-sizing: border-box;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import "./striped.css";
 
 const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
   const stripe = useStripe();
@@ -42,7 +43,6 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
   const handleStripePayment = async (paymentMethodId) => {
     const amount = Math.round(totalPrice * 100);
     const cardName = document.querySelector(".cardName").value;
-    console.log(cardName);
     try {
       // Make a POST request to your backend to finalize the payment
       const response = await fetch(
@@ -79,7 +79,13 @@ const StripePaymentForm = ({ handlePaymentSuccess, totalPrice }) => {
   };
 
   const renderLoading = () => {
-    return loading && <div>Loading...</div>;
+    return (
+      loading && (
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
+      )
+    );
   };
 
   return (

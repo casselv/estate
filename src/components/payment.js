@@ -8,8 +8,6 @@ const PaymentPage = ({ resetCart }) => {
   const location = useLocation();
   const { userData, totalPrice, cart } = location.state;
 
-  console.log("sdsd", userData);
-
   // Function to handle successful payment
   const handlePaymentSuccess = async (paymentMethodId) => {
     try {

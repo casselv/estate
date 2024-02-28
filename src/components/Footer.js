@@ -28,7 +28,7 @@ const Footer = () => {
         </section>
         <section className="footer-section">
           <h4>Contact Us</h4>
-          <p>Email: anatolink.com@@gmail.com</p>
+          <p>Email: anatolink.com@gmail.com</p>
         </section>
         <section className="footer-section">
           <h4>Legal</h4>

@@ -29,12 +29,6 @@ function Analysis() {
       painType
     ) => {
       setIsLoading(true);
-      console.log("the fetch is running");
-      console.log("names", names);
-      console.log("description", description);
-      console.log("painLevel", painLevel);
-      console.log("duration", duration);
-      console.log("painType", painType);
 
       try {
         const response = await fetch(

@@ -77,4 +77,60 @@ object-fit: cover;
     color: rgba(0, 0, 255, 0.516);
     font-size: 0.8rem;
   }
+
+  @media (max-width: 1000px) {
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Creates a three-column layout */
+      gap: 100px;
+      justify-items: center;
+      padding: 90px;
+      box-sizing: border-box;
+      height: fit-content;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    article{
+      display: flex;
+      min-height: 90vh;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      flex-direction: column;
+      align-items: flex-start;
+        }
+  }
+
+  @media (max-width: 700px) {
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* Creates a three-column layout */
+      gap: 100px;
+      justify-items: center;
+      padding: 90px;
+      box-sizing: border-box;
+      height: fit-content;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    article{
+      display: flex;
+      min-height: 90vh;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      flex-direction: column;
+      align-items: flex-start;
+        }
+  }
   

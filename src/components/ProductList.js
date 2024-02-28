@@ -10,7 +10,9 @@ const ProductList = ({
 }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(
+    localStorage.getItem("popupDismissed") !== "true"
+  );
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
@@ -39,6 +41,11 @@ const ProductList = ({
 
   const productCounts = products.length;
 
+  const handleClosePopup = () => {
+    localStorage.setItem("popupDismissed", "true"); // Set the flag in local storage
+    setShowPopup(false); // Close the popup
+  };
+
   return (
     <div>
       {showPopup && (
@@ -46,7 +53,7 @@ const ProductList = ({
           <div className="popup">
             <p>Currently Accepting Orders in Australia Only</p>
             <img className="ausonly" src="aus.svg" alt=""></img>
-            <button onClick={() => setShowPopup(false)}>Close</button>
+            <button onClick={handleClosePopup}>Close</button>
           </div>
           <div className="overlay"></div>
         </>

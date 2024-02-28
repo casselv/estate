@@ -6,7 +6,7 @@ const Confirmation = () => {
   const location = useLocation();
   const { orderDetails } = location.state || {};
 
-  console.log("order detaiks", orderDetails); // Assuming you're passing order details via state
+  // Assuming you're passing order details via state
 
   return (
     <div className="checkcont confirmation-container">

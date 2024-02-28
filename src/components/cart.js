@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 // import necessary items for routing
 
 const Cart = ({ cart, handleRemoveFromCart, toggleCart }) => {
-  console.log("check the import", cart);
   const navigate = useNavigate();
 
   const navigateToCheckout = () => {

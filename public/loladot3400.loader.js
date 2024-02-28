@@ -1054,8 +1054,6 @@ function createUnityInstance(t, n, c) {
       clickedObjectNames.splice(index, 1); // Remove the object name from the array
       updateClickedObjectsDisplay(); // Update the display
 
-      console.log("Attempting to unhighlight in Unity:", objectName);
-
       if (window.unityInstance) {
         window.unityInstance.SendMessage(objectName, "Unhighlight");
       } else {

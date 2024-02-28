@@ -8,6 +8,50 @@
     z-index: -100000000000000;
   }
 
+  .termsModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .scrollableTerms {
+    max-height: 200px; /* Adjust based on your design */
+    overflow-y: auto;
+    margin-top: 20px;
+    border: 1px solid #ccc; /* Optional, for style */
+    padding: 10px;
+  }
+
+  .termsModal a{
+  text-decoration: underline;
+  }
+  
+  .termsModal {
+    background-color: white;
+    padding: 20px;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+  
+  .termsModal button {
+    margin-top: 20px;
+    background-color: blue;
+  }
+
+  .termsModal{
+  color: black !important;
+  }
+
   .typing-container {
     padding: 20px;
     color: #0022ff;

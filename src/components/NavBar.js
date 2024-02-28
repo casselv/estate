@@ -12,11 +12,7 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
   };
 
   useEffect(() => {
-    console.log("effect is working");
-
     const handleClickOutside = (event) => {
-      console.log("click is working", event.target);
-
       // Check if the clicked element or any of its ancestors have a "cart" class
       let target = event.target;
       let isInsideCart = false;

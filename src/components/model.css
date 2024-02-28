@@ -16,8 +16,7 @@ flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000000000000000000000000000000;
-
+  z-index: 9999;
 }
 
 
@@ -26,10 +25,12 @@ flex-direction: column;
 .popup-content {
   background: #ffffff;
   border-radius: 8px;
+  position: relative;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 500px;
+  z-index: 9999;
 }
 
 .popup-close {

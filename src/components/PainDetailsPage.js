@@ -14,8 +14,6 @@ function PainDetailsPage() {
   const [painType, setPainType] = useState("");
   const [duration, setDuration] = useState(0);
 
-  console.log("check", description);
-
   useEffect(() => {
     if (location.state?.description) {
       setTextAreaValue(location.state.description);

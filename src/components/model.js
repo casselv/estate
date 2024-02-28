@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./model.css";
 import UnityCanvas from "./UnityCanvas";
@@ -6,30 +6,18 @@ import UnityCanvas from "./UnityCanvas";
 // Create a corresponding CSS file for styling
 
 function ModelViewPage() {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
   const { description, painLevel, painType, duration } = location.state || {};
-
-  console.log("ek", description);
-  console.log("ek", painLevel);
-  console.log("ek", painType);
-  console.log("ek", duration);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true); // Show popup after 1 second
-    }, 1000);
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
 
   function InstructionPopup({ onClose }) {
     return (
       <div className="popup-overlay">
         <div className="popup-content">
           <button className="popup-close" onClick={onClose}>
-            ok
+            Ok
           </button>
           <video className="popup-image" autoPlay muted loop>
             <source src="/vid4.mp4" type="video/mp4" />

@@ -16,7 +16,6 @@ const Details = ({ onAddToCart }) => {
         );
         if (!response.ok) throw new Error("Failed to fetch");
         const product = await response.json();
-        console.log("ok", product);
 
         setProduct(product);
       } catch (err) {

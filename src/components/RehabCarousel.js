@@ -22,6 +22,7 @@ const RehabCarousel = ({ rehabItems, selectedCategory }) => {
     "Shins",
     "Feet",
     "Back",
+    "Hamstrings",
   ];
 
   // Convert selectedCategory to a format that is comparable with validAreas

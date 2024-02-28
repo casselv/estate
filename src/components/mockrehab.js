@@ -22,15 +22,24 @@ const mockRehabItems = [
       "Ideal for relaxing and relieving tension in the neck muscles.",
   },
   {
-    title: "Back Stretching",
+    title: "Back Rolling",
     area: "Back",
     link: "/shop",
-    prodimg: "/neckstretcher.avif",
-    linkd: "Cervical Neck Stretcher",
+    prodimg: "/foamroller.avif",
+    linkd: "Foam Roller",
     mediaSrc:
-      "https://www.youtube.com/embed/iu5-Y_gEcvA?autoplay=1&mute=1&si=uvugUdI9mX8U4SLU",
-    description:
-      "Ideal for relaxing and relieving tension in the neck muscles.",
+      "https://www.youtube.com/embed/X8P9KSaYOkE?autoplay=1&mute=1&si=sPrumidzRtGZ5UvI",
+    description: "Ideal for relaxing and relieving tension in the back.",
+  },
+  {
+    title: "Hamstring Rolling",
+    area: "Hamstring",
+    link: "/shop",
+    prodimg: "/foamroller.avif",
+    linkd: "Foam Roller",
+    mediaSrc:
+      "https://www.youtube.com/embed/2vA2RDdGmF4?autoplay=1&mute=1&si=MoFa6WcpJVVu_Qp4",
+    description: "Ideal for relaxing and relieving tension in the hamstring.",
   },
   {
     title: "Abdominal Strengthening",
@@ -48,7 +57,7 @@ const mockRehabItems = [
     area: "other",
     link: "/shop",
     mediaSrc: "",
-    description: "we have selected other due to no matches",
+    description: "",
   },
   {
     title: "Shoulder Stretch",

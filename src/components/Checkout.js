@@ -221,4 +221,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-//<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbvlObfwjz8XcqHmzdNN_nCidNbNkUkpw&libraries=places&callback=initAutocomplete"></script>
