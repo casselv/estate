@@ -3,8 +3,6 @@ import "./product.css";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  console.log("Product data in Product component:", product);
-
   return (
     <div className="product">
       <Link to={`/details/${product.id}`}>

@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom"; // Import this only if you're using React Router
 import "./navbar.css"; // Make sure to create a corresponding CSS file
 import Cart from "./cart";
 
-const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
-  const [isCartVisible, setCartVisible] = useState(false);
-  //const cartRef = useRef(null);
-
-  const toggleCart = () => {
-    setCartVisible(!isCartVisible);
-  };
-
+const NavigationBar = ({
+  cart,
+  cartItemCount,
+  handleRemoveFromCart,
+  isCartVisible,
+  toggleCart,
+}) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       // Check if the clicked element or any of its ancestors have a "cart" class
@@ -26,8 +25,8 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
       }
 
       // If not inside the cart, close it
-      if (!isInsideCart) {
-        setCartVisible(false);
+      if (!isInsideCart && isCartVisible) {
+        toggleCart(); // This should only toggle if necessary, or replace with a direct 'hide' function if available
       }
     };
 
@@ -37,7 +36,7 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
     return () => {
       window.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isCartVisible, toggleCart]);
 
   const cartStyle = {
     right: isCartVisible ? "0" : "-100%", // Slide in when visible, slide out when hidden
@@ -51,6 +50,10 @@ const NavigationBar = ({ cart, cartItemCount, handleRemoveFromCart }) => {
 
   return (
     <nav className="navigation-bar">
+      <div
+        className={`overlay ${isCartVisible ? "showOverlay" : ""}`}
+        onClick={toggleCart}
+      ></div>
       <ul className="nav-list">
         <li className="nav-item">
           <Link to="/">

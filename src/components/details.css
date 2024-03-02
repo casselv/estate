@@ -8,6 +8,78 @@
     z-index: -1;
     }
 
+    .image-coin{
+    height: fit-content;
+    }
+    
+    .description {
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+      
+      .minimized {
+        max-height: 0;
+      }
+      
+      .expanded {
+        max-height: 1000px; /* Adjust based on your content's needs */
+      }
+      
+      .toggle-description {
+        cursor: pointer;
+        background-color: white;
+        width: 80%;
+        color: #4873B4;
+        border-top: solid 1px rgba(0, 0, 255, 0.224);
+        border-bottom: solid 1px rgba(0, 0, 255, 0.124);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0px;
+        margin-bottom: 40px;
+      }
+
+      .toggle-description:hover{
+    background-color: white;
+      }
+
+    .quantity-selector{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    width: fit-content;
+    border: solid 1px blue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .handlingitems{
+    display: flex;
+    gap: 20px;
+    }
+
+    .quantity-button{
+    background-color:white;
+    color: blue;
+    padding: 0px;
+    margin: 0px;
+    width: 85px;
+    height: 100%;
+    cursor: pointer;
+    }
+
+    .quantity-value{
+    font-size: 15px;
+    font-weight: bold;
+    }
+
+    .quantity-button:hover{
+    background-color: white;
+    }
+
     .productPrice{
     font-weight: lighter;
     color: #4873B4;
@@ -44,11 +116,15 @@
         z-index: 9999; /* Ensure it's on top of other content */
     }
 
+    .briefdes{
+    max-width: 65ch;
+    }
+
 
     .detailed{
     display: flex;
-    height: 120vh;
-    justify-content: center;
+    height: 150vh;
+    justify-content: flex-start;
     align-items: center;
 
     padding: 0px;
@@ -76,6 +152,8 @@
     .productdescriptor{
     color: #4873B4;
     width: 100ch;
+    max-width: 100%;
+    height: 100%;
     }
 
     .productname{
@@ -130,6 +208,8 @@ box-sizing: border-box;
            
                 width: 30ch;
                 }
+
+                
 
             .text{
                 box-sizing: border-box;
@@ -186,6 +266,35 @@ box-sizing: border-box;
    
             width: 50ch;
             }
+
+
+    .quantity-selector{
+        background-color: white;
+        box-sizing: border-box;
+        padding: 5px;
+        width: fit-content;
+        border: solid 1px blue;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+
+
+      .toggle-description {
+        cursor: pointer;
+        background-color: white;
+        width: 90%;
+        color: #4873B4;
+        border-top: solid 1px rgba(0, 0, 255, 0.224);
+        border-bottom: solid 1px rgba(0, 0, 255, 0.124);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0px;
+        margin-bottom: 40px;
+      }
 
             .productimaged{
                 object-fit: scale-down;

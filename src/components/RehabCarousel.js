@@ -5,8 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const RehabCarousel = ({ rehabItems, selectedCategory }) => {
-  console.log("Selected Category:", selectedCategory);
-
   const validAreas = [
     "Neck",
     "Abdominal",

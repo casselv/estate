@@ -33,7 +33,7 @@ const mockRehabItems = [
   },
   {
     title: "Hamstring Rolling",
-    area: "Hamstring",
+    area: "Hamstrings",
     link: "/shop",
     prodimg: "/foamroller.avif",
     linkd: "Foam Roller",

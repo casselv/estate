@@ -35,8 +35,7 @@ function AddProduct() {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const data = await response.json();
-      console.log("Product added:", data);
+
       // Reset form
       setItem({
         name: "",

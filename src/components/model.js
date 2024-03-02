@@ -16,17 +16,17 @@ function ModelViewPage() {
     return (
       <div className="popup-overlay">
         <div className="popup-content">
-          <button className="popup-close" onClick={onClose}>
-            Ok
-          </button>
-          <video className="popup-image" autoPlay muted loop>
-            <source src="/vid4.mp4" type="video/mp4" />
-          </video>
           <p className="popup-text">
             Rotate and Zoom the 3D model using your mouse or by touching your
             screen. Highlight the areas where you feel discomfort by clicking or
             tapping on them.
           </p>
+          <video className="popup-image" autoPlay muted loop>
+            <source src="/vid4.mp4" type="video/mp4" />
+          </video>
+          <button className="popup-close" onClick={onClose}>
+            Ok
+          </button>
         </div>
       </div>
     );
@@ -39,13 +39,20 @@ function ModelViewPage() {
     );
 
     if (names.length === 0) {
-      // Display an alert or show an error message to the user
       alert("Please select an area of pain before proceeding.");
-    } else {
-      navigate("/analysis", {
-        state: { names, description, painLevel, duration, painType },
-      });
+      return;
     }
+
+    // Option to clear cache before navigating
+    localStorage.removeItem("analysisData");
+    localStorage.removeItem("analysisCacheTime");
+
+    // Using a unique identifier (e.g., timestamp) as part of the state could help in invalidating cache appropriately
+    const analysisId = new Date().getTime(); // Example of a unique identifier
+
+    navigate("/analysis", {
+      state: { names, description, painLevel, duration, painType, analysisId },
+    });
   };
 
   return (

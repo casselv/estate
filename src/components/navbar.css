@@ -9,6 +9,27 @@
     box-shadow: 0px 8px 5px rgba(0, 0, 255, 0.065);
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    pointer-events: none;
+    visibility: hidden; /* Initially hidden, but still takes up space */
+    opacity: 0;
+    transition: visibility 0s 0.2s, opacity 0.2s ease; /* Delay hiding visibility */
+  }
+  
+  .showOverlay {
+    visibility: visible; /* Make visible */
+    opacity: 1;
+    transition: opacity 0.5s ease; /* No delay needed when showing */
+  }
+  
+
 .weblogo{
 min-width: 140px;
 min-height: 140px;
@@ -107,7 +128,7 @@ margin-right: 5px;
     .cart-container{
         width: 60%;
         top: 0;
-        z-index: 100000000000;
+        z-index: 9999;
         position: fixed;
         transition: right 0.31s ease-in-out; 
         right: -100%;

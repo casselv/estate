@@ -40,6 +40,12 @@ function App() {
     setCart([]);
   };
 
+  const [isCartVisible, setCartVisible] = useState(false);
+
+  const toggleCart = () => {
+    setCartVisible(!isCartVisible);
+  };
+
   /*const [isAuthenticated, setIsAuthenticated] = useState(false);*/
 
   const handleRemoveFromCart = (productId) => {
@@ -50,37 +56,25 @@ function App() {
     const productExists = cart.find((item) => item.id === product.id);
     if (productExists) {
       // Update quantity if product already exists in cart
+      // Note: Now we add the new quantity to the existing one, instead of just incrementing
       setCart(
         cart.map((item) =>
           item.id === product.id
             ? {
                 ...productExists,
-                quantity: productExists.quantity + 1,
+                quantity: productExists.quantity + product.quantity,
               }
             : item
         )
       );
     } else {
-      // Add new product to cart
-      setCart([...cart, { ...product, quantity: 1 }]);
+      // Add new product to cart with its selected quantity
+      // Note: No change needed here, except ensuring product includes the quantity field
+      setCart([...cart, { ...product, quantity: product.quantity || 1 }]); // Default to 1 if quantity not provided
     }
   };
 
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
-
-  /*
-  const verifyPasscode = (enteredPasscode) => {
-    const correctPasscode = process.env.REACT_APP_PASSCODE; // Define your correct passcode here
-    if (enteredPasscode === correctPasscode) {
-      setIsAuthenticated(true);
-    } else {
-      alert("Incorrect passcode");
-    }
-  };
-
-  if (!isAuthenticated) {
-    return <EntryScreen onVerifyPasscode={verifyPasscode} />;
-  }*/
 
   return (
     <Router>
@@ -89,6 +83,8 @@ function App() {
         onAddToCart={handleAddToCart}
         cartItemCount={cartItemCount}
         cart={cart}
+        isCartVisible={isCartVisible}
+        toggleCart={toggleCart}
       />
       <Elements stripe={stripePromise}>
         <Routes>
@@ -116,6 +112,8 @@ function App() {
                 onAddToCart={handleAddToCart}
                 cartItemCount={cartItemCount}
                 cart={cart}
+                isCartVisible={isCartVisible}
+                toggleCart={toggleCart}
               />
             }
           />

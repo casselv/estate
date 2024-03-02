@@ -14,22 +14,36 @@ function Analysis() {
   });
 
   const [lastWord, setLastWord] = useState("");
-  console.log("drakomalfoy", lastWord);
+
   const [activeTab, setActiveTab] = useState("overview");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("useEffect is running for analysis");
+    const fetchAnalysis = async () => {
+      // Assume location.state contains necessary info for fetching analysis
+      const { names, description, painLevel, duration, painType } =
+        location.state || {};
 
-    const fetchAnalysis = async (
-      names,
-      description,
-      painLevel,
-      duration,
-      painType
-    ) => {
+      // Key to store and retrieve cached data
+      const cacheKey = "analysisData";
+      const cachedData = localStorage.getItem(cacheKey);
+      const cacheTimeKey = "analysisCacheTime";
+      const cachedTime = localStorage.getItem(cacheTimeKey);
+
+      // Check if cache is valid, let's say we consider 1 hour as valid cache time
+      const hour = 1000 * 60 * 60;
+      if (
+        cachedData &&
+        cachedTime &&
+        new Date().getTime() - cachedTime < hour
+      ) {
+        const parsedCacheData = JSON.parse(cachedData);
+        setAnalysisSections(parsedCacheData);
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(true);
-
       try {
         const response = await fetch(
           "https://estateserver-production.up.railway.app/api/analyze",
@@ -49,26 +63,26 @@ function Analysis() {
         );
 
         if (!response.ok) {
-          console.error("Server error:", response.statusText);
-          setIsLoading(false);
-          return;
+          throw new Error("Server error");
         }
 
         const content = await response.text();
-        const parsedcontent = parseAIResponse(content);
+        const parsedContent = parseAIResponse(content);
 
-        setAnalysisSections(parsedcontent);
+        // Update cache with new data
+        localStorage.setItem(cacheKey, JSON.stringify(parsedContent));
+        localStorage.setItem(cacheTimeKey, new Date().getTime().toString());
+
+        setAnalysisSections(parsedContent);
         setIsLoading(false);
       } catch (error) {
-        console.error("Network error:", error);
+        console.error("Fetching error:", error);
         setIsLoading(false);
       }
     };
 
     if (location.state?.names && location.state.description) {
-      const { names, description, painLevel, duration, painType } =
-        location.state;
-      fetchAnalysis(names, description, painLevel, duration, painType);
+      fetchAnalysis();
     }
   }, [location, location.state]);
 

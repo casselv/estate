@@ -35,7 +35,6 @@ const UnityCanvas = () => {
         window.unityInstance
           .Quit()
           .then(() => {
-            console.log("Unity instance quit successfully");
             window.unityInstance = null;
           })
           .catch((error) => {

@@ -14,24 +14,30 @@ const Cart = ({ cart, handleRemoveFromCart, toggleCart }) => {
 
   // Function to calculate total
   const calculateTotal = () => {
-    return cart.reduce((acc, item) => {
+    const total = cart.reduce((acc, item) => {
       // Remove the "$" symbol and convert the price to a number
       const priceWithoutSymbol = parseFloat(item.price.replace("$", ""));
 
       // Calculate the total for each item and accumulate it
       return acc + priceWithoutSymbol * item.quantity;
     }, 0);
+
+    // Format the total to 2 decimal places
+    return total.toFixed(2);
   };
 
   return (
     <div className="cart">
-      <h2>Shopping Cart</h2>
+      <div className="carttop">
+        <h2>Cart</h2>
+      </div>
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
         cart.map((item) => (
           <div className="cartier" key={item.id}>
             <h3 className="itemname">{item.name}</h3>
+
             <p>Quantity: {item.quantity}</p>
             <img className="itemimages" src={item.image_urls[0]} alt="" />
             <p>{item.price}</p>
@@ -47,7 +53,10 @@ const Cart = ({ cart, handleRemoveFromCart, toggleCart }) => {
       )}
       {cart.length > 0 && (
         <div className="addup">
-          <p>Total: ${calculateTotal()}</p>
+          <div className="calcto">
+            <p>Subtotal:</p>
+            <p>${calculateTotal()}</p>
+          </div>
           <button className="boss" onClick={navigateToCheckout}>
             Checkout
           </button>
