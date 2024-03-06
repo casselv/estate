@@ -55,7 +55,7 @@ const ProductList = ({
             <img className="ausonly" src="aus.svg" alt=""></img>
             <button onClick={handleClosePopup}>Close</button>
           </div>
-          <div className="overlay"></div>
+          <div className="overlayd"></div>
         </>
       )}
       <img className="godgiven" src="./banner5.png" alt=""></img>

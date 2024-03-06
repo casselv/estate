@@ -20,9 +20,6 @@ const Cta = () => {
           <Link to="/injury-details" className="injuryLink">
             1 minute AI Injury Assessment
           </Link>
-          <Link to="/shop" className="shopLink">
-            Shop
-          </Link>
         </div>
       </div>
       <video className="vid4" autoPlay muted loop>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Routes from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NavBar from "./components/NavBar";
@@ -26,6 +27,7 @@ import BlogList from "./components/BlogList";
 import BlogPost from "./components/BlogPost";
 import Terms from "./components/terms";
 import Footer from "./components/Footer";
+import YouTubeSearch from "./components/videoData.js";
 import BlogPostForm from "./components/contentForm.js";
 
 /*import EntryScreen from "./components/entryscreen";*/
@@ -98,6 +100,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/master-blog" element={<BlogPostForm />} />
           <Route path="/review-order" element={<ReviewOrder />} />
+          <Route path="/video-data" element={<YouTubeSearch />} />
           <Route path="/model" element={<ModelViewPage />} />
           <Route path="/add-product" element={<AddProduct />} />
           <Route
