@@ -5,6 +5,16 @@ background-color: rgb(255, 255, 255);
 color: white;
 }
 
+.toplis{
+width: 100%;
+display: flex;
+}
+
+.viddata{
+height: 100%;
+width: 100%;
+}
+
 .bonk{
 display: flex;
 flex-direction: column;

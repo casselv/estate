@@ -1,0 +1,94 @@
+.search-container {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .search-form {
+    display: flex;
+    gap: 10px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .search-input {
+    border: 2px solid #007bff;
+    padding: 10px;
+    max-width: 50%;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .video-item {
+    position: relative;
+  }
+
+  .vidcard{
+position: relative;
+height: 400px ;
+  }
+  
+  .custom-thumbnail {
+    position: absolute;
+    top: 0px;
+    opacity: 1;
+    cursor: pointer;
+    left: 0px;
+    min-width: 95% !important;
+    max-width: 95% !important;
+    min-height: 95% !important;
+    max-height: 95% !important;
+    z-index: 1; /* Ensure the custom thumbnail is above the YouTube thumbnail */
+  }
+
+  .custom-thumbnail:hover{
+opacity: 0.5;
+  }
+
+  
+  .youtube-thumbnail {
+    width: 100%;
+    height: auto;
+    z-index: 0; /* Ensure the YouTube thumbnail is below the custom thumbnail */
+  }
+  
+  .search-button {
+    color: #007bff !important;
+    background-color: white;
+    border: solid 1px #007bff !important;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .video-item {
+
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .video-item iframe{
+max-width: 100%;
+max-width: 100%;
+border-radius: 20px;
+  }
